@@ -1,0 +1,19 @@
+{
+  "title": "thon",
+  "number": "0141",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "6/3-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↓ ○ vann", "↓ ● luft", "↑ ● ild"],
+  "L2": ["↑ ○ ild", "↓ ● jord", "↑ ● ild", "↓ ○ jord"],
+  "L3": ["↑ ● jord", "↓ ● luft", "↑ ○ vann", "↓ ● vann"],
+  "L4": ["↓ ★ metall", "↑ ★ plante", "↓ ★ lyn", "↓ ★ metall"],
+  "L5": ["---", "---", "---", "↑ ★ plante"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "haesjy",
+  "number": "0326",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "5/5-26",
+  "size": "1000x1000 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↑ ○ jord", "↑ ● ild", "↓ ● ild"],
+  "L2": ["↓ ● luft", "↑ ● vann", "↓ ● jord", "↑ ● luft"],
+  "L3": ["↑ ● ild", "↓ ● vann", "↑ ● jord", "↑ ● vann"],
+  "L4": ["---", "↑ ★ plante", "↑ ★ metall", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

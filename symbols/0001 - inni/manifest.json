@@ -1,0 +1,48 @@
+{
+  "title": "inni",
+  "number": "0001",
+  "filetype": ".gif",
+  "frames": "8(0,2)",
+  "date": "17/10-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● luft",
+      "↑ ● ild",
+      "↑ ● jord",
+      "↑ ● ild"
+    ],
+    "L2": [
+      "↑ ● jord",
+      "↓ ● ild",
+      "↑ ● jord",
+      "↓ ● vann"
+    ],
+    "L3": [
+      "↓ ● luft",
+      "↓ ● luft",
+      "↑ ○ vann",
+      "↑ ● vann"
+    ],
+    "L4": [
+      "---",
+      "---",
+      "↑ ★ plante",
+      "↑ ★ lyn"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

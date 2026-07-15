@@ -1,0 +1,48 @@
+{
+  "title": "limkjut",
+  "number": "0051",
+  "filetype": ".gif",
+  "frames": "13(0,2)",
+  "date": "6/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ○ jord",
+      "↑ ○ vann",
+      "↑ ● luft",
+      "↓ ● vann"
+    ],
+    "L2": [
+      "↓ ● ild",
+      "↑ ● ild",
+      "↓ ● jord",
+      "↑ ● luft"
+    ],
+    "L3": [
+      "↓ ○ vann",
+      "↑ ● ild",
+      "↑ ● luft",
+      "↓ ● jord"
+    ],
+    "L4": [
+      "↓ ★ metall",
+      "↓ ★ lyn",
+      "---",
+      "---"
+    ],
+    "L5": [
+      "↓ ★ lyn",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

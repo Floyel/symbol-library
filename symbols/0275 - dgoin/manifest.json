@@ -1,0 +1,19 @@
+{
+  "title": "dgoin",
+  "number": "0275",
+  "filetype": ".gif",
+  "frames": "10(0,2)",
+  "date": "9/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ○ ild", "↓ ● vann", "↑ ● luft", "↑ ○ ild"],
+  "L2": ["↑ ● jord", "↓ ● vann", "↓ ● jord", "↑ ● jord"],
+  "L3": ["↓ ● vann", "↑ ● luft", "↑ ● ild", "↑ ● luft"],
+  "L4": ["↓ ★ metall", "---", "↓ ★ metall", "↓ ★ metall"],
+  "L5": ["↓ ★ plante", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

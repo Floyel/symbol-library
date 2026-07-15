@@ -1,0 +1,48 @@
+{
+  "title": "pling",
+  "number": "0017",
+  "filetype": ".gif",
+  "frames": "22(0,2)",
+  "date": "2/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● luft",
+      "↑ ● ild",
+      "↓ ● vann",
+      "↓ ● vann"
+    ],
+    "L2": [
+      "↑ ● luft",
+      "↑ ● ild",
+      "↑ ● jord",
+      "↓ ○ jord"
+    ],
+    "L3": [
+      "↓ ● vann",
+      "↑ ● ild",
+      "↓ ● jord",
+      "↑ ● luft"
+    ],
+    "L4": [
+      "---",
+      "---",
+      "↓ ★ plante",
+      "↓ ★ plante"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

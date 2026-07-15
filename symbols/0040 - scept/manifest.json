@@ -1,0 +1,48 @@
+{
+  "title": "scept",
+  "number": "0040",
+  "filetype": ".gif",
+  "frames": "11(0,2)",
+  "date": "25/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● ild",
+      "↓ ● jord",
+      "↓ ● jord",
+      "↓ ● luft"
+    ],
+    "L2": [
+      "↓ ● vann",
+      "↑ ● vann",
+      "↑ ● luft",
+      "↓ ● ild"
+    ],
+    "L3": [
+      "↑ ● jord",
+      "↑ ● vann",
+      "↓ ● ild",
+      "↓ ● luft"
+    ],
+    "L4": [
+      "↓ ★ lyn",
+      "↓ ★ plante",
+      "---",
+      "---"
+    ],
+    "L5": [
+      "↑ ★ plante",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

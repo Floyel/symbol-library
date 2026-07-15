@@ -1,0 +1,19 @@
+{
+  "title": "erear",
+  "number": "0134",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "27/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● vann", "↑ ● jord", "↑ ● luft", "↓ ● luft"],
+  "L2": ["↑ ○ jord", "↑ ○ vann", "↓ ● vann", "↓ ● ild"],
+  "L3": ["↓ ● ild", "↑ ● ild", "↑ ● jord", "↑ ● luft"],
+  "L4": ["↓ ★ plante", "↓ ★ plante", "↑ ★ plante", "---"],
+  "L5": ["↑ ★ metall", "↑ ★ lyn", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

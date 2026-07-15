@@ -1,0 +1,19 @@
+{
+  "title": "N/A",
+  "number": "0333",
+  "filetype": "---",
+  "frames": "",
+  "date": "",
+  "size": "",
+  "dimension": "**",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["N/A", "N/A", "N/A", "N/A"],
+  "L2": ["N/A", "N/A", "N/A", "N/A"],
+  "L3": ["N/A", "N/A", "N/A", "N/A"],
+  "L4": ["N/A", "N/A", "N/A", "N/A"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow","Inverted","Filter"]
+}

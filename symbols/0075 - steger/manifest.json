@@ -1,0 +1,19 @@
+{
+  "title": "steger",
+  "number": "0075",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "30/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● ild", "↓ ● luft", "↑ ● vann", "↓ ● jord"],
+  "L2": ["↑ ● vann", "↓ ● jord", "↓ ● ild", "↓ ● jord"],
+  "L3": ["↓ ● vann", "↑ ● luft", "↓ ● luft", "↓ ○ ild"],
+  "L4": ["↓ ★ lyn", "---", "↑ ★ lyn", "↓ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

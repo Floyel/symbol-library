@@ -1,0 +1,20 @@
+{
+  "title": "jordo",
+  "number": "0186",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "13/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↑ ● jord", "↑ ● jord", "↓ ● ild"],
+  "L2": ["↓ ● ild", "↓ ○ vann", "↓ ● luft", "↓ ● luft"],
+  "L3": ["↑ ● vann", "↓ ● jord", "↓ ● vann", "↑ ● ild"],
+  "L4": ["↓ ★ lyn", "↑ ★ plante", "---", "---"],
+  "L5": ["---", "↓ ★ plante", "---", "---"]
+  
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "maoum",
+  "number": "0277",
+  "filetype": ".gif",
+  "frames": "10(0,2)",
+  "date": "11/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↑ ● vann", "↑ ● luft", "↑ ● ild"],
+  "L2": ["↑ ○ jord", "↑ ● luft", "↑ ● vann", "↑ ○ jord"],
+  "L3": ["↑ ● ild", "↑ ● vann", "↑ ○ ild", "↓ ● jord"],
+  "L4": ["↑ ★ metall", "---", "↑ ★ lyn", "↑ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "djof",
+  "number": "0195",
+  "filetype": ".gif",
+  "frames": "21(0,2)",
+  "date": "23/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↑ ● ild", "↑ ○ jord", "↓ ○ vann", "↑ ● jord"],
+  "L2":  ["↑ ○ jord", "↑ ● vann", "↓ ● ild", "↓ ● ild"],
+  "L3":  ["↓ ● luft", "↑ ● luft", "↓ ● luft", "↓ ○ vann"],
+  "L4":  ["↓ ★ metall", "↓ ★ plante", "↑ ★ lyn", "↑ ★ metall"],
+  "L5":  ["---", "---", "---", "↓ ★ lyn"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

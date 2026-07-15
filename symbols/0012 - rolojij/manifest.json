@@ -1,0 +1,48 @@
+{
+  "title": "rolojij",
+  "number": "0012",
+  "filetype": ".gif",
+  "frames": "11(0,2)",
+  "date": "28/10-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● vann",
+      "↑ ● luft",
+      "↑ ● vann",
+      "↑ ● jord"
+    ],
+    "L2": [
+      "↓ ● luft",
+      "↑ ● ild",
+      "↓ ● ild",
+      "↓ ○ jord"
+    ],
+    "L3": [
+      "↑ ● luft",
+      "↓ ● jord",
+      "↑ ● vann",
+      "↓ ● ild"
+    ],
+    "L4": [
+      "---",
+      "↓ ★ metall",
+      "↓ ★ lyn",
+      "↓ ★ metall"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "↓ ★ lyn",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

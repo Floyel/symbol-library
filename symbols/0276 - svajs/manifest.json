@@ -1,0 +1,19 @@
+{
+  "title": "svajs",
+  "number": "0276",
+  "filetype": ".gif",
+  "frames": "31(0,1)",
+  "date": "10/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● vann", "↑ ● jord", "↑ ● jord", "↑ ● luft"],
+  "L2": ["↑ ● luft", "↑ ○ ild", "↓ ● vann", "↓ ○ ild"],
+  "L3": ["↓ ● vann", "↑ ● ild", "↑ ● luft", "↓ ● jord"],
+  "L4": ["---", "↓ ★ metall", "↓ ★ plante", "↓ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

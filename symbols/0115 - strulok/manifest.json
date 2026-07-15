@@ -1,0 +1,19 @@
+{
+  "title": "strulok",
+  "number": "0115",
+  "filetype": ".gif",
+  "frames": "11(0,2)",
+  "date": "8/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● ild", "↑ ● ild", "↑ ● luft", "↓ ● vann"],
+  "L2": ["↑ ● jord", "↓ ● jord", "↑ ● vann", "↑ ● vann"],
+  "L3": ["↓ ● ild", "↑ ● luft", "↑ ● luft", "↑ ○ jord"],
+  "L4": ["↑ ★ metall", "↓ ★ metall", "---", "↑ ★ plante"],
+  "L5": ["↑ ★ metall", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "dhuj",
+  "number": "0293",
+  "filetype": ".gif",
+  "frames": "9(0,2)",
+  "date": "27/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● vann", "↑ ● jord", "↓ ● jord", "↑ ● ild"],
+  "L2": ["↑ ● luft", "↓ ● luft", "↑ ● luft", "↑ ● ild"],
+  "L3": ["↑ ● jord", "↓ ● vann", "↓ ● ild", "↓ ● vann"],
+  "L4": ["---", "---", "---", "↑ ★ lyn"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

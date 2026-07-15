@@ -1,0 +1,19 @@
+{
+  "title": "yok",
+  "number": "0330",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "22/5-26",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "of a post-it note",
+  "element_code": {
+  "L1": ["↑ ● vann", "↓ ● ild", "↑ ● jord", "↓ ● ild"],
+  "L2": ["↓ ● luft", "↑ ● vann", "↓ ● luft", "↓ ● luft"],
+  "L3": ["↑ ● vann", "↓ ● ild", "↓ ● jord", "↓ ● jord"],
+  "L4": ["---", "↓ ★ lyn", "---", "---"],
+  "L5": ["---", "↑ ★ lyn", "---", "---"]
+  },
+  "effects": ["Glow","Inverted","Filter"]
+}

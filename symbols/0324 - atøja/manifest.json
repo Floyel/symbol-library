@@ -1,0 +1,19 @@
+{
+  "title": "atøja",
+  "number": "0324",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "12/4-26",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↑ ● jord", "↓ ● luft", "↑ ● luft"],
+  "L2": ["↑ ● vann", "↓ ● vann", "↓ ○ vann", "↓ ○ ild"],
+  "L3": ["↓ ● jord", "↑ ● ild", "↓ ● ild", "↓ ● jord"],
+  "L4": ["↑ ★ plante", "↑ ★ plante", "↑ ★ lyn", "↓ ★ metall"],
+  "L5": ["---", "↑ ★ lyn", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "boloop",
+  "number": "0228",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "23/8-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↑ ● luft", "↑ ● vann", "↑ ● ild"],
+  "L2": ["↓ ● luft", "↓ ● jord", "↑ ○ jord", "↑ ○ vann"],
+  "L3": ["↑ ● ild", "↓ ○ vann", "↑ ○ ild", "↓ ● jord"],
+  "L4": ["---", "↑ ★ plante", "↑ ★ plante", "↑ ★ lyn"],
+  "L5": ["---", "---", "↑ ★ metall", "↓ ★ plante"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

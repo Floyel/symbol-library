@@ -1,0 +1,19 @@
+{
+  "title": "phati",
+  "number": "0088",
+  "filetype": ".gif",
+  "frames": "36(0,2)",
+  "date": "12/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ○ vann", "↓ ● jord", "↑ ● luft", "↓ ● ild"],
+  "L2": ["↓ ● ild", "↓ ○ jord", "↑ ● jord", "↓ ○ vann"],
+  "L3": ["↓ ● luft", "↓ ● vann", "↑ ● luft", "↑ ● ild"],
+  "L4": ["↑ ★ lyn", "↑ ★ plante", "---", "↓ ★ lyn"],
+  "L5": ["---", "---", "---", "↑ ★ lyn"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

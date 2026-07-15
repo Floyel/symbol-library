@@ -1,0 +1,19 @@
+{
+  "title": "skhohe",
+  "number": "0188",
+  "filetype": ".gif",
+  "frames": "10(0,2)",
+  "date": "16/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↓ ● jord", "↓ ● jord", "↑ ● vann"],
+  "L2": ["↓ ● vann", "↑ ● ild", "↑ ● ild", "↑ ○ jord"],
+  "L3": ["↑ ● vann", "↓ ● luft", "↓ ● luft", "↑ ● luft"],
+  "L4": ["↓ ★ lyn", "↑ ★ metall", "★ metall", "↑ ★ plante"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

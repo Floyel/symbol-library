@@ -1,0 +1,48 @@
+{
+  "title": "prrel",
+  "number": "0020",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "5/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● vann",
+      "↓ ● ild",
+      "↓ ● luft",
+      "↓ ● luft"
+    ],
+    "L2": [
+      "↓ ● jord",
+      "↑ ● jord",
+      "↓ ● vann",
+      "↓ ● jord"
+    ],
+    "L3": [
+      "↓ ○ vann",
+      "↓ ● ild",
+      "↑ ● ild",
+      "↓ ● luft"
+    ],
+    "L4": [
+      "↑ ★ plante",
+      "↑ ★ metall",
+      "↓ ★ lyn",
+      "---"
+    ],
+    "L5": [
+      "↓ ★ plante",
+      "↓ ★ metall",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

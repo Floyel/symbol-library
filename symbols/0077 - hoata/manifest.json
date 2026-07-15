@@ -1,0 +1,19 @@
+{
+  "title": "hoata",
+  "number": "0077",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "1/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↓ ● luft", "↓ ● vann", "↓ ● jord"],
+  "L2": ["↑ ● luft", "↓ ○ jord", "↓ ○ ild", "↑ ● luft"],
+  "L3": ["↓ ● ild", "↓ ● vann", "↑ ● vann", "↓ ● jord"],
+  "L4": ["---", "↓ ★ plante", "↑ ★ lyn", "---"],
+  "L5": ["---", "---", "↓ ★ lyn", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

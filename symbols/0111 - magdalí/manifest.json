@@ -1,0 +1,19 @@
+{
+  "title": "magdalí",
+  "number": "0111",
+  "filetype": ".gif",
+  "frames": "37(0,1)",
+  "date": "4/2-25",
+  "size": "1000x1000 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↑ ○ ild", "↑ ● jord", "↓ ● luft"],
+  "L2": ["↓ ● luft", "↑ ● vann", "↑ ○ jord", "↓ ● ild"],
+  "L3": ["↑ ● jord", "↓ ● vann", "↑ ● vann", "↓ ● luft"],
+  "L4": ["---", "↓ ★ lyn", "↑ ★ plante", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

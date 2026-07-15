@@ -1,0 +1,19 @@
+{
+  "title": "arofire",
+  "number": "0097",
+  "filetype": ".gif",
+  "frames": "24(0,2)",
+  "date": "21/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● ild", "↓ ● vann", "↓ ● luft", "↑ ● ild"],
+  "L2": ["↓ ● luft", "↓ ● luft", "↑ ● vann", "↓ ○ jord"],
+  "L3": ["↓ ● vann", "↓ ● jord", "↓ ● jord", "↓ ● ild"],
+  "L4": ["---", "---", "↓ ★ plante", "↑ ★ metall"],
+  "L5": ["---", "---", "---", "↓ ★ metall"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

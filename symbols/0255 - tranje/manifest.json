@@ -1,0 +1,19 @@
+{
+  "title": "tranje",
+  "number": "0255",
+  "filetype": ".gif",
+  "frames": "24(0,2)",
+  "date": "19/9-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↑ ● jord", "↑ ● luft", "↑ ● ild"],
+  "L2": ["↑ ● luft", "↓ ● vann", "↓ ● jord", "↑ ○ vann"],
+  "L3": ["↓ ● vann", "↓ ○ jord", "↑ ● luft", "↓ ● ild"],
+  "L4": ["---", "↓ ★ plante", "---", "↑ ★ lyn"],
+  "L5": ["---", "↑ ★ plante", "---", "↓ ★ lyn"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

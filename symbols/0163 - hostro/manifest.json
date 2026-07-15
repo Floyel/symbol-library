@@ -1,0 +1,19 @@
+{
+  "title": "hostro",
+  "number": "0163",
+  "filetype": ".gif",
+  "frames": "15(0,2)",
+  "date": "19/4-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↓ ● luft", "↑ ● jord", "↑ ● luft"],
+  "L2": ["↑ ● luft", "↓ ● ild", "↑ ○ ild", "↓ ● vann"],
+  "L3": ["↑ ● vann", "↓ ○ vann", "↓ ● jord", "↑ ● ild"],
+  "L4": ["---", "↑ ★ lyn", "↑ ★ metall", "↓ ★ lyn"],
+  "L5": ["---", "---", "↑ ★ metall", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "@æ@æ",
+  "number": "0321",
+  "filetype": ".gif",
+  "frames": "17(0,2)",
+  "date": "1/4-26",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● vann", "↑ ○ ild", "↓ ● luft", "↓ ● vann"],
+  "L2": ["↑ ○ jord", "↑ ● jord", "↓ ● vann", "↑ ● jord"],
+  "L3": ["↓ ● ild", "↓ ● luft", "↑ ● luft", "↑ ○ ild"],
+  "L4": ["↓ ★ plante", "↑ ★ metall", "---", "↓ ★ plante"],
+  "L5": ["↑ ★ metall", "---", "---", "↑ ★ metall"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

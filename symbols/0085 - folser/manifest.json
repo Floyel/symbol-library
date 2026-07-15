@@ -1,0 +1,19 @@
+{
+  "title": "folser",
+  "number": "0085",
+  "filetype": ".gif",
+  "frames": "18(0,2)",
+  "date": "9/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● vann", "↑ ● luft", "↑ ● jord", "↓ ● luft"],
+  "L2": ["↑ ● luft", "↓ ● vann", "↓ ○ jord", "↑ ● ild"],
+  "L3": ["↑ ● vann", "↑ ● ild", "↓ ● ild", "↓ ● jord"],
+  "L4": ["---", "↓ ★ lyn", "↑ ★ metall", "↓ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

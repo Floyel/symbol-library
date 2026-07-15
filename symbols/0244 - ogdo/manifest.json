@@ -1,0 +1,19 @@
+{
+  "title": "ogdo",
+  "number": "0244",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "8/9-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↓ ● ild", "↑ ● luft", "↓ ● vann"],
+  "L2": ["↓ ○ jord", "↓ ● luft", "↓ ● vann", "↓ ○ ild"],
+  "L3": ["↓ ● vann", "↓ ● ild", "↓ ○ jord", "↑ ● luft"],
+  "L4": ["↓ ★ plante", "---", "↓ ★ plante", "↑ ★ lyn"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

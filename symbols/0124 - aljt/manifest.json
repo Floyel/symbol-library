@@ -1,0 +1,19 @@
+{
+  "title": "aljt",
+  "number": "0124",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "17/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↓ ● jord", "↓ ● vann", "↓ ○ jord"],
+  "L2": ["↓ ● luft", "↓ ○ vann", "↑ ● vann", "↓ ● ild"],
+  "L3": ["↓ ● jord", "↓ ● luft", "↓ ● ild", "↓ ● luft"],
+  "L4": ["---", "↓ ★ plante", "↓ ★ lyn", "↑ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

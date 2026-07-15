@@ -1,0 +1,48 @@
+{
+  "title": "wegg",
+  "number": "0009",
+  "filetype": ".gif",
+  "frames": "8(0,2)",
+  "date": "25/10-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ○ vann",
+      "↑ ● vann",
+      "↓ ● ild",
+      "↓ ● jord"
+    ],
+    "L2": [
+      "↓ ● jord",
+      "↓ ● vann",
+      "↑ ● luft",
+      "↓ ● luft"
+    ],
+    "L3": [
+      "↑ ● luft",
+      "↑ ● ild",
+      "↓ ● ild",
+      "↓ ● jord"
+    ],
+    "L4": [
+      "↑ ★ plante",
+      "↑ ★ lyn",
+      "---",
+      "---"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

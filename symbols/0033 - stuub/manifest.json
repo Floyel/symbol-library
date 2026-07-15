@@ -1,0 +1,48 @@
+{
+  "title": "stuub",
+  "number": "0033",
+  "filetype": ".gif",
+  "frames": "18(0,2)",
+  "date": "18/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● ild",
+      "↓ ● ild",
+      "↓ ● luft",
+      "↓ ● luft"
+    ],
+    "L2": [
+      "↓ ○ jord",
+      "↓ ○ vann",
+      "↓ ● ild",
+      "↑ ● jord"
+    ],
+    "L3": [
+      "↑ ● jord",
+      "↓ ● vann",
+      "↓ ● luft",
+      "↑ ○ vann"
+    ],
+    "L4": [
+      "↓ ★ metall",
+      "↓ ★ lyn",
+      "---",
+      "↓ ★ plante"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

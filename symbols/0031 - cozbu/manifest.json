@@ -1,0 +1,48 @@
+{
+  "title": "cozbu",
+  "number": "0031",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "16/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● vann",
+      "↑ ● ild",
+      "↓ ● jord",
+      "↓ ○ vann"
+    ],
+    "L2": [
+      "↓ ● vann",
+      "↓ ● jord",
+      "↑ ● luft",
+      "↓ ● ild"
+    ],
+    "L3": [
+      "↓ ○ ild",
+      "↑ ● luft",
+      "↑ ● jord",
+      "↑ ● luft"
+    ],
+    "L4": [
+      "↓ ★ lyn",
+      "↑ ★ metall",
+      "---",
+      "↓ ★ lyn"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

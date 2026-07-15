@@ -1,0 +1,19 @@
+{
+  "title": "hrush",
+  "number": "0071",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "26/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● jord", "↑ ● ild", "↑ ● vann", "↑ ● vann"],
+  "L2": ["↓ ● jord", "↓ ● jord", "↓ ● vann", "↓ ● luft"],
+  "L3": ["↓ ● luft", "↓ ● luft", "↑ ● ild", "↓ ● ild"],
+  "L4": ["---", "↓ ★ metall", "↑ ★ lyn", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

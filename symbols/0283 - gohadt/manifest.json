@@ -1,0 +1,19 @@
+{
+  "title": "gohadt",
+  "number": "0283",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "17/10-25",
+  "size": "1000x1000 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● ild", "↓ ● ild", "↓ ○ vann", "↑ ● jord"],
+  "L2": ["↑ ● jord", " ○ vann", "↓ ● jord", "↑ ○ ild"],
+  "L3": ["↓ ● luft", "↑ ● luft", "↓ ○ vann", "↑ ● luft"],
+  "L4": ["↑ ★ metall", "↑ ★ lyn", "↑ ★ plante", "↑ ★ metall"],
+  "L5": ["---", "---", "↑ ★ plante", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

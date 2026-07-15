@@ -1,0 +1,19 @@
+{
+  "title": "tzulu",
+  "number": "0117",
+  "filetype": ".gif",
+  "frames": "11(0,2)",
+  "date": "10/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↑ ● luft", "↓ ● jord", "↑ ● ild"],
+  "L2": ["↓ ● vann", "↓ ● luft", "↑ ● luft", "↓ ● ild"],
+  "L3": ["↑ ● vann", "↓ ● vann", "↓ ● jord", "↓ ● ild"],
+  "L4": ["↓ ★ plante", "---", "---", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

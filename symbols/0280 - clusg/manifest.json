@@ -1,0 +1,19 @@
+{
+  "title": "clusg",
+  "number": "0280",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "14/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↓ ● luft", "↑ ● jord", "↑ ● jord"],
+  "L2": ["↓ ● ild", "↑ ● ild", "↓ ● luft", "↑ ○ vann"],
+  "L3": ["↓ ● luft", "↑ ○ jord", "↓ ● vann", "↓ ● vann"],
+  "L4": ["---", "↑ ★ metall", "---", "↓ ★ plante"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "ersion",
+  "number": "0177",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "27/5-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● vann", "↑ ● jord", "↓ ● jord", "↑ ● ild"],
+  "L2": ["↑ ● luft", "↑ ○ vann", "↑ ● ild", "↓ ● jord"],
+  "L3": ["↑ ● ild", "↑ ● vann", "↑ ● luft", "↑ ● luft"],
+  "L4": ["---", "↓ ★ plante", "↓ ★ metall", "↓ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

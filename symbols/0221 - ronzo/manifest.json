@@ -1,0 +1,19 @@
+{
+  "title": "ronzo",
+  "number": "0221",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "16/8-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↑ ● jord", "↓ ● luft", "↓ ○ ild", "↑ ● luft"],
+  "L2":  ["↑ ● jord", "↓ ● vann", "↓ ● vann", "↓ ● luft"],
+  "L3":  ["↓ ● jord", "↓ ○ ild", "↑ ● ild", "↓ ● vann"],
+  "L4":  ["---", "↓ ★ lyn", "↑ ★ lyn", "---"],
+  "L5":  ["---", "---", "↓ ★ lyn", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

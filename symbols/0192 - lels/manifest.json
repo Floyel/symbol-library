@@ -1,0 +1,19 @@
+{
+  "title": "lels",
+  "number": "0192",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "20/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "1. twin pair",
+  "element_code": {
+  "L1": ["↑ ● luft", "↓ ● luft", "↑ ● vann", "↑ ● ild"],
+  "L2": ["↑ ● ild", "↓ ○ jord", "↑ ● luft", "↓ ● vann"],
+  "L3": ["↑ ○ jord", "↓ ● vann", "↑ ● ild", "↑ ● jord"],
+  "L4": ["↓ ★ metall", "↑ ★ plante", "---", "↓ ★ lyn"],
+  "L5": ["---", "---", "---", "↓ ★ plante"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

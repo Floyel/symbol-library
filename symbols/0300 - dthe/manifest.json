@@ -1,0 +1,19 @@
+{
+  "title": "dthe",
+  "number": "0300",
+  "filetype": "?",
+  "frames": "12(0,2)",
+  "date": "3/11-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": ".mp4",
+  "element_code": {
+  "L1": ["↓ ○ ild", "↑ ● jord", "↓ ● luft", "↑ ● jord"],
+  "L2": ["↓ ● vann", "↑ ● jord", "↓ ● ild", "↓ ● vann"],
+  "L3": ["↓ ○ ild", "↓ ● vann", "↓ ● luft", "↓ ● luft"],
+  "L4": ["↑ ★ lyn", "↓ ★ plante", "---", "↑ ★ plante"],
+  "L5": ["↓ ★ lyn", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

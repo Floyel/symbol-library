@@ -1,0 +1,19 @@
+{
+  "title": "zuzeltjugijagog",
+  "number": "0320",
+  "filetype": ".gif",
+  "frames": "13(0,2)",
+  "date": "31/3-26",
+  "size": "570x570 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● jord", "↓ ● vann", "↑ ● luft", "↓ ● luft"],
+  "L2": ["↓ ● jord", "↑ ● ild", "↑ ● ild", "↓ ● jord"],
+  "L3": ["↑ ● vann", "↑ ● ild", "↓ ● luft", "↓ ○ vann"],
+  "L4": ["↓ ★ plante", "↑ ★ lyn", "---", "↓ ★ plante"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

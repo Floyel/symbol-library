@@ -1,0 +1,19 @@
+{
+  "title": "dryion",
+  "number": "0129",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "22/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● jord", "↑ ● luft", "↑ ○ vann", "↓ ● ild"],
+  "L2": ["↓ ○ ild", "↑ ● jord", "↑ ● ild", "↓ ○ vann"],
+  "L3": ["↓ ● jord", "↓ ● luft", "↑ ● luft", "↑ ● vann"],
+  "L4": ["↓ ★ metall", "---", "↓ ★ lyn", "↑ ★ lyn"],
+  "L5": ["↑ ★ metall", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

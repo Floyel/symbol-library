@@ -1,0 +1,20 @@
+{
+  "title": "jyahr",
+  "number": "0189",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "18/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↓ ● luft", "↑ ● vann", "↑ ● ild"],
+  "L2": ["↓ ● vann", "↑ ● jord", "↓ ● luft", "↓ ● ild"],
+  "L3": ["↑ ● vann", "↓ ● jord", "↓ ● luft", "↑ ● jord"],
+  "L4": ["↑ ★ lyn", "---", "---", "↑ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

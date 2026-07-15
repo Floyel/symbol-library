@@ -1,0 +1,20 @@
+{
+  "title": "hnjaa",
+  "number": "0118",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "11/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● ild", "↓ ● vann", "↓ ● jord", "↑ ● luft"],
+  "L2": ["↓ ○ ild", "↑ ● ild", "↓ ○ vann", "↓ ● jord"],
+  "L3": ["↓ ● vann", "↓ ● luft", "↑ ● luft", "↓ ● jord"],
+  "L4": ["↓ ★ lyn", "↑ ★ lyn", "↓ ★ plante", "---"],
+  "L5": ["---", "---", "---", "---"]
+  
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

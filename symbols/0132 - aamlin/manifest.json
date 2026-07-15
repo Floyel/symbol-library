@@ -1,0 +1,19 @@
+{
+  "title": "aamlin",
+  "number": "0132",
+  "filetype": ".gif",
+  "frames": "15(0,2)",
+  "date": "25/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↑ ● vann", "↑ ● ild", "↑ ○ jord"],
+  "L2": ["↓ ● vann", "↑ ● luft", "↑ ● luft", "↑ ● ild"],
+  "L3": ["↓ ● luft", "↑ ● ild", "↑ ● vann", "↓ ● jord"],
+  "L4": ["↑ ★ plante", "---", "---", "↑ ★ metall"],
+  "L5": ["---", "---", "---", "↑ ★ metall"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

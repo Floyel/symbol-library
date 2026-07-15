@@ -1,0 +1,48 @@
+{
+  "title": "harlojol",
+  "number": "0010",
+  "filetype": ".gif",
+  "frames": "10(0,2)",
+  "date": "26/10-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● jord",
+      "↑ ○ jord",
+      "↑ ● vann",
+      "↓ ● luft"
+    ],
+    "L2": [
+      "↑ ○ vann",
+      "↑ ○ ild",
+      "↑ ● luft",
+      "↓ ● luft"
+    ],
+    "L3": [
+      "↑ ● jord",
+      "↑ ● vann",
+      "↓ ● ild",
+      "↓ ● ild"
+    ],
+    "L4": [
+      "↑ ★ plante",
+      "↓ ★ metall",
+      "---",
+      "---"
+    ],
+    "L5": [
+      "↓ ★ plante",
+      "↓ ★ lyn",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

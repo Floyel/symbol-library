@@ -1,0 +1,19 @@
+{
+  "title": "thohg",
+  "number": "0204",
+  "filetype": ".gif",
+  "frames": "11(0,2)",
+  "date": "16/7-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↓ ● ild", "↑ ● luft", "↑ ● ild", "↑ ● jord"],
+  "L2":  ["↑ ● jord", "↓ ● vann", "↑ ● luft", "↑ ● jord"],
+  "L3":  ["↑ ● luft", "↓ ● vann", "↓ ● ild", "↓ ● vann"],
+  "L4":  ["↓ ★ metall", "---", "---", "↓ ★ plante"],
+  "L5":  ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

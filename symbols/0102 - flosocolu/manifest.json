@@ -1,0 +1,19 @@
+{
+  "title": "flosocolu",
+  "number": "0102",
+  "filetype": ".gif",
+  "frames": "52(0,2-0,4)",
+  "date": "26/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↑ ● luft", "↓ ● vann", "↓ ● ild"],
+  "L2": ["↓ ● jord", "↓ ● ild", "↑ ● luft", "↑ ● vann"],
+  "L3": ["↑ ● ild", "↑ ● vann", "↑ ● luft", "↓ ● jord"],
+  "L4": ["↑ ★ metall", "↑ ★ lyn", "---", "↓ ★ lyn"],
+  "L5": ["---", "---", "---", "↑ ★ plante"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

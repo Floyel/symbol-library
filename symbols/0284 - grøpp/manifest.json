@@ -1,0 +1,19 @@
+{
+  "title": "grøpp",
+  "number": "0284",
+  "filetype": ".gif",
+  "frames": "15(0,2)",
+  "date": "18/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↓ ● vann", "↑ ● jord", "↑ ● vann"],
+  "L2": ["↓ ● ild", "↓ ● vann", "↓ ● jord", "↓ ● luft"],
+  "L3": ["↓ ● luft", "↓ ● luft", "↑ ● jord", "↓ ● ild"],
+  "L4": ["---", "---", "---", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

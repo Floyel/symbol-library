@@ -1,0 +1,19 @@
+{
+  "title": "fødteg",
+  "number": "0161",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "7/4-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↓ ○ ild", "↓ ● jord", "↑ ● vann"],
+  "L2": ["↑ ● luft", "↓ ● vann", "↓ ● jord", "↓ ○ ild"],
+  "L3": ["↑ ● jord", "↑ ● luft", "↓ ● luft", "↓ ● vann"],
+  "L4": ["---", "↓ ★ lyn", "---", "↑ ★ lyn"],
+  "L5": ["---", "---", "---", "↑ ★ lyn"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

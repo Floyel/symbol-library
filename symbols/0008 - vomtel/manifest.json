@@ -1,0 +1,48 @@
+{
+  "title": "vomtel",
+  "number": "0008",
+  "filetype": ".gif",
+  "frames": "9(0,2)",
+  "date": "24/10-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● luft",
+      "↑ ● luft",
+      "↑ ● luft",
+      "↓ ○ vann"
+    ],
+    "L2": [
+      "↑ ● jord",
+      "↓ ● jord",
+      "↑ ● ild",
+      "↓ ● jord"
+    ],
+    "L3": [
+      "↑ ○ ild",
+      "↓ ○ ild",
+      "↓ ● vann",
+      "↑ ● vann"
+    ],
+    "L4": [
+      "↑ ★ metall",
+      "↓ ★ metall",
+      "↓ ★ lyn",
+      "↓ ★ plante"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "↓ ★ plante"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

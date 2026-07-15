@@ -1,0 +1,19 @@
+{
+  "title": "delsa",
+  "number": "0325",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "21/4-26",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↑ ● jord", "↑ ● ild", "↓ ● luft"],
+  "L2": ["↓ ● jord", "↓ ● luft", "↓ ● vann", "↑ ● ild"],
+  "L3": ["↑ ● jord", "↑ ● ild", "↓ ● vann", "↓ ● vann"],
+  "L4": ["---", "---", "↓ ★ lyn", "↑ ★ lyn"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

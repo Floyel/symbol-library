@@ -1,0 +1,19 @@
+{
+  "title": "bloid",
+  "number": "0104",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "28/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ○ vann", "↓ ● jord", "↓ ● luft", "↑ ○ vann"],
+  "L2": ["↑ ● jord", "↓ ● luft", "↑ ● vann", "↑ ● ild"],
+  "L3": ["↓ ● jord", "↓ ● ild", "↓ ● ild", "↑ ● luft"],
+  "L4": ["↓ ★ plante", "---", "↑ ★ lyn", "↓ ★ lyn"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

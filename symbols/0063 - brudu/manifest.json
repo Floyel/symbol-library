@@ -1,0 +1,48 @@
+{
+  "title": "brudu",
+  "number": "0063",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "18/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● luft",
+      "↓ ● ild",
+      "↑ ● vann",
+      "↑ ● ild"
+    ],
+    "L2": [
+      "↓ ● luft",
+      "↓ ● ild",
+      "↓ ● luft",
+      "↑ ○ vann"
+    ],
+    "L3": [
+      "↓ ● jord",
+      "↑ ● vann",
+      "↓ ● jord",
+      "↓ ● jord"
+    ],
+    "L4": [
+      "---",
+      "↓ ★ lyn",
+      "---",
+      "↑ ★ lyn"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "↓ ★ plante"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

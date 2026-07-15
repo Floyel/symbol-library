@@ -1,0 +1,48 @@
+{
+  "title": "lappish",
+  "number": "0034",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "19/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● vann",
+      "↑ ● ild",
+      "↓ ● jord",
+      "↓ ● ild"
+    ],
+    "L2": [
+      "↓ ● luft",
+      "↑ ○ jord",
+      "↑ ● jord",
+      "↑ ● luft"
+    ],
+    "L3": [
+      "↓ ● ild",
+      "↓ ● vann",
+      "↑ ● luft",
+      "↑ ● vann"
+    ],
+    "L4": [
+      "---",
+      "↓ ★ metall",
+      "---",
+      "---"
+    ],
+    "L5": [
+      "---",
+      "↓ ★ plante",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

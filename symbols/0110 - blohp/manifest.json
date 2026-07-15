@@ -1,0 +1,19 @@
+{
+  "title": "blohp",
+  "number": "0110",
+  "filetype": ".gif",
+  "frames": "13(0,2)",
+  "date": "3/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↓ ● ild", "↓ ● luft", "↑ ● ild"],
+  "L2": ["↑ ○ vann", "↑ ● ild", "↓ ● vann", "↑ ● luft"],
+  "L3": ["↓ ● jord", "↑ ○ vann", "↑ ● jord", "↑ ● luft"],
+  "L4": ["↓ ★ plante", "↑ ★ lyn", "↑ ★ plante", "---"],
+  "L5": ["↓ ★ plante", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

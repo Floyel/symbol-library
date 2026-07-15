@@ -1,0 +1,19 @@
+{
+  "title": "ruket",
+  "number": "0209",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "22/7-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↑ ● luft", "↓ ● vann", "↑ ● jord", "↓ ● vann"],
+  "L2":  ["↑ ● luft", "↑ ● jord", "↓ ● jord", "↓ ○ ild"],
+  "L3":  ["↓ ● ild", "↓ ● ild", "↓ ● luft", "↑ ● vann"],
+  "L4":  ["---", "↑ ★ plante", "---", "↑ ★ lyn"],
+  "L5":  ["---", "↓ ★ metall", "---", "↑ ★ lyn"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

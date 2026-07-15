@@ -1,0 +1,19 @@
+{
+  "title": "subi",
+  "number": "0147",
+  "filetype": ".gif",
+  "frames": "22(0,2)",
+  "date": "18/3-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↑ ● ild", "↓ ○ jord", "↑ ● ild"],
+  "L2": ["↑ ● vann", "↓ ● vann", "↓ ● vann", "↑ ● luft"],
+  "L3": ["↑ ○ ild", "↓ ○ jord", "↓ ● luft", "↑ ● jord"],
+  "L4": ["↑ ★ lyn", "↑ ★ lyn", "↑ ★ plante", "---"],
+  "L5": ["---", "↓ ★ plante", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

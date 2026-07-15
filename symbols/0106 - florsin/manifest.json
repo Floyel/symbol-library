@@ -1,0 +1,19 @@
+{
+  "title": "florsin",
+  "number": "0106",
+  "filetype": ".gif",
+  "frames": "83(0,1)",
+  "date": "30/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● jord", "↑ ● vann", "↓ ● luft", "↑ ● ild"],
+  "L2": ["↑ ○ vann", "↑ ○ jord", "↑ ○ jord", "↓ ● ild"],
+  "L3": ["↑ ● ild", "↑ ● luft", "↑ ● vann", "↓ ● luft"],
+  "L4": ["↓ ★ plante", "↓ ★ plante", "↓ ★ plante", "---"],
+  "L5": ["↑ ★ lyn", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

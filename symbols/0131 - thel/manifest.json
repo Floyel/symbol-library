@@ -1,0 +1,19 @@
+{
+  "title": "thel",
+  "number": "0131",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "24/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● ild", "↓ ● luft", "↓ ● vann", "↑ ● jord"],
+  "L2": ["↑ ○ ild", "↓ ● vann", "↑ ○ jord", "↓ ● luft"],
+  "L3": ["↑ ● jord", "↓ ● luft", "↑ ● vann", "↑ ● ild"],
+  "L4": ["↓ ★ metall", "---", "↑ ★ plante", "---"],
+  "L5": ["---", "---", "↑ ★ plante", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

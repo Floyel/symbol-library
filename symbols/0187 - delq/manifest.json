@@ -1,0 +1,19 @@
+{
+  "title": "delq",
+  "number": "0187",
+  "filetype": ".gif",
+  "frames": "10(0,2)",
+  "date": "14/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↑ ● luft", "↑ ● jord", "↓ ○ jord"],
+  "L2": ["↓ ● luft", "↑ ● vann", "↑ ● luft", "↓ ● vann"],
+  "L3": ["↑ ● jord", "↑ ● vann", "↓ ● ild", "↓ ○ ild"],
+  "L4": ["---", "---", "---", "↑ ★ plante"],
+  "L5": ["---", "---", "---", "↓ ★ lyn"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

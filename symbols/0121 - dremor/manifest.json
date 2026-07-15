@@ -1,0 +1,19 @@
+{
+  "title": "dremor",
+  "number": "0121",
+  "filetype": ".gif",
+  "frames": "37(0,2)",
+  "date": "14/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↑ ● ild", "↓ ● ild", "↓ ● vann"],
+  "L2": ["↑ ○ jord", "↑ ● luft", "↓ ● luft", "↓ ● vann"],
+  "L3": ["↑ ● vann", "↑ ● ild", "↓ ● jord", "↓ ● luft"],
+  "L4": ["↑ ★ plante", "---", "---", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

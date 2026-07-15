@@ -1,0 +1,48 @@
+{
+  "title": "doeme",
+  "number": "0058",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "13/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● ild",
+      "↓ ● luft",
+      "↑ ○ ild",
+      "↓ ● jord"
+    ],
+    "L2": [
+      "↓ ● jord",
+      "↓ ● vann",
+      "↑ ● vann",
+      "↑ ● ild"
+    ],
+    "L3": [
+      "↑ ● vann",
+      "↓ ● luft",
+      "↓ ● jord",
+      "↑ ● luft"
+    ],
+    "L4": [
+      "↓ ★ metall",
+      "---",
+      "↑ ★ lyn",
+      "↑ ★ metall"
+    ],
+    "L5": [
+      "↓ ★ plante",
+      "---",
+      "↓ ★ plante",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

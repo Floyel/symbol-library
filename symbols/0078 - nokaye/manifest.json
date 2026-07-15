@@ -1,0 +1,19 @@
+{
+  "title": "nokaye",
+  "number": "0078",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "2/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↑ ● vann", "↓ ○ vann", "↓ ● luft"],
+  "L2": ["↓ ● vann", "↑ ● luft", "↓ ● ild", "↓ ○ ild"],
+  "L3": ["↑ ● jord", "↑ ● jord", "↓ ● ild", "↓ ● jord"],
+  "L4": ["↓ ★ plante", "---", "↓ ★ lyn", "↓ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "cumeel",
+  "number": "0239",
+  "filetype": ".gif",
+  "frames": "28(0,2)",
+  "date": "3/9-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● vann", "↓ ● ild", "↓ ● jord", "↑ ● luft"],
+  "L2": ["↑ ● jord", "↑ ● ild", "↓ ○ ild", "↑ ● luft"],
+  "L3": ["↓ ● luft", "↓ ● vann", "↓ ○ jord", "↑ ● vann"],
+  "L4": ["↑ ★ plante", "↑ ★ lyn", "↓ ★ metall", "---"],
+  "L5": ["---", "---", "↓ ★ metall", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "galp",
+  "number": "0191",
+  "filetype": ".gif",
+  "frames": "10(0,2)",
+  "date": "20/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "1. twin pair",
+  "element_code": {
+  "L1": ["↑ ● jord", "↓ ● luft", "↓ ● ild", "↑ ○ vann"],
+  "L2": ["↓ ● vann", "↑ ● ild", "↑ ● ild", "↑ ● jord"],
+  "L3": ["↑ ● luft", "↑ ○ jord", "↓ ● luft", "↓ ● vann"],
+  "L4": ["↓ ★ plante", "↓ ★ metall", "---", "↓ ★ plante"],
+  "L5": ["---", "---", "---", "↓ ★ plante"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

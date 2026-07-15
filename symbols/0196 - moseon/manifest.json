@@ -1,0 +1,20 @@
+{
+  "title": "moseon",
+  "number": "0196",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "24/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↑ ● vann", "↑ ● luft", "↑ ○ ild", "↓ ● jord"],
+  "L2":  ["↑ ● luft", "↓ ● ild", "↑ ● vann", "↑ ● ild"],
+  "L3":  ["↓ ● jord", "↑ ● vann", "↓ ● luft", "↑ ○ jord"],
+  "L4":  ["---", "↓ ★ lyn", "↓ ★ lyn", "↓ ★ metall"],
+  "L5":  ["---", "---", "---", "↓ ★ metall"]
+  
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

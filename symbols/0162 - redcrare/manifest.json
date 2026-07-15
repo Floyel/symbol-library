@@ -1,0 +1,19 @@
+{
+  "title": "redcrare",
+  "number": "0162",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "13/4-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● vann", "↑ ● jord", "↓ ● luft", "↓ ● luft"],
+  "L2": ["↑ ● jord", "↓ ○ jord", "↓ ● luft", "↓ ● ild"],
+  "L3": ["↑ ○ vann", "↓ ● ild", "↓ ● ild", "↓ ○ vann"],
+  "L4": ["↓ ★ plante", "↓ ★ metall", "---", "↓ ★ lyn"],
+  "L5": ["↑ ★ plante", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

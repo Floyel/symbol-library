@@ -1,0 +1,48 @@
+{
+  "title": "stuulp",
+  "number": "0062",
+  "filetype": ".gif",
+  "frames": "19(0,2)",
+  "date": "17/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● ild",
+      "↑ ● luft",
+      "↑ ● luft",
+      "↑ ● jord"
+    ],
+    "L2": [
+      "↑ ● ild",
+      "↓ ● vann",
+      "↓ ○ jord",
+      "↑ ○ vann"
+    ],
+    "L3": [
+      "↓ ● jord",
+      "↑ ● vann",
+      "↓ ● ild",
+      "↑ ● luft"
+    ],
+    "L4": [
+      "↓ ★ metall",
+      "---",
+      "↑ ★ metall",
+      "↑ ★ plante"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

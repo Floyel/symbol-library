@@ -1,0 +1,19 @@
+{
+  "title": "shushesh",
+  "number": "0272",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "6/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↑ ● vann", "↓ ● jord", "↑ ● vann"],
+  "L2": ["↑ ● luft", "↑ ● luft", "↓ ● jord", "↑ ○ ild"],
+  "L3": ["↑ ● jord", "↑ ● ild", "↑ ● vann", "↑ ● ild"],
+  "L4": ["---", "---", "↑ ★ plante", "↓ ★ lyn"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "bmoba",
+  "number": "0296",
+  "filetype": ".gif",
+  "frames": "13(0,2)",
+  "date": "30/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● ild", "↑ ● jord", "↑ ● jord", "↓ ● vann"],
+  "L2": ["↓ ● ild", "↓ ● jord", "↓ ● luft", "↓ ● vann"],
+  "L3": ["↓ ○ vann", "↑ ● luft", "↑ ● luft", "↓ ○ ild"],
+  "L4": ["↓ ★ lyn", "---", "---", "↑ ★ lyn"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

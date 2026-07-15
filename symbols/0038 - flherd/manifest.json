@@ -1,0 +1,48 @@
+{
+  "title": "flherd",
+  "number": "0038",
+  "filetype": ".gif",
+  "frames": "26(0,2)",
+  "date": "23/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● ild",
+      "↓ ● ild",
+      "↓ ● vann",
+      "↑ ● jord"
+    ],
+    "L2": [
+      "↓ ○ vann",
+      "↑ ● ild",
+      "↓ ○ jord",
+      "↓ ● luft"
+    ],
+    "L3": [
+      "↑ ● vann",
+      "↓ ● jord",
+      "↑ ● luft",
+      "↑ ● luft"
+    ],
+    "L4": [
+      "↑ ★ lyn",
+      "↑ ★ metall",
+      "↓ ★ plante",
+      "---"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

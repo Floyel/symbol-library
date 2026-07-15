@@ -1,0 +1,19 @@
+{
+  "title": "hotol",
+  "number": "0081",
+  "filetype": ".gif",
+  "frames": "22(0,2)",
+  "date": "5/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ○ jord", "↑ ● luft", "↓ ● luft", "↓ ● ild"],
+  "L2": ["↓ ● vann", "↑ ● jord", "↑ ● ild", "↓ ○ jord"],
+  "L3": ["↓ ● vann", "↓ ● luft", "↓ ● ild", "↑ ● vann"],
+  "L4": ["↑ ★ plante", "---", "---", "↑ ★ metall"],
+  "L5": ["---", "---", "---", "↑ ★ plante"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>0087 - treheal</title>
+<style>
+body{background:#42424f;color:#5fcf89;font-family:Arial,sans-serif;text-align:center;margin:0;padding:0;}
+
+.sound-control{position:fixed;top:10px;right:10px;z-index:3000;}
+.sound-toast{position:fixed;top:56px;right:10px;background:rgba(0,0,0,0.8);color:white;padding:6px 10px;border-radius:8px;opacity:0;transition:opacity 200ms;}
+.sound-toast.show{opacity:1;}
+#soundBtn{padding:8px 10px;border:none;border-radius:8px;background:#3b2d3f;color:#b8b8b8;cursor:pointer;font-size:14px;}
+
+.viewer-wrap{margin-top:12px;display:inline-block;position:relative;}
+#gifEl{max-width:500px;width:500px;height:auto;display:block;}
+
+.replay-wrap{position:absolute;bottom:-42px;left:0;display:none;}
+.replay-btn{
+  width:36px;height:36px;
+  border:1px solid #555;border-radius:8px;
+  background:#2e2e38;color:#b8b8b8;
+  cursor:pointer;font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+  transition:background 0.15s,color 0.15s;
+  padding:0;
+}
+.replay-btn:hover{background:#3a3a50;}
+
+.tap-area{margin-top:8px;}
+#tapHold{
+  display:inline-block;padding:9px 26px;
+  border:2px solid #5fcf89;border-radius:10px;
+  background:#2e2e38;color:#5fcf89;
+  cursor:pointer;font-size:14px;user-select:none;
+  transition:background 0.1s,color 0.1s;
+}
+#tapHold.held{background:#5fcf89;color:#2e2e38;}
+#tapHold.tapped{background:#3a4840;color:#a0d8b0;border-color:#a0d8b0;}
+#statusLine{font-size:12px;color:#aaa;letter-spacing:1px;margin:4px 0 0;min-height:16px;}
+
+/* ── GIF CONTROLS ── */
+.gif-controls{
+  position:fixed;right:10px;top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:row;align-items:flex-start;z-index:1000;
+}
+.gif-col{display:flex;flex-direction:column;align-items:stretch;width:56px;}
+.gif-btn{
+  width:56px;height:56px;border:none;border-radius:0;
+  background:#2e2e38;color:#888;
+  cursor:pointer;font-size:20px;font-weight:bold;
+  transition:background 0.15s,color 0.15s,box-shadow 0.15s;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.gif-btn:first-child{border-radius:10px 10px 0 0;}
+.gif-btn.last-btn{border-radius:0 0 10px 10px;}
+.gif-btn.panel-open{background:#3a2d44;color:#bf95cb;}
+.gif-btn.has-effect{color:#f0c8ff;box-shadow:inset 0 0 0 2px #bf95cb;}
+.gif-btn.active-i{background:#bf95cb;color:#1a1a22;}
+.gif-sub{font-size:9px;color:inherit;opacity:0.7;margin-top:1px;}
+.btn-sep{width:56px;height:1px;background:#3a3a48;}
+
+.gif-panel{
+  position:absolute;right:62px;
+  background:#1e1e28;border:1px solid #555;border-radius:10px;
+  padding:10px 12px;width:220px;
+  display:none;text-align:left;z-index:2000;
+}
+.gif-panel.open{display:block;}
+#gPanel{top:0;}
+#fPanel{top:114px;}
+
+.panel-close{
+  position:absolute;top:6px;right:8px;
+  background:none;border:none;color:#888;
+  font-size:16px;cursor:pointer;line-height:1;padding:0;
+}
+.panel-close:hover{color:#fff;}
+
+.swatch-row{display:flex;gap:7px;margin-bottom:9px;align-items:center;flex-wrap:wrap;}
+.swatch{
+  width:26px;height:26px;border-radius:50%;
+  border:2px solid transparent;cursor:pointer;
+  transition:border 0.12s,transform 0.1s;font-size:11px;
+  display:flex;align-items:center;justify-content:center;
+}
+.swatch:hover{transform:scale(1.18);}
+.swatch.selected{border:2px solid white;}
+
+.slider-label{font-size:11px;color:#aaa;margin-bottom:3px;}
+.slider-wrap{display:flex;align-items:center;gap:7px;margin-bottom:9px;}
+.slider-wrap input[type=range]{flex:1;accent-color:#bf95cb;}
+
+.pc-row{display:flex;gap:7px;margin-top:2px;}
+.pc-btn{
+  flex:1;padding:5px 0;
+  border:1px solid #555;border-radius:7px;
+  background:#2e2e38;color:#aaa;
+  cursor:pointer;font-size:12px;
+  transition:background 0.15s,color 0.15s;
+}
+.pc-btn.active{background:#bf95cb;color:#1a1a22;border-color:#bf95cb;}
+
+/* ── MANIFEST DRAWER (slides up from bottom) ── */
+#manifestSidebar{
+  position:fixed;
+  left:0;right:0;bottom:0;
+  height:310px;
+  background:#1e1e28;
+  border-top:1px solid #3a3a48;
+  overflow-x:auto;
+  overflow-y:hidden;
+  transform:translateY(100%);
+  transition:transform 0.28s ease;
+  z-index:2000;
+  font-family:'Courier New',monospace;
+  display:flex;
+  flex-direction:row;
+  align-items:stretch;
+  gap:0;
+}
+#manifestSidebar.open{
+  transform:translateY(0);
+}
+
+/* drawer overlays — no content push needed */
+body.sidebar-open .viewer-wrap,
+body.sidebar-open .tap-area,
+body.sidebar-open h2{
+  margin-bottom:0;
+}
+
+#mSidebarHeader{
+  padding:14px 14px 10px;
+  border-bottom:1px solid #3a3a48;
+}
+#mSidebarNumber{font-size:10px;color:#7a7a8a;letter-spacing:2px;}
+#mSidebarTitle{font-size:18px;color:#5fcf89;letter-spacing:3px;margin-top:2px;}
+
+.ms-section{padding:10px 14px;border-bottom:1px solid #2e2e3a;}
+.ms-label{font-size:9px;letter-spacing:2px;color:#7a7a8a;text-transform:uppercase;margin-bottom:6px;}
+
+/* simple fields */
+.ms-fields{display:grid;grid-template-columns:1fr 1fr;gap:5px 10px;}
+.ms-field{display:flex;flex-direction:column;gap:1px;}
+.ms-key{font-size:9px;color:#7a7a8a;letter-spacing:1px;text-transform:uppercase;}
+.ms-val{font-size:11px;color:#c8c8d8;}
+
+/* element grid — 4 cols × 5 rows */
+#msElementGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:repeat(5,48px);
+  gap:3px;
+  width:240px;
+  flex-shrink:0;
+}
+.ms-cell{
+  background:#2a2a36;
+  border:1px solid #3a3a48;
+  border-radius:4px;
+  padding:4px 5px;
+  display:flex;flex-direction:column;
+  align-items:flex-start;justify-content:center;
+  gap:1px;
+  overflow:hidden;
+}
+.ms-cell.empty{background:transparent;border-color:#2a2a36;}
+.ms-arrow{font-size:10px;color:#bf95cb;line-height:1;}
+.ms-shape{font-size:9px;color:#7a7a8a;line-height:1;}
+.ms-name{font-size:9px;color:#c8c8d8;line-height:1.2;}
+.ms-elem-name{font-size:8px;color:#5a5a6a;line-height:1;margin-top:1px;letter-spacing:0.5px;}
+
+/* ── MANIFEST TAB (sits on top edge of drawer) ── */
+#manifestToggle{
+  position:fixed;
+  bottom:0;
+  left:15%;
+  transform:none;
+  width:64px;height:22px;
+  border:1px solid #3a3a48;
+  border-bottom:none;
+  border-radius:6px 6px 0 0;
+  background:#1e1e28;
+  color:#7a7a8a;
+  cursor:pointer;font-size:11px;letter-spacing:1px;
+  display:flex;align-items:center;justify-content:center;
+  z-index:3001;
+  transition:color 0.15s, bottom 0.28s ease;
+}
+#manifestToggle:hover{color:#bf95cb;}
+#manifestToggle.active{
+  color:#bf95cb;
+  bottom:310px;
+}
+
+/* scrollbar */
+#manifestSidebar::-webkit-scrollbar{width:4px;}
+#manifestSidebar::-webkit-scrollbar-track{background:#1e1e28;}
+#manifestSidebar::-webkit-scrollbar-thumb{background:#3a3a48;border-radius:2px;}
+
+/* ── MANIFEST/METADATA TAB BUTTONS (floating over content) ── */
+#drawerTabBar{
+  position:absolute;
+  top:7px;right:10px;
+  display:flex;gap:4px;
+  z-index:2010;
+  pointer-events:auto;
+}
+.drawer-tab-btn{
+  width:24px;height:24px;
+  border:1px solid #3a3a48;border-radius:5px;
+  background:#2a2a36;color:#5a5a6a;
+  cursor:pointer;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+  transition:background 0.15s,color 0.15s,border 0.15s;
+  padding:0;
+}
+.drawer-tab-btn:hover{color:#bf95cb;border-color:#bf95cb;}
+.drawer-tab-btn.active{background:#3a2d44;color:#bf95cb;border-color:#bf95cb;}
+
+/* metadata tab content */
+#metaTabContent{
+  display:none;
+  flex-direction:row;
+  align-items:stretch;
+  width:100%;
+  flex-shrink:0;
+}
+#metaTabContent.visible{display:flex;}
+
+/* metadata columns */
+.meta-col{
+  padding:14px 16px;
+  border-right:1px solid #3a3a48;
+  display:flex;flex-direction:column;gap:6px;
+  flex-shrink:0;overflow-y:auto;
+  min-width:180px;
+}
+.meta-col:last-child{border-right:none;}
+.meta-label{font-size:9px;letter-spacing:2px;color:#7a7a8a;text-transform:uppercase;margin-bottom:2px;}
+.meta-val{font-size:11px;color:#c8c8d8;line-height:1.4;}
+.meta-field{display:flex;flex-direction:column;gap:1px;margin-bottom:6px;}
+
+/* hex5 grid in metadata tab — same style as element grid */
+#metaHex5Grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:3px;
+  width:240px;
+  flex-shrink:0;
+}
+
+/* effects row */
+.meta-effects{
+  display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;
+}
+.meta-effect-pill{
+  font-size:10px;padding:2px 7px;
+  border:1px solid #3a3a48;border-radius:4px;
+  background:#2a2a36;color:#bf95cb;
+  font-family:'Courier New',monospace;
+}
+
+/* not minted state */
+#metaNotMinted{
+  display:none;
+  padding:30px 20px;
+  font-size:11px;color:#4a4a5a;
+  text-align:center;letter-spacing:1px;
+  align-items:center;justify-content:center;
+  width:100%;
+}
+#metaNotMinted.visible{display:flex;}
+
+
+/* ── PRESET PANEL (slim, slides from left) ── */
+#presetPanel{
+  position:fixed;
+  left:0;top:0;bottom:0;
+  width:180px;
+  background:#1a1a24;
+  border-right:1px solid #3a3a48;
+  transform:translateX(-100%);
+  transition:transform 0.28s ease;
+  z-index:2001;
+  font-family:'Courier New',monospace;
+  display:flex;flex-direction:column;
+  overflow:hidden;
+}
+#presetPanel.open{transform:translateX(0);}
+
+#presetHeader{
+  padding:10px 12px 8px;
+  border-bottom:1px solid #3a3a48;
+  font-size:9px;letter-spacing:2px;color:#7a7a8a;text-transform:uppercase;
+  display:flex;align-items:center;justify-content:space-between;
+}
+#presetHeader span{color:#bf95cb;}
+
+#presetList{
+  flex:1;overflow-y:auto;padding:6px 0;
+}
+#presetList::-webkit-scrollbar{width:3px;}
+#presetList::-webkit-scrollbar-thumb{background:#3a3a48;border-radius:2px;}
+
+.preset-item{
+  display:flex;align-items:center;gap:0;
+  border-bottom:1px solid #222230;
+}
+.preset-load{
+  flex:1;padding:8px 10px;
+  background:none;border:none;color:#c8c8d8;
+  font-family:'Courier New',monospace;font-size:11px;
+  text-align:left;cursor:pointer;
+  transition:background 0.1s,color 0.1s;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.preset-load:hover{background:#2a2a38;color:#bf95cb;}
+.preset-load.active-preset{color:#5fcf89;}
+.preset-sub{
+  font-size:9px;color:#5a5a6a;display:block;margin-top:1px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.preset-del{
+  padding:8px 8px;background:none;border:none;
+  color:#3a3a4a;cursor:pointer;font-size:12px;flex-shrink:0;
+  transition:color 0.1s;
+}
+.preset-del:hover{color:#cf6f6f;}
+
+#presetSaveArea{
+  padding:8px 10px;
+  border-top:1px solid #3a3a48;
+  display:flex;flex-direction:column;gap:5px;
+}
+#presetNameInput{
+  width:100%;background:#2a2a36;border:1px solid #3a3a48;
+  border-radius:5px;color:#c8c8d8;font-family:'Courier New',monospace;
+  font-size:11px;padding:5px 7px;outline:none;
+}
+#presetNameInput:focus{border-color:#bf95cb;}
+#presetNameInput::placeholder{color:#4a4a5a;}
+#presetSaveBtn{
+  width:100%;padding:5px 0;background:#2a2a38;
+  border:1px solid #3a3a48;border-radius:5px;
+  color:#bf95cb;font-family:'Courier New',monospace;font-size:11px;
+  cursor:pointer;transition:background 0.15s,border 0.15s;
+}
+#presetSaveBtn:hover{background:#3a2d44;border-color:#bf95cb;}
+
+/* preset tab — top left, 1/10 from top */
+#presetToggle{
+  position:fixed;
+  top:10%;
+  left:0;
+  width:22px;height:64px;
+  border:1px solid #3a3a48;
+  border-left:none;
+  border-radius:0 6px 6px 0;
+  background:#1a1a24;
+  color:#7a7a8a;
+  cursor:pointer;font-size:11px;letter-spacing:1px;
+  display:flex;align-items:center;justify-content:center;
+  writing-mode:vertical-rl;
+  z-index:3001;
+  transition:color 0.15s, left 0.28s ease;
+}
+#presetToggle:hover{color:#bf95cb;}
+#presetToggle.active{color:#bf95cb;left:180px;}
+
+</style>
+</head>
+<body>
+
+<div class="sound-control">
+  <button id="soundBtn">&#127925;</button>
+</div>
+<div id="soundToast" class="sound-toast"></div>
+
+<!-- MANIFEST DRAWER (horizontal layout) -->
+<div id="manifestSidebar">
+
+  <!-- floating tab buttons -->
+  <div id="drawerTabBar">
+    <button class="drawer-tab-btn active" id="tabManifestBtn" title="Manifest">&#9776;</button>
+    <button class="drawer-tab-btn" id="tabMetaBtn" title="Metadata">&#11042;</button>
+  </div>
+
+  <!-- MANIFEST TAB CONTENT -->
+  <div id="manifestTabContent" style="display:flex;flex-direction:row;align-items:stretch;flex-shrink:0;">
+    <!-- col 1: number + title + info fields + notes -->
+    <div style="min-width:200px;max-width:240px;padding:14px 16px;border-right:1px solid #3a3a48;display:flex;flex-direction:column;gap:0;flex-shrink:0;overflow-y:auto;">
+      <div id="mSidebarNumber" style="font-size:10px;color:#7a7a8a;letter-spacing:2px;"></div>
+      <div id="mSidebarTitle" style="font-size:18px;color:#5fcf89;letter-spacing:3px;margin-top:2px;margin-bottom:10px;"></div>
+      <div style="font-size:9px;letter-spacing:2px;color:#7a7a8a;text-transform:uppercase;margin-bottom:6px;">info</div>
+      <div class="ms-fields" id="msFields"></div>
+      <div id="msNotesSection" style="display:none;margin-top:10px;">
+        <div style="font-size:9px;letter-spacing:2px;color:#7a7a8a;text-transform:uppercase;margin-bottom:4px;">notes</div>
+        <div id="msNotes" style="font-size:11px;color:#7a7a8a;line-height:1.6;font-style:italic;"></div>
+      </div>
+    </div>
+    <!-- col 2: element code -->
+    <div style="padding:14px 16px;flex-shrink:0;">
+      <div style="font-size:9px;letter-spacing:2px;color:#7a7a8a;text-transform:uppercase;margin-bottom:8px;">element code</div>
+      <div id="msElementGrid"></div>
+    </div>
+  </div>
+
+  <!-- METADATA TAB CONTENT -->
+  <div id="metaTabContent" style="flex-direction:column;">
+    <!-- not minted message -->
+    <div id="metaInnerRow" style="display:flex;flex-direction:row;align-items:stretch;flex:1;overflow-x:auto;">
+  <div id="metaNotMinted">not minted</div>
+    <!-- col 1: mint info + effects -->
+    <div class="meta-col" id="metaInfoCol" style="display:none;">
+      <div class="meta-field">
+        <div class="meta-label">generation</div>
+        <div class="meta-val" id="metaGeneration"></div>
+      </div>
+      <div class="meta-field">
+        <div class="meta-label">chain</div>
+        <div class="meta-val" id="metaChain"></div>
+      </div>
+      <div class="meta-field">
+        <div class="meta-label">mint date</div>
+        <div class="meta-val" id="metaMintDate"></div>
+      </div>
+      <div class="meta-field">
+        <div class="meta-label">effects</div>
+        <div class="meta-effects" id="metaEffects"></div>
+      </div>
+    </div>
+    <!-- col 2: hex5 grid -->
+    <div class="meta-col" id="metaGridCol" style="display:none;">
+      <div class="meta-label">element roll</div>
+      <div id="metaHex5Grid"></div>
+    </div>
+  </div><!-- end metaInnerRow -->
+
+  <!-- owned by footer — inside metaTabContent, only visible with metadata tab -->
+  <div id="metaOwnedRow" style="display:none;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    border-top:1px solid #3a3a48;
+    padding:5px 12px;
+    background:#1a1a22;
+    z-index:2500;
+    flex-direction:row;align-items:center;gap:12px;">
+    <div style="font-size:9px;color:#7a7a8a;white-space:nowrap;flex:1;">owner&nbsp;<span id="metaOwnerAddr" style="font-size:10px;color:#4a9eff;font-family:'Courier New',monospace;"></span></div>
+    <div style="font-size:9px;color:#7a7a8a;white-space:nowrap;flex-shrink:0;">token&nbsp;<span id="metaTokenId" style="color:#c8c8d8;"></span></div>
+    <span id="metaSymbolNum" style="display:none;"></span>
+  </div>
+  </div><!-- end metaTabContent -->
+
+</div><!-- end manifestSidebar -->
+
+<!-- PRESET PANEL -->
+<div id="presetPanel">
+  <div id="presetHeader">
+    <span>Presets</span>
+    <span id="presetCount"></span>
+  </div>
+  <div id="presetList"></div>
+  <div id="presetSaveArea">
+    <input id="presetNameInput" type="text" placeholder="preset name..." maxlength="24"/>
+    <button id="presetSaveBtn">&#8679; Save current</button>
+  </div>
+</div>
+
+<!-- PRESET TAB -->
+<button id="presetToggle" title="Toggle presets">&#9776;</button>
+
+<h2 style="margin:10px 0 6px;transition:margin-left 0.25s ease;" id="pageTitle">0087 - treheal</h2>
+
+<div class="viewer-wrap">
+  <img id="gifEl" src="" alt=""/>
+  <div class="replay-wrap" id="replayWrap">
+    <button class="replay-btn" id="replayBtn" title="Replay">&#8635;</button>
+  </div>
+</div>
+
+<div class="tap-area">
+  <button id="tapHold">&#9675; Tap &#9675;</button>
+  <div id="statusLine">&#8212;</div>
+</div>
+
+<!-- MANIFEST TAB -->
+<button id="manifestToggle" title="Toggle manifest">&#9135; &#9135;</button>
+
+<!-- GIF CONTROLS -->
+<div class="gif-controls">
+  <div style="position:relative;">
+    <div class="gif-panel" id="gPanel">
+      <button class="panel-close" id="gClose">&#10005;</button>
+      <div class="slider-label">Color</div>
+      <div class="swatch-row" id="gSwatches">
+        <div class="swatch" data-color="red" style="background:red;"></div>
+        <div class="swatch" data-color="green" style="background:#00dd00;"></div>
+        <div class="swatch" data-color="blue" style="background:#4488ff;"></div>
+        <div class="swatch" data-color="white" style="background:white;"></div>
+        <div class="swatch" data-color="" style="background:#333;border:1px dashed #888;color:#888;">&#10005;</div>
+      </div>
+      <div class="slider-label">Size <span id="gSizeVal">10</span>px</div>
+      <div class="slider-wrap">
+        <input id="gSize" type="range" min="1" max="50" value="10" step="1"/>
+      </div>
+      <div class="pc-row">
+        <button class="pc-btn" id="gPulseBtn">Pulse</button>
+        <button class="pc-btn" id="gCycleBtn">Cycle</button>
+      </div>
+    </div>
+
+    <div class="gif-panel" id="fPanel">
+      <button class="panel-close" id="fClose">&#10005;</button>
+      <div class="slider-label">Color</div>
+      <div class="swatch-row" id="fSwatches">
+        <div class="swatch" data-color="cyan" style="background:cyan;"></div>
+        <div class="swatch" data-color="magenta" style="background:magenta;"></div>
+        <div class="swatch" data-color="yellow" style="background:yellow;"></div>
+        <div class="swatch" data-color="" style="background:#333;border:1px dashed #888;color:#888;">&#10005;</div>
+      </div>
+      <div class="slider-label">Opacity <span id="fOpVal">40</span></div>
+      <div class="slider-wrap">
+        <input id="fOpacity" type="range" min="25" max="50" value="40" step="1"/>
+      </div>
+      <div class="pc-row">
+        <button class="pc-btn" id="fPulseBtn">Pulse</button>
+        <button class="pc-btn" id="fCycleBtn">Cycle</button>
+      </div>
+    </div>
+
+    <div class="gif-col">
+      <button class="gif-btn" id="gBtn">
+        <div style="font-size:20px;font-weight:bold;">G</div>
+        <div class="gif-sub">glow</div>
+      </button>
+      <div class="btn-sep"></div>
+      <button class="gif-btn" id="iBtn">
+        <div style="font-size:20px;font-weight:bold;">I</div>
+        <div class="gif-sub">invert</div>
+      </button>
+      <div class="btn-sep"></div>
+      <button class="gif-btn last-btn" id="fBtn">
+        <div style="font-size:20px;font-weight:bold;">F</div>
+        <div class="gif-sub">filter</div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div style="height:50px;"></div>
+
+<script>
+window.addEventListener("DOMContentLoaded", function() {
+
+  /* ── CONFIG ──────────────────────────────────────────────────────
+     BASE and PLAYS_ONCE can be overridden by URL parameters:
+       viewer.html?folder=0001 - inni
+       viewer.html?folder=0001 - inni&plays_once=true
+     If no URL params, falls back to the hardcoded defaults below.
+     ────────────────────────────────────────────────────────────── */
+  var DEFAULT_BASE       = "0087 - treheal";
+  var DEFAULT_PLAYS_ONCE = false;
+
+  var params     = new URLSearchParams(window.location.search);
+  var BASE       = params.get("folder") || DEFAULT_BASE;
+  var PLAYS_ONCE = params.get("plays_once") === "true" || DEFAULT_PLAYS_ONCE;
+
+  /* Effect URL params (set by mint page):
+     gcolor, gsize, gpulse, gcycle,
+     fcolor, fopacity, fpulse, fcycle,
+     negative, nft_gen, nft_chain, nft_ts, nft_effects, nft_grid */
+  var urlGColor   = params.get("gcolor")   || "";
+  var urlGSize    = parseInt(params.get("gsize") || "10");
+  var urlGPulse   = params.get("gpulse")   === "true";
+  var urlGCycle   = params.get("gcycle")   === "true";
+  var urlFColor   = params.get("fcolor")   || "";
+  var urlFOpacity = parseInt(params.get("fopacity") || "40");
+  var urlFPulse   = params.get("fpulse")   === "true";
+  var urlFCycle   = params.get("fcycle")   === "true";
+  var urlNeg      = params.get("negative") === "true";
+  var urlHasEffects = urlGColor || urlGPulse || urlGCycle || urlFColor || urlFPulse || urlFCycle || urlNeg;
+
+  /* NFT metadata URL params */
+  var nftGen      = params.get("nft_gen")      || "";
+  var nftChain    = params.get("nft_chain")    || "";
+  var nftTs       = params.get("nft_ts")       || "";
+  var nftEffects  = params.get("nft_effects")  || "";
+  var nftGrid     = params.get("nft_grid")     || "";
+  var nftOwner    = params.get("nft_owner")    || "";
+  var nftTokenId  = params.get("nft_tokenid")  || "";
+  var nftNumber   = params.get("nft_number")   || "";
+  var hasMeta     = !!(nftGen || nftChain || nftTs);
+  /* ────────────────────────────────────────────────────────────── */
+
+  var gifEl = document.getElementById("gifEl");
+  gifEl.src = BASE + ".gif";
+  document.getElementById("pageTitle").textContent = BASE;
+  document.title = BASE;
+
+  /* Apply URL effect params on load */
+  function applyUrlEffects() {
+    if (!urlHasEffects) return;
+    gColor   = urlGColor;
+    gSize    = isNaN(urlGSize) ? 10 : urlGSize;
+    fColor   = urlFColor;
+    fOpacity = isNaN(urlFOpacity) ? 40 : urlFOpacity;
+    negative = urlNeg;
+    document.getElementById("gSize").value    = gSize;
+    document.getElementById("fOpacity").value = fOpacity;
+    document.getElementById("gSizeVal").textContent = gSize;
+    document.getElementById("fOpVal").textContent   = fOpacity;
+    document.getElementById("iBtn").classList.toggle("active-i", negative);
+    // trigger pulse/cycle after swatches init
+    setTimeout(function() {
+      updateSwatches("g"); updateSwatches("f");
+      if (urlGPulse) document.getElementById("gPulseBtn").click();
+      if (urlGCycle) document.getElementById("gCycleBtn").click();
+      if (urlFPulse) document.getElementById("fPulseBtn").click();
+      if (urlFCycle) document.getElementById("fCycleBtn").click();
+      updateAll();
+    }, 50);
+  }
+
+  if (PLAYS_ONCE) {
+    document.getElementById("replayWrap").style.display = "block";
+  }
+
+  document.getElementById("replayBtn").onclick = function() {
+    gifEl.src = BASE + ".gif?" + Date.now();
+  };
+
+  /* ── MANIFEST SIDEBAR ── */
+  function parseFrames(raw) {
+    if (!raw) return raw;
+    var m = raw.match(/^(\d+)\(([^)]+)\)$/);
+    if (!m) return raw;
+    var count    = m[1];
+    var delayNum = parseFloat(m[2].replace(",", "."));
+    if (isNaN(delayNum)) return raw;
+    var sec = delayNum < 1 ? delayNum : delayNum / 10;
+    return count + " frames  ·  " + sec.toFixed(1) + "s";
+  }
+
+  function populateManifest(manifest) {
+    document.getElementById("mSidebarNumber").textContent = manifest.number || "";
+    document.getElementById("mSidebarTitle").textContent  = manifest.title  || "";
+
+    var fields = [
+      { key: "date",      val: manifest.date },
+      { key: "size",      val: manifest.size },
+      { key: "dimension", val: manifest.dimension },
+      { key: "filetype",  val: manifest.filetype },
+      { key: "frames",    val: parseFrames(manifest.frames) },
+      { key: "timeline",  val: manifest.timeline },
+    ];
+    var fg = document.getElementById("msFields");
+    fg.innerHTML = "";
+    fields.forEach(function(f) {
+      if (!f.val) return;
+      var div = document.createElement("div");
+      div.className = "ms-field";
+      div.innerHTML = '<div class="ms-key">' + f.key + '</div>' +
+                      '<div class="ms-val">' + f.val + '</div>';
+      fg.appendChild(div);
+    });
+
+    var ec   = manifest.element_code;
+    var grid = document.getElementById("msElementGrid");
+    grid.innerHTML = "";
+    if (ec) {
+      Object.keys(ec).sort().forEach(function(lk) {
+        ec[lk].forEach(function(cell) {
+          var div = document.createElement("div");
+          if (!cell || cell === "---") {
+            div.className = "ms-cell empty";
+          } else {
+            var mparts = cell.trim().split(/\s+/);
+            var marrow = mparts[0] || "";
+            var mshape = mparts[1] || "";
+            var mname  = mparts.slice(2).join(" ");
+            div = makeElemCell(marrow, mshape, mname);
+          }
+          grid.appendChild(div);
+        });
+      });
+    }
+
+    if (manifest.info && manifest.info !== "-") {
+      document.getElementById("msNotes").textContent = manifest.info;
+      document.getElementById("msNotesSection").style.display = "block";
+    }
+  }
+
+  function populateOwnedRow() {
+    if (!nftOwner && !nftTokenId) return;
+    var row = document.getElementById("metaOwnedRow");
+    row.style.display = "flex";
+    /* truncate address */
+    var addr = nftOwner ? nftOwner.slice(0,6) + "..." + nftOwner.slice(-4) : "";
+    document.getElementById("metaOwnerAddr").textContent = addr;
+    document.getElementById("metaOwnerAddr").title       = nftOwner;
+    document.getElementById("metaTokenId").textContent    = nftTokenId  || "—";
+    document.getElementById("metaSymbolNum").textContent  = nftNumber   || "—";
+  }
+
+  // Fetch manifest — works both standalone and via server
+  fetch("manifest.json")
+    .then(function(r) { return r.json(); })
+    .then(function(m) { populateManifest(m); })
+    .catch(function() {});
+
+  /* ── ELEMENT SYMBOL MAP ── */
+  /* Element symbol → Norwegian name map (correct unicode codepoints) */
+  var ELEM_SYM_MAP = {
+    "⌃": "luft",   /* ⌃ */
+    "△": "ild",    /* △ */
+    "▽": "vann",   /* ▽ */
+    "▢": "jord",   /* ▢ */
+    "✳": "plante", /* ✳ */
+    "ϟ": "lyn",    /* ϟ */
+    "⌂": "metall", /* ⌂ */
+    "·": "tom"     /* · */
+  };
+
+  /* Norwegian element names (manifest uses these directly as the 'name' part) */
+  var ELEM_NAMES = ["ild","luft","vann","jord","plante","lyn","metall","tom"];
+
+  function makeElemCell(arrow, shape, sym) {
+    /* sym is either:
+       - a unicode symbol like ⌃ (from chain grid) → look up name
+       - a Norwegian word like luft (from manifest) → use as name, show symbol too  */
+    var div = document.createElement("div");
+    div.className = "ms-cell";
+    var displaySym  = sym;
+    var displayName = "";
+    if (ELEM_SYM_MAP[sym]) {
+      /* chain format: sym is unicode symbol */
+      displayName = ELEM_SYM_MAP[sym];
+    } else if (ELEM_NAMES.indexOf(sym) >= 0) {
+      /* manifest format: sym is already the name, find the symbol */
+      displayName = sym;
+      var revMap = {"luft":"⌃","ild":"△","vann":"▽","jord":"▢",
+                    "plante":"✳","lyn":"ϟ","metall":"⌂","tom":"·"};
+      displaySym = revMap[sym] || sym;
+    } else {
+      displayName = sym;
+    }
+    div.innerHTML =
+      '<span class="ms-arrow">' + arrow + '</span>' +
+      '<span class="ms-shape">' + shape + '</span>' +
+      '<span class="ms-name">'  + displaySym + '</span>' +
+      '<span class="ms-elem-name">' + displayName + '</span>';
+    return div;
+  }
+
+  /* ── METADATA TAB ── */
+  function populateMetadata() {
+    if (!hasMeta) {
+      document.getElementById("metaNotMinted").classList.add("visible");
+      return;
+    }
+    document.getElementById("metaNotMinted").classList.remove("visible");
+    document.getElementById("metaInfoCol").style.display = "flex";
+    document.getElementById("metaGridCol").style.display = "flex";
+
+    document.getElementById("metaGeneration").textContent = nftGen  || "—";
+    document.getElementById("metaChain").textContent      = nftChain || "—";
+
+    // format timestamp
+    if (nftTs && !isNaN(parseInt(nftTs))) {
+      var d = new Date(parseInt(nftTs) * 1000);
+      var pad = function(n){ return n < 10 ? "0"+n : n; };
+      document.getElementById("metaMintDate").textContent =
+        pad(d.getDate()) + "/" + pad(d.getMonth()+1) + "-" +
+        String(d.getFullYear()).slice(2) + " " +
+        pad(d.getHours()) + ":" + pad(d.getMinutes());
+    } else {
+      document.getElementById("metaMintDate").textContent = nftTs || "—";
+    }
+
+    // effect pills
+    var efContainer = document.getElementById("metaEffects");
+    efContainer.innerHTML = "";
+    if (nftEffects) {
+      nftEffects.split(",").forEach(function(pill) {
+        if (!pill.trim()) return;
+        var span = document.createElement("span");
+        span.className = "meta-effect-pill";
+        span.textContent = pill.trim();
+        efContainer.appendChild(span);
+      });
+    } else {
+      efContainer.innerHTML = '<span class="meta-effect-pill" style="border-color:#3a3a48;color:#4a4a5a;">none</span>';
+    }
+
+    // hex5 grid — rows separated by | cells by space
+    var hexGrid = document.getElementById("metaHex5Grid");
+    hexGrid.innerHTML = "";
+    if (nftGrid) {
+      var rows = nftGrid.split("|");
+      /* Always render exactly 5 rows × 4 cols */
+      for (var ri = 0; ri < 5; ri++) {
+        var rowStr = rows[ri] ? rows[ri].trim() : "";
+        var cells  = rowStr ? rowStr.split(" ") : [];
+        for (var ci = 0; ci < 4; ci++) {
+          var cell = cells[ci] || "";
+          var div  = document.createElement("div");
+          if (!cell || cell === "---") {
+            div.className = "ms-cell empty";
+          } else {
+            var arrow = cell.slice(0,1);
+            var shape = cell.slice(1,2);
+            var sym   = cell.slice(2);
+            div = makeElemCell(arrow, shape, sym);
+          }
+          hexGrid.appendChild(div);
+        }
+      }
+    }
+  }
+  populateMetadata();
+  populateOwnedRow();
+
+  /* ── TAB TOGGLE ── */
+  var activeDrawerTab = "manifest";
+  document.getElementById("tabManifestBtn").onclick = function() {
+    activeDrawerTab = "manifest";
+    document.getElementById("manifestTabContent").style.display = "flex";
+    document.getElementById("metaTabContent").classList.remove("visible");
+    document.getElementById("tabManifestBtn").classList.add("active");
+    document.getElementById("tabMetaBtn").classList.remove("active");
+  };
+  document.getElementById("tabMetaBtn").onclick = function() {
+    activeDrawerTab = "meta";
+    document.getElementById("manifestTabContent").style.display = "none";
+    document.getElementById("metaTabContent").classList.add("visible");
+    document.getElementById("tabMetaBtn").classList.add("active");
+    document.getElementById("tabManifestBtn").classList.remove("active");
+  };
+
+  /* ── MANIFEST TOGGLE ── */
+  var sidebarOpen = false;
+  var toggleBtn   = document.getElementById("manifestToggle");
+  var sidebar     = document.getElementById("manifestSidebar");
+
+  function setManifestOpen(on) {
+    sidebarOpen = on;
+    sidebar.classList.toggle("open", sidebarOpen);
+    toggleBtn.classList.toggle("active", sidebarOpen);
+    document.body.classList.toggle("sidebar-open", sidebarOpen);
+  }
+
+  toggleBtn.onclick = function() {
+    setManifestOpen(!sidebarOpen);
+    if(sidebarOpen && typeof presetOpen !== "undefined" && presetOpen) {
+      setPresetOpen(false);
+    }
+  };
+
+  /* ── AUDIO ── */
+  var sbtn  = document.getElementById("soundBtn");
+  var toast = document.getElementById("soundToast");
+  var audio = new Audio(BASE + ".mp3");
+  audio.loop    = true;
+  audio.preload = "auto";
+
+  function showToast(t) {
+    toast.textContent = t;
+    toast.classList.add("show");
+    setTimeout(function(){ toast.classList.remove("show"); }, 1500);
+  }
+  audio.onerror = function() { showToast("No audio file"); };
+  sbtn.onclick = async function() {
+    if (audio.paused) {
+      try { await audio.play(); sbtn.innerHTML = "&#9208;&#65039;"; }
+      catch(e) { showToast("Playback blocked"); }
+    } else {
+      audio.pause();
+      sbtn.innerHTML = "&#127925;";
+    }
+  };
+
+  /* ── EFFECTS STATE ── */
+  var tapped = false, negative = false;
+  var gColor = "", gSize = 10, fColor = "", fOpacity = 40;
+  var gPulseInterval = null, fPulseInterval = null;
+  var gCycleInterval = null, fCycleInterval = null;
+  var gHue = 0;
+  var fCycleHues     = [180, 300, 60];
+  var fCycleFrom     = 180, fCycleTo = 300, fCycleProgress = 0, fCycleSegment = 0;
+
+  /* ── TAP / RE-TAP ── */
+  var tapBtn = document.getElementById("tapHold");
+
+  tapBtn.addEventListener("mousedown", function() {
+    tapped = true;
+    tapBtn.classList.add("held");
+    tapBtn.textContent = "● Tapped ●";
+    updateAll();
+  });
+  tapBtn.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    tapped = true;
+    tapBtn.classList.add("held");
+    tapBtn.textContent = "● Tapped ●";
+    updateAll();
+  });
+
+  function doRetap() {
+    tapBtn.classList.remove("held", "tapped");
+    tapped = false; negative = false;
+    gColor = ""; fColor = ""; gSize = 10; fOpacity = 40;
+    document.getElementById("gSize").value    = 10;
+    document.getElementById("fOpacity").value = 40;
+    document.getElementById("gSizeVal").textContent = 10;
+    document.getElementById("fOpVal").textContent   = 40;
+    stopAll();
+    updateSwatches("g"); updateSwatches("f");
+    document.getElementById("iBtn").classList.remove("active-i");
+    document.getElementById("gBtn").classList.remove("has-effect", "panel-open");
+    document.getElementById("fBtn").classList.remove("has-effect", "panel-open");
+    document.getElementById("gPanel").classList.remove("open");
+    document.getElementById("fPanel").classList.remove("open");
+    tapBtn.innerHTML = "&#9675; Tap &#9675;";
+    updateAll();
+  }
+  tapBtn.addEventListener("mouseup",    function() { if(tapped) doRetap(); });
+  tapBtn.addEventListener("mouseleave", function() {
+    if(tapBtn.classList.contains("held")) {
+      tapBtn.classList.remove("held");
+      tapBtn.classList.add("tapped");
+    }
+  });
+  tapBtn.addEventListener("touchend", function() { if(tapped) doRetap(); });
+
+  /* ── PANELS ── */
+  function openPanel(which) {
+    var panel  = document.getElementById(which + "Panel");
+    var btn    = document.getElementById(which + "Btn");
+    var other  = which === "g" ? "f" : "g";
+    var isOpen = panel.classList.contains("open");
+    panel.classList.toggle("open", !isOpen);
+    btn.classList.toggle("panel-open", !isOpen);
+    document.getElementById(other + "Panel").classList.remove("open");
+    document.getElementById(other + "Btn").classList.remove("panel-open");
+  }
+  document.getElementById("gBtn").onclick = function() { openPanel("g"); };
+  document.getElementById("fBtn").onclick = function() { openPanel("f"); };
+  document.getElementById("gClose").onclick = function(e) {
+    e.stopPropagation();
+    document.getElementById("gPanel").classList.remove("open");
+    document.getElementById("gBtn").classList.remove("panel-open");
+  };
+  document.getElementById("fClose").onclick = function(e) {
+    e.stopPropagation();
+    document.getElementById("fPanel").classList.remove("open");
+    document.getElementById("fBtn").classList.remove("panel-open");
+  };
+  document.getElementById("iBtn").onclick = function() {
+    negative = !negative;
+    document.getElementById("iBtn").classList.toggle("active-i", negative);
+    updateAll();
+  };
+
+  /* ── SWATCHES ── */
+  function setupSwatches(p) {
+    document.querySelectorAll("#" + p + "Swatches .swatch").forEach(function(s) {
+      s.onclick = function() {
+        if(p === "g") { gColor = s.dataset.color; stopCycle("g"); }
+        else          { fColor = s.dataset.color; stopCycle("f"); }
+        updateSwatches(p); updateAll();
+      };
+    });
+  }
+  setupSwatches("g"); setupSwatches("f");
+
+  function updateSwatches(p) {
+    var col = p === "g" ? gColor : fColor;
+    document.querySelectorAll("#" + p + "Swatches .swatch").forEach(function(s) {
+      s.classList.toggle("selected", s.dataset.color === col);
+    });
+    document.getElementById(p + "Btn").classList.toggle("has-effect", col !== "");
+  }
+
+  /* ── SLIDERS ── */
+  document.getElementById("gSize").oninput = function() {
+    gSize = parseInt(this.value);
+    document.getElementById("gSizeVal").textContent = gSize;
+    updateAll();
+  };
+  document.getElementById("fOpacity").oninput = function() {
+    fOpacity = parseInt(this.value);
+    document.getElementById("fOpVal").textContent = fOpacity;
+    updateAll();
+  };
+
+  /* ── PULSE ── */
+  document.getElementById("gPulseBtn").onclick = function() {
+    if(gPulseInterval) { clearInterval(gPulseInterval); gPulseInterval = null; document.getElementById("gPulseBtn").classList.remove("active"); return; }
+    document.getElementById("gPulseBtn").classList.add("active");
+    var grow = true;
+    gPulseInterval = setInterval(function() {
+      gSize += grow ? 1 : -1;
+      if(gSize >= 40) grow = false;
+      if(gSize <= 3)  grow = true;
+      document.getElementById("gSize").value = gSize;
+      document.getElementById("gSizeVal").textContent = gSize;
+      updateAll();
+    }, 60);
+  };
+  document.getElementById("fPulseBtn").onclick = function() {
+    if(fPulseInterval) { clearInterval(fPulseInterval); fPulseInterval = null; document.getElementById("fPulseBtn").classList.remove("active"); return; }
+    document.getElementById("fPulseBtn").classList.add("active");
+    var grow = true;
+    fPulseInterval = setInterval(function() {
+      fOpacity += grow ? 1 : -1;
+      if(fOpacity >= 50) grow = false;
+      if(fOpacity <= 25) grow = true;
+      document.getElementById("fOpacity").value = fOpacity;
+      document.getElementById("fOpVal").textContent = fOpacity;
+      updateAll();
+    }, 60);
+  };
+
+  /* ── CYCLE ── */
+  document.getElementById("gCycleBtn").onclick = function() {
+    if(gCycleInterval) { stopCycle("g"); return; }
+    document.getElementById("gCycleBtn").classList.add("active");
+    if(!gColor) { gColor = "hsl(" + gHue + ",100%,55%)"; document.getElementById("gBtn").classList.add("has-effect"); }
+    gCycleInterval = setInterval(function() {
+      gHue  = (gHue + 3) % 360;
+      gColor = "hsl(" + gHue + ",100%,55%)";
+      updateAll();
+    }, 40);
+  };
+  document.getElementById("fCycleBtn").onclick = function() {
+    if(fCycleInterval) { stopCycle("f"); return; }
+    document.getElementById("fCycleBtn").classList.add("active");
+    fCycleSegment = 0; fCycleProgress = 0;
+    fCycleFrom = fCycleHues[0]; fCycleTo = fCycleHues[1];
+    if(!fColor) { fColor = "hsl(" + fCycleFrom + ",100%,50%)"; document.getElementById("fBtn").classList.add("has-effect"); }
+    fCycleInterval = setInterval(function() {
+      fCycleProgress += 0.025;
+      if(fCycleProgress >= 1) {
+        fCycleProgress = 0;
+        fCycleSegment  = (fCycleSegment + 1) % fCycleHues.length;
+        fCycleFrom     = fCycleHues[fCycleSegment];
+        fCycleTo       = fCycleHues[(fCycleSegment + 1) % fCycleHues.length];
+      }
+      var diff = ((fCycleTo - fCycleFrom + 540) % 360) - 180;
+      var h    = ((fCycleFrom + diff * fCycleProgress) + 360) % 360;
+      fColor   = "hsl(" + Math.round(h) + ",100%,50%)";
+      updateAll();
+    }, 40);
+  };
+
+  function stopCycle(p) {
+    if(p === "g") { clearInterval(gCycleInterval); gCycleInterval = null; document.getElementById("gCycleBtn").classList.remove("active"); }
+    else          { clearInterval(fCycleInterval); fCycleInterval = null; document.getElementById("fCycleBtn").classList.remove("active"); }
+  }
+  function stopAll() {
+    clearInterval(gPulseInterval); gPulseInterval = null;
+    clearInterval(fPulseInterval); fPulseInterval = null;
+    stopCycle("g"); stopCycle("f");
+    document.getElementById("gPulseBtn").classList.remove("active");
+    document.getElementById("fPulseBtn").classList.remove("active");
+  }
+
+  /* ── RENDER ── */
+  function updateAll() {
+    if(tapped) {
+      gifEl.style.filter = negative
+        ? "grayscale(1) invert(1) brightness(0.7)"
+        : "grayscale(1) brightness(0.7)";
+      updateStatus(); return;
+    }
+    var f = "";
+    if(fColor) { var v = (fOpacity / 50).toFixed(2); f += "opacity(" + v + ") drop-shadow(0 0 0 " + fColor + ") "; }
+    if(gColor) { f += "drop-shadow(0 0 " + gSize + "px " + gColor + ") "; }
+    if(negative) f += "invert(1)";
+    gifEl.style.filter = f.trim();
+    updateStatus();
+  }
+
+  function colorLabel(col) {
+    if(!col) return "";
+    var map = {"red":"R","green":"G","blue":"B","white":"W","cyan":"C","magenta":"M","yellow":"Y"};
+    if(map[col]) return map[col];
+    var m = col.match(/hsl\((\d+)/);
+    if(m) return "~" + m[1] + "deg";
+    return col.slice(0,2).toUpperCase();
+  }
+
+  function updateStatus() {
+    var parts = [];
+
+    if(gColor || gCycleInterval || gPulseInterval) {
+      var gBoth  = gCycleInterval && gPulseInterval;
+      var gCycle = gCycleInterval && !gPulseInterval;
+      var gPulse = gPulseInterval && !gCycleInterval;
+      if(gBoth)       parts.push("@G");
+      else if(gCycle) parts.push("\u203BG[" + gSize + "]");
+      else if(gPulse) parts.push("*G:" + colorLabel(gColor));
+      else            parts.push("G:" + colorLabel(gColor) + "[" + gSize + "]");
+    }
+
+    if(negative) parts.push("I");
+
+    if(fColor || fCycleInterval || fPulseInterval) {
+      var fBoth  = fCycleInterval && fPulseInterval;
+      var fCycle = fCycleInterval && !fPulseInterval;
+      var fPulse = fPulseInterval && !fCycleInterval;
+      if(fBoth)       parts.push("@F");
+      else if(fCycle) parts.push("\u203BF[" + fOpacity + "]");
+      else if(fPulse) parts.push("*F:" + colorLabel(fColor));
+      else            parts.push("F:" + colorLabel(fColor) + "[" + fOpacity + "]");
+    }
+
+    if(tapped) parts.push("(tap)");
+    document.getElementById("statusLine").textContent = parts.length ? parts.join("  ") : "\u2014";
+  }
+
+
+  /* ── PRESETS ── */
+  var PRESETS_KEY = "viewerPresets";
+  var presets = JSON.parse(localStorage.getItem(PRESETS_KEY) || "[]");
+
+  function getState() {
+    return {
+      gColor:        gColor,
+      gSize:         gSize,
+      fColor:        fColor,
+      fOpacity:      fOpacity,
+      negative:      negative,
+      gPulse:        !!gPulseInterval,
+      fPulse:        !!fPulseInterval,
+      gCycle:        !!gCycleInterval,
+      fCycle:        !!fCycleInterval,
+    };
+  }
+
+  function stateLabel(st) {
+    var parts = [];
+    if(st.gColor || st.gCycle || st.gPulse) {
+      var g = (st.gCycle && st.gPulse) ? "@G" : st.gCycle ? "※G" : st.gPulse ? "*G" : "G:" + (st.gColor||"").slice(0,3);
+      parts.push(g);
+    }
+    if(st.negative) parts.push("I");
+    if(st.fColor || st.fCycle || st.fPulse) {
+      var f2 = (st.fCycle && st.fPulse) ? "@F" : st.fCycle ? "※F" : st.fPulse ? "*F" : "F:" + (st.fColor||"").slice(0,3);
+      parts.push(f2);
+    }
+    return parts.join(" ") || "—";
+  }
+
+  function applyState(st) {
+    // stop all running effects first
+    stopAll();
+    // apply values
+    gColor   = st.gColor   || "";
+    gSize    = st.gSize    !== undefined ? st.gSize : 10;
+    fColor   = st.fColor   || "";
+    fOpacity = st.fOpacity !== undefined ? st.fOpacity : 40;
+    negative = !!st.negative;
+    document.getElementById("gSize").value    = gSize;
+    document.getElementById("fOpacity").value = fOpacity;
+    document.getElementById("gSizeVal").textContent = gSize;
+    document.getElementById("fOpVal").textContent   = fOpacity;
+    document.getElementById("iBtn").classList.toggle("active-i", negative);
+    updateSwatches("g"); updateSwatches("f");
+    // restart pulse/cycle if stored
+    if(st.gPulse) document.getElementById("gPulseBtn").click();
+    if(st.fPulse) document.getElementById("fPulseBtn").click();
+    if(st.gCycle) document.getElementById("gCycleBtn").click();
+    if(st.fCycle) document.getElementById("fCycleBtn").click();
+    updateAll();
+  }
+
+  function savePresets() {
+    localStorage.setItem(PRESETS_KEY, JSON.stringify(presets));
+  }
+
+  function renderPresets() {
+    var list = document.getElementById("presetList");
+    list.innerHTML = "";
+    document.getElementById("presetCount").textContent = presets.length ? presets.length : "";
+    if(presets.length === 0) {
+      var empty = document.createElement("div");
+      empty.style.cssText = "padding:12px 10px;font-size:10px;color:#4a4a5a;text-align:center;";
+      empty.textContent = "no presets saved";
+      list.appendChild(empty);
+      return;
+    }
+    presets.forEach(function(p, i) {
+      var item = document.createElement("div");
+      item.className = "preset-item";
+
+      var load = document.createElement("button");
+      load.className = "preset-load";
+      load.innerHTML = p.name + '<span class="preset-sub">' + stateLabel(p.state) + '</span>';
+      load.onclick = function() { applyState(p.state); renderPresets(); };
+
+      var del = document.createElement("button");
+      del.className = "preset-del";
+      del.textContent = "×";
+      del.title = "Delete";
+      del.onclick = function(e) {
+        e.stopPropagation();
+        presets.splice(i, 1);
+        savePresets();
+        renderPresets();
+      };
+
+      item.appendChild(load);
+      item.appendChild(del);
+      list.appendChild(item);
+    });
+  }
+
+  document.getElementById("presetSaveBtn").onclick = function() {
+    var nameEl = document.getElementById("presetNameInput");
+    var name = nameEl.value.trim();
+    if(!name) { nameEl.focus(); return; }
+    presets.push({ name: name, state: getState() });
+    savePresets();
+    nameEl.value = "";
+    renderPresets();
+  };
+
+  document.getElementById("presetNameInput").addEventListener("keydown", function(e) {
+    if(e.key === "Enter") document.getElementById("presetSaveBtn").click();
+  });
+
+  /* ── PRESET TOGGLE ── */
+  var presetOpen   = false;
+  var presetToggleEl = document.getElementById("presetToggle");
+  var presetPanelEl  = document.getElementById("presetPanel");
+
+  function setPresetOpen(on) {
+    presetOpen = on;
+    presetPanelEl.classList.toggle("open", presetOpen);
+    presetToggleEl.classList.toggle("active", presetOpen);
+    if(presetOpen) renderPresets();
+  }
+
+  presetToggleEl.onclick = function() {
+    setPresetOpen(!presetOpen);
+    if(presetOpen && sidebarOpen) setManifestOpen(false);
+  };
+
+  renderPresets();
+
+
+  updateSwatches("g");
+  updateSwatches("f");
+  applyUrlEffects();
+
+});
+</script>
+</body>
+</html>

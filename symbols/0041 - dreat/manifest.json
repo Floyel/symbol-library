@@ -1,0 +1,48 @@
+{
+  "title": "dreat",
+  "number": "0041",
+  "filetype": ".gif",
+  "frames": "18(0,2)",
+  "date": "26/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● vann",
+      "↑ ● luft",
+      "↑ ● luft",
+      "↓ ● ild"
+    ],
+    "L2": [
+      "↓ ○ ild",
+      "↑ ● vann",
+      "↓ ● jord",
+      "↑ ● jord"
+    ],
+    "L3": [
+      "↓ ● jord",
+      "↑ ● vann",
+      "↑ ● ild",
+      "↓ ● luft"
+    ],
+    "L4": [
+      "↓ ★ lyn",
+      "---",
+      "↓ ★ metall",
+      "↓ ★ metall"
+    ],
+    "L5": [
+      "↑ ★ metall",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

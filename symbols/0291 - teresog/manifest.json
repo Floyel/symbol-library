@@ -1,0 +1,19 @@
+{
+  "title": "teresog",
+  "number": "0291",
+  "filetype": ".gif",
+  "frames": "17(0,2)",
+  "date": "25/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● ild", "↑ ○ ild", "↓ ● luft", "↓ ● jord"],
+  "L2": ["↑ ● luft", "↑ ● vann", "↑ ● ild", "↑ ● jord"],
+  "L3": ["↓ ● jord", "↑ ● vann", "↓ ● vann", "↑ ● luft"],
+  "L4": ["---", "↑ ★ lyn", "↑ ★ lyn", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

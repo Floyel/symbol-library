@@ -1,0 +1,19 @@
+{
+  "title": "tlune",
+  "number": "0136",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "1/3-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● vann", "↑ ○ ild", "↓ ● vann", "↓ ● ild"],
+  "L2": ["↑ ● luft", "↑ ● jord", "↑ ● luft", "↑ ● jord"],
+  "L3": ["↑ ● ild", "↑ ○ vann", "[ ↑ ● jord", "↑ ● luft"],
+  "L4": ["---", "↓ ★ metall", "---", "↓ ★ metall"],
+  "L5": ["---", "↓ ★ plante", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

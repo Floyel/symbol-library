@@ -1,0 +1,19 @@
+{
+  "title": "xjig",
+  "number": "0332",
+  "filetype": ".gif",
+  "frames": "9(0,2)",
+  "date": "24/5-26",
+  "size": "1000x1000 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↑ ● jord", "↓ ○ vann", "↓ ● ild"],
+  "L2": ["↑ ○ vann", "↓ ● luft", "↓ ● ild", "↓ ○ jord"],
+  "L3": ["↓ ● ild", "↑ ● luft", "↑ ● luft", "↑ ● vann"],
+  "L4": ["↓ ★ plante", "---", "↓ ★ lyn", "↑ ★ metall"],
+  "L5": ["↓ ★ lyn", "---", "---", "↑ ★ plante"]
+  },
+  "effects": ["Glow","Inverted","Filter"]
+}

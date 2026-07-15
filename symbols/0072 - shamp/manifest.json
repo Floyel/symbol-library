@@ -1,0 +1,19 @@
+{
+  "title": "shamp",
+  "number": "0072",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "27/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↑ ● vann", "↑ ● ild", "↑ ● vann"],
+  "L2": ["↓ ● luft", "↓ ● vann", "↓ ● luft", "↑ ○ jord"],
+  "L3": ["↑ ● ild", "↑ ● jord", "↓ ● ild", "↓ ● luft"],
+  "L4": ["---", "↑ ★ plante", "---", "↑ ★ plante"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

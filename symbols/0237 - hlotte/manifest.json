@@ -1,0 +1,19 @@
+{
+  "title": "hlotte",
+  "number": "0237",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "1/9-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↑ ● luft", "↑ ● ild", "↓ ● vann"],
+  "L2": ["↓ ● luft", "↓ ● ild", "↓ ● ild", "↑ ● vann"],
+  "L3": ["↑ ● jord", "↑ ● jord", "↑ ● vann", "↓ ● jord"],
+  "L4": ["---", "↑ ★ metall", "↑ ★ lyn", "↑ ★ plante"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

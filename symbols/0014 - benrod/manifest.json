@@ -1,0 +1,48 @@
+{
+  "title": "benrod",
+  "number": "0014",
+  "filetype": ".gif",
+  "frames": "15(0,2)",
+  "date": "30/10-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● jord",
+      "↑ ● ild",
+      "↓ ● vann",
+      "↓ ● jord"
+    ],
+    "L2": [
+      "↑ ● vann",
+      "↓ ● jord",
+      "↓ ○ ild",
+      "↑ ● vann"
+    ],
+    "L3": [
+      "↑ ● luft",
+      "↑ ● ild",
+      "↑ ● luft",
+      "↑ ● luft"
+    ],
+    "L4": [
+      "↓ ★ plante",
+      "↑ ★ metall",
+      "↑ ★ lyn",
+      "↓ ★ plante"
+    ],
+    "L5": [
+      "---",
+      "↑ ★ metall",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

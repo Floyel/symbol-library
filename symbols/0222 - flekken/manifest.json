@@ -1,0 +1,19 @@
+{
+  "title": "flekken",
+  "number": "0222",
+  "filetype": ".gif",
+  "frames": "13(0,2)",
+  "date": "17/8-25",
+  "size": "1000x1000 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "Made from a picture of a stain",
+  "element_code": {
+  "L1":  ["↓ ● jord", "↓ ● vann", "↑ ● ild", "↑ ● ild"],
+  "L2":  ["↑ ● vann", "↑ ● luft", "↑ ○ jord", "↑ ● ild"],
+  "L3":  ["↓ ● luft", "↑ ● jord", "↓ ● luft", "↑ ○ vann"],
+  "L4":  ["↑ ★ plante", "---", "↑ ★ metall", "↑ ★ lyn"],
+  "L5":  ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

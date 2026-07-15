@@ -1,0 +1,2523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Symbol Library</title>
+<style>
+:root {
+  --bg:       #2a2a34;
+  --bg2:      #32323e;
+  --bg3:      #3c3c4a;
+  --border:   #4a4a5a;
+  --green:    #5fcf89;
+  --purple:   #bf95cb;
+  --text:     #c8c8d8;
+  --text-dim: #7a7a8a;
+  --red:      #cf6f6f;
+  --gold:     #d4a843;
+  --yellow:   #d4c243;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'Courier New',monospace;min-height:100vh;overflow-x:hidden;}
+
+/* ── TOPBAR ── */
+#topbar{
+  position:fixed;top:0;left:0;right:0;height:48px;
+  background:var(--bg2);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:10px;padding:0 14px;z-index:100;
+}
+#topbar h1{font-size:13px;letter-spacing:3px;color:var(--green);text-transform:uppercase;white-space:nowrap;margin-right:4px;flex-shrink:0;cursor:pointer;}
+#searchInput{
+  flex:1;max-width:280px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;
+  color:var(--text);font-family:inherit;font-size:12px;padding:5px 10px;outline:none;transition:border 0.15s;
+}
+#searchInput:focus{border-color:var(--green);}
+#searchInput::placeholder{color:var(--text-dim);}
+.topbar-spacer{flex:1;}
+.view-controls{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.view-btn{
+  width:28px;height:28px;border:1px solid var(--border);border-radius:5px;
+  background:transparent;color:var(--text-dim);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-size:14px;
+  transition:all 0.15s;flex-shrink:0;
+}
+.view-btn:hover {border-color:var(--purple);color:var(--purple);}
+.view-btn.active{background:var(--purple);border-color:var(--purple);color:#1a1a2a;}
+#sizeSlider{width:70px;accent-color:var(--purple);}
+#symbolCount{font-size:11px;color:var(--text-dim);white-space:nowrap;}
+
+/* ── DROPDOWN ── */
+.dropdown-wrap{position:relative;flex-shrink:0;}
+.dropdown-btn{
+  padding:4px 10px;border:1px solid var(--border);border-radius:6px;
+  background:var(--bg3);color:var(--text-dim);font-family:inherit;font-size:11px;
+  cursor:pointer;white-space:nowrap;transition:all 0.15s;display:flex;align-items:center;gap:5px;
+}
+.dropdown-btn:hover {border-color:var(--green);color:var(--green);}
+.dropdown-btn.active{border-color:var(--green);color:var(--green);}
+.dropdown-menu{
+  position:absolute;top:calc(100% + 4px);left:0;background:var(--bg2);
+  border:1px solid var(--border);border-radius:8px;padding:4px 0;
+  min-width:200px;z-index:500;display:none;box-shadow:0 8px 24px rgba(0,0,0,0.4);
+}
+.dropdown-menu.open{display:block;}
+.drop-item{
+  padding:7px 14px;font-size:12px;color:var(--text);cursor:pointer;
+  transition:background 0.1s;display:flex;align-items:center;gap:8px;
+}
+.drop-item:hover {background:var(--bg3);color:var(--green);}
+.drop-item.active{color:var(--green);}
+.drop-item .drop-check{font-size:10px;width:14px;flex-shrink:0;}
+.drop-sep{height:1px;background:var(--border);margin:3px 0;}
+.drop-section-label{
+  padding:5px 14px 3px;font-size:9px;letter-spacing:2px;
+  color:var(--text-dim);text-transform:uppercase;
+}
+/* sort direction toggle inside drop item */
+.sort-dir{
+  margin-left:auto;font-size:10px;color:var(--text-dim);
+  padding:1px 5px;border:1px solid var(--border);border-radius:3px;
+}
+.drop-item.active .sort-dir{color:var(--green);border-color:var(--green);}
+
+
+/* ── FLYOUT SUBMENU ── */
+.flyout-item{position:relative;}
+.flyout-item:hover .flyout-menu,
+.flyout-item.open .flyout-menu{display:block;}
+.flyout-arrow{margin-left:auto;font-size:10px;color:var(--text-dim);}
+.flyout-menu{
+  position:absolute;left:100%;top:0;
+  background:var(--bg2);border:1px solid var(--border);border-radius:8px;
+  padding:4px 0;min-width:140px;display:none;
+  box-shadow:4px 4px 16px rgba(0,0,0,0.4);z-index:600;
+}
+.flyout-opt{
+  padding:7px 14px;font-size:12px;color:var(--text);cursor:pointer;
+  transition:background 0.1s;display:flex;align-items:center;gap:8px;
+}
+.flyout-opt:hover {background:var(--bg3);color:var(--green);}
+.flyout-opt.active{color:var(--green);}
+.flyout-opt .drop-check{font-size:10px;width:14px;flex-shrink:0;}
+
+/* ── RECENTLY VIEWED BAR ── */
+#recentBar{
+  position:fixed;top:82px;left:0;right:0;
+  height:52px;background:var(--bg2);border-bottom:1px solid var(--border);
+  display:none;align-items:center;gap:6px;padding:0 14px;
+  overflow-x:auto;z-index:90;scrollbar-width:none;
+}
+#recentBar::-webkit-scrollbar{display:none;}
+#recentBar.visible{display:flex;}
+.recent-thumb{
+  width:36px;height:36px;flex-shrink:0;
+  border:1px solid var(--border);border-radius:5px;
+  overflow:hidden;background:#1a1a22;cursor:pointer;
+  transition:border 0.15s,transform 0.1s;position:relative;
+}
+.recent-thumb:hover{border-color:var(--green);transform:scale(1.08);}
+.recent-thumb img{width:100%;height:100%;object-fit:contain;display:block;}
+.recent-label{
+  position:absolute;bottom:0;left:0;right:0;
+  font-size:7px;text-align:center;background:rgba(0,0,0,0.6);
+  color:var(--text-dim);padding:1px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+#recentClear{
+  flex-shrink:0;font-size:10px;color:var(--text-dim);cursor:pointer;
+  background:none;border:none;font-family:inherit;margin-left:4px;
+}
+#recentClear:hover{color:var(--red);}
+
+/* ── SETTINGS PANEL ── */
+#settingsPanel{
+  position:fixed;top:48px;right:0;width:280px;
+  background:var(--bg2);border-left:1px solid var(--border);
+  border-bottom:1px solid var(--border);border-radius:0 0 0 10px;
+  padding:16px;z-index:200;display:none;
+  box-shadow:-4px 4px 20px rgba(0,0,0,0.3);max-height:calc(100vh - 48px);overflow-y:auto;
+}
+#settingsPanel.open{display:block;}
+.settings-title{font-size:10px;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase;margin-bottom:14px;}
+.setting-row{margin-bottom:14px;}
+.setting-label{font-size:11px;color:var(--text-dim);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;}
+.setting-options{display:flex;gap:6px;flex-wrap:wrap;}
+.setting-opt{
+  padding:5px 12px;border:1px solid var(--border);border-radius:6px;
+  background:var(--bg3);color:var(--text);font-family:inherit;font-size:11px;
+  cursor:pointer;transition:all 0.15s;
+}
+.setting-opt:hover {border-color:var(--purple);color:var(--purple);}
+.setting-opt.active{background:var(--purple);border-color:var(--purple);color:#1a1a2a;}
+.setting-action{
+  padding:5px 12px;border:1px solid var(--border);border-radius:6px;
+  background:var(--bg3);color:var(--text-dim);font-family:inherit;font-size:11px;
+  cursor:pointer;transition:all 0.15s;width:100%;text-align:left;margin-top:4px;
+}
+.setting-action:hover{border-color:var(--red);color:var(--red);}
+.settings-sep{height:1px;background:var(--border);margin:12px 0;}
+
+/* shortcut reference table */
+.shortcut-table{width:100%;font-size:10px;border-collapse:collapse;margin-top:4px;}
+.shortcut-table td{padding:3px 0;color:var(--text-dim);}
+.shortcut-table td:first-child{color:var(--purple);font-weight:bold;width:60px;}
+
+
+/* ── DATE CALENDAR PICKER ── */
+#calPicker{
+  position:fixed;
+  background:var(--bg2);border:1px solid var(--border);border-radius:10px;
+  padding:12px;z-index:3000;display:none;
+  box-shadow:0 8px 24px rgba(0,0,0,0.5);
+  width:240px;
+  font-family:'Courier New',monospace;
+}
+#calPicker.open{display:block;}
+#calNav{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+#calNavBtn-prev,#calNavBtn-next{
+  background:none;border:none;color:var(--text-dim);cursor:pointer;
+  font-size:16px;padding:2px 6px;border-radius:4px;font-family:inherit;
+}
+#calNavBtn-prev:hover,#calNavBtn-next:hover{color:var(--green);}
+#calNavLabel{
+  font-size:12px;color:var(--text);cursor:pointer;letter-spacing:1px;
+  padding:2px 6px;border-radius:4px;transition:background 0.1s;
+}
+#calNavLabel:hover{background:var(--bg3);color:var(--green);}
+#calNavInput{
+  display:none;background:var(--bg3);border:1px solid var(--border);border-radius:4px;
+  color:var(--text);font-family:inherit;font-size:12px;padding:2px 6px;
+  width:100%;outline:none;text-align:center;
+}
+#calNavInput:focus{border-color:var(--green);}
+#calGrid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
+.cal-dayname{font-size:9px;color:var(--text-dim);text-align:center;padding:2px 0;letter-spacing:1px;}
+.cal-day{
+  font-size:11px;text-align:center;padding:4px 2px;border-radius:4px;
+  cursor:pointer;color:var(--text-dim);transition:background 0.1s,color 0.1s;
+}
+.cal-day:hover{background:var(--bg3);color:var(--green);}
+.cal-day.has-symbol{color:var(--text);}
+.cal-day.highlight{background:var(--purple);color:#1a1a2a;}
+.cal-day.today{border:1px solid var(--border);}
+.cal-day.empty{cursor:default;}
+.cal-day.empty:hover{background:transparent;color:var(--text-dim);}
+#calJumpInfo{
+  margin-top:8px;font-size:10px;color:var(--text-dim);text-align:center;
+  min-height:14px;
+}
+
+
+/* ── CHAIN TAB ── */
+#tabNav{
+  position:fixed;top:48px;left:0;right:0;
+  display:flex;gap:0;
+  border-bottom:1px solid var(--border);
+  background:var(--bg2);
+  z-index:95;height:34px;
+}
+.tab-nav-btn{
+  padding:6px 16px;font-size:11px;letter-spacing:2px;
+  color:var(--text-dim);cursor:pointer;
+  border-bottom:2px solid transparent;
+  background:none;border-top:none;border-left:none;border-right:none;
+  font-family:inherit;text-transform:uppercase;
+  transition:all 0.15s;
+}
+.tab-nav-btn:hover{color:var(--text);}
+.tab-nav-btn.active{color:var(--green);border-bottom-color:var(--green);}
+
+/* chain view */
+#chainView{display:none;padding:16px;margin-top:82px;}
+#chainView.visible{display:block;}
+#chainHeader{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:16px;flex-wrap:wrap;
+}
+#chainStats{
+  font-size:11px;color:var(--text-dim);letter-spacing:1px;
+  display:flex;gap:16px;
+}
+.chain-stat{display:flex;flex-direction:column;gap:2px;}
+.chain-stat-val{font-size:18px;color:var(--text);letter-spacing:2px;}
+.chain-stat-label{font-size:9px;letter-spacing:2px;color:var(--text-dim);text-transform:uppercase;}
+.chain-stat-val.revealed{color:var(--green);}
+.chain-stat-val.hidden{color:var(--text-dim);}
+
+#updateChainBtn{
+  padding:5px 14px;
+  border:1px solid var(--border);border-radius:6px;
+  background:var(--bg3);color:var(--text-dim);
+  font-family:inherit;font-size:11px;cursor:pointer;
+  transition:all 0.15s;margin-left:auto;
+}
+#updateChainBtn:hover{border-color:var(--green);color:var(--green);}
+#updateChainBtn.loading{color:var(--purple);border-color:var(--purple);}
+
+#chainGrid{display:flex;flex-wrap:wrap;gap:10px;}
+
+/* chain card — extends symbol-card */
+.chain-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:8px;
+  overflow:hidden;cursor:pointer;
+  transition:border 0.15s,transform 0.1s;
+  position:relative;flex-shrink:0;
+}
+.chain-card:hover{border-color:var(--green);transform:translateY(-1px);}
+.chain-card.owned{border-color:#4a9eff;}
+.chain-card.no-effects:hover{border-color:var(--green);}
+
+.chain-thumb{
+  width:100%;aspect-ratio:1;overflow:hidden;
+  background:#1a1a22;display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.chain-thumb img{width:100%;height:100%;object-fit:contain;display:block;}
+
+/* effect pills overlay on hover */
+.chain-effect-pills{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:4px 5px;
+  background:linear-gradient(transparent,rgba(0,0,0,0.75));
+  display:flex;flex-wrap:wrap;gap:3px;
+  opacity:0;transition:opacity 0.2s;
+  pointer-events:none;
+}
+.chain-card:hover .chain-effect-pills{opacity:1;}
+.chain-pill{
+  font-size:9px;padding:1px 5px;
+  border:1px solid rgba(191,149,203,0.5);
+  border-radius:3px;background:rgba(30,20,36,0.85);
+  color:#bf95cb;font-family:'Courier New',monospace;
+  white-space:nowrap;
+}
+
+.chain-info{padding:5px 7px;border-top:1px solid var(--border);}
+.chain-number{font-size:9px;color:var(--text-dim);letter-spacing:1px;}
+.chain-title{font-size:11px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.chain-date{font-size:9px;color:var(--text-dim);margin-top:1px;}
+
+/* update warning modal */
+#chainUpdateModal{
+  position:fixed;inset:0;background:rgba(0,0,0,0.6);
+  z-index:8000;display:none;align-items:center;justify-content:center;
+}
+#chainUpdateModal.show{display:flex;}
+.chain-modal-box{
+  background:var(--bg2);border:1px solid var(--border);border-radius:10px;
+  padding:22px;max-width:320px;text-align:center;
+}
+.chain-modal-box h3{color:var(--green);font-size:11px;letter-spacing:2px;margin-bottom:10px;}
+.chain-modal-box p{font-size:12px;color:var(--text-dim);line-height:1.6;margin-bottom:16px;}
+.chain-modal-check{
+  display:flex;align-items:center;gap:8px;justify-content:center;
+  font-size:11px;color:var(--text-dim);margin-bottom:16px;cursor:pointer;
+}
+.chain-modal-btns{display:flex;gap:8px;justify-content:center;}
+.chain-modal-btn{
+  padding:7px 18px;border:1px solid var(--border);border-radius:6px;
+  background:var(--bg3);color:var(--text);font-family:inherit;font-size:11px;
+  cursor:pointer;transition:all 0.15s;
+}
+.chain-modal-btn.primary{border-color:var(--green);color:var(--green);}
+.chain-modal-btn:hover{border-color:var(--purple);color:var(--purple);}
+
+/* chain empty / loading state */
+#chainEmpty{
+  padding:40px;text-align:center;font-size:11px;color:var(--text-dim);
+  letter-spacing:2px;display:none;
+}
+#chainEmpty.visible{display:block;}
+
+/* keyframes for pulse glow on chain thumbnails */
+@keyframes pulseGlow{
+  0%,100%{filter:drop-shadow(0 0 3px var(--glow-color));}
+  50%{filter:drop-shadow(0 0 18px var(--glow-color));}
+}
+@keyframes cycleHue{
+  0%{filter:drop-shadow(0 0 10px hsl(0,100%,55%));}
+  25%{filter:drop-shadow(0 0 10px hsl(90,100%,55%));}
+  50%{filter:drop-shadow(0 0 10px hsl(180,100%,55%));}
+  75%{filter:drop-shadow(0 0 10px hsl(270,100%,55%));}
+  100%{filter:drop-shadow(0 0 10px hsl(360,100%,55%));}
+}
+@keyframes cycleFilter{
+  0%{filter:opacity(0.7) drop-shadow(0 0 0 cyan);}
+  33%{filter:opacity(0.7) drop-shadow(0 0 0 magenta);}
+  66%{filter:opacity(0.7) drop-shadow(0 0 0 yellow);}
+  100%{filter:opacity(0.7) drop-shadow(0 0 0 cyan);}
+}
+
+
+/* ── WALLET INDICATOR ── */
+#walletIndicator{
+  display:flex;align-items:center;gap:6px;
+  padding:4px 10px;
+  border:1px solid var(--border);border-radius:6px;
+  background:var(--bg3);
+  cursor:pointer;flex-shrink:0;
+  transition:all 0.15s;font-size:11px;color:var(--text-dim);
+  user-select:none;
+}
+#walletIndicator:hover{border-color:var(--purple);color:var(--text);}
+#walletIndicator.connected{border-color:#4a9eff;color:#4a9eff;}
+.wallet-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--border);flex-shrink:0;transition:background 0.2s;
+}
+.wallet-dot.on{background:#4a9eff;box-shadow:0 0 5px rgba(74,158,255,0.6);}
+#walletDrop{
+  position:absolute;top:calc(100% + 5px);right:0;
+  background:var(--bg2);border:1px solid var(--border);border-radius:8px;
+  padding:4px 0;min-width:200px;z-index:500;display:none;
+  box-shadow:0 8px 24px rgba(0,0,0,0.4);
+}
+#walletDrop.open{display:block;}
+.wallet-addr{
+  padding:8px 14px;font-size:10px;color:#4a9eff;
+  letter-spacing:1px;border-bottom:1px solid var(--border);
+  word-break:break-all;font-family:'Courier New',monospace;
+}
+.wallet-opt{
+  padding:7px 14px;font-size:12px;color:var(--text);
+  cursor:pointer;transition:background 0.1s;
+}
+.wallet-opt:hover{background:var(--bg3);color:var(--red);}
+
+/* ── MINT DROPDOWN ── */
+#mintWrap{position:relative;flex-shrink:0;}
+#mintDropBtn{
+  padding:4px 10px;
+  border:1px solid var(--green);border-radius:6px;
+  background:var(--bg3);color:var(--green);
+  font-family:inherit;font-size:11px;cursor:pointer;
+  letter-spacing:1px;transition:all 0.15s;
+  display:flex;align-items:center;gap:5px;
+}
+#mintDropBtn:hover{background:rgba(95,207,137,0.08);}
+#mintDropMenu{
+  position:absolute;top:calc(100% + 4px);left:0;
+  background:var(--bg2);border:1px solid var(--border);border-radius:8px;
+  padding:4px 0;min-width:160px;z-index:500;display:none;
+  box-shadow:0 8px 24px rgba(0,0,0,0.4);
+}
+#mintDropMenu.open{display:block;}
+.mint-opt{
+  padding:8px 14px;font-size:12px;color:var(--text);
+  cursor:pointer;transition:background 0.1s;
+  display:flex;align-items:center;gap:8px;
+}
+.mint-opt:hover{background:var(--bg3);color:var(--green);}
+
+/* ── BUY GUIDE MODAL ── */
+.buy-box{
+  background:var(--bg2);border:1px solid var(--border);border-radius:12px;
+  padding:28px;max-width:480px;width:100%;
+  max-height:90vh;overflow-y:auto;
+}
+.buy-box h2{
+  font-size:12px;letter-spacing:3px;color:var(--green);
+  text-transform:uppercase;margin-bottom:4px;
+}
+.buy-subtitle{font-size:10px;color:var(--text-dim);letter-spacing:1px;margin-bottom:20px;}
+.buy-link{
+  display:inline-block;margin-bottom:20px;padding:7px 14px;
+  border:1px solid var(--green);border-radius:6px;
+  color:var(--green);font-size:11px;text-decoration:none;
+  letter-spacing:1px;transition:background 0.15s;
+}
+.buy-link:hover{background:rgba(95,207,137,0.1);}
+.buy-steps{list-style:none;padding:0;margin-bottom:20px;}
+.buy-steps li{
+  padding:8px 0;border-bottom:1px solid var(--bg3);
+  font-size:12px;color:var(--text);line-height:1.5;
+  display:flex;gap:10px;align-items:flex-start;
+}
+.buy-steps li:last-child{border-bottom:none;}
+.step-num{
+  flex-shrink:0;width:18px;height:18px;border-radius:50%;
+  background:var(--bg3);border:1px solid var(--border);
+  font-size:9px;color:var(--text-dim);
+  display:flex;align-items:center;justify-content:center;margin-top:1px;
+}
+.buy-notes{
+  background:var(--bg3);border-radius:8px;
+  padding:12px 14px;margin-bottom:16px;
+}
+.buy-notes-title{
+  font-size:9px;letter-spacing:2px;color:var(--text-dim);
+  text-transform:uppercase;margin-bottom:8px;
+}
+.buy-notes li{
+  font-size:11px;color:var(--text-dim);line-height:1.6;
+  padding:2px 0;display:flex;gap:8px;
+}
+.buy-notes li::before{content:"·";color:var(--green);flex-shrink:0;}
+.buy-close{
+  width:100%;padding:8px;border:1px solid var(--border);border-radius:6px;
+  background:var(--bg3);color:var(--text-dim);font-family:inherit;
+  font-size:11px;cursor:pointer;transition:all 0.15s;
+}
+.buy-close:hover{border-color:var(--purple);color:var(--purple);}
+
+/* ── SETTINGS GROUPS ── */
+.settings-group{
+  margin-bottom:6px;border:1px solid var(--bg3);border-radius:7px;overflow:hidden;
+}
+.settings-group-hdr{
+  padding:8px 12px;background:var(--bg3);
+  font-size:10px;letter-spacing:2px;color:var(--text-dim);
+  text-transform:uppercase;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;
+  user-select:none;transition:color 0.15s;
+}
+.settings-group-hdr:hover{color:var(--text);}
+.settings-group-hdr .grp-arrow{font-size:10px;transition:transform 0.2s;}
+.settings-group.open .grp-arrow{transform:rotate(90deg);}
+.settings-group-body{display:none;padding:10px 12px 4px;}
+.settings-group.open .settings-group-body{display:block;}
+
+/* ── ANNOTATION EDIT MODAL ── */
+#annotModal{
+  position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:8000;
+  display:none;align-items:center;justify-content:center;
+}
+#annotModal.show{display:flex;}
+#buyModal{display:none;}
+#buyModal.show{display:flex;}
+.annot-box{
+  background:var(--bg2);border:1px solid var(--border);border-radius:10px;
+  padding:20px;width:320px;
+}
+.annot-box h3{font-size:11px;letter-spacing:2px;color:var(--green);margin-bottom:10px;}
+#annotText{
+  width:100%;height:80px;background:var(--bg3);border:1px solid var(--border);
+  border-radius:6px;color:var(--text);font-family:inherit;font-size:12px;
+  padding:8px;resize:none;outline:none;
+}
+#annotText:focus{border-color:var(--green);}
+.annot-btns{display:flex;gap:8px;margin-top:10px;justify-content:flex-end;}
+.annot-btn{
+  padding:5px 14px;border:1px solid var(--border);border-radius:6px;
+  background:var(--bg3);color:var(--text);font-family:inherit;font-size:11px;cursor:pointer;
+}
+.annot-btn.primary{border-color:var(--green);color:var(--green);}
+.annot-btn:hover{border-color:var(--purple);color:var(--purple);}
+
+/* ── MAIN ── */
+#main{margin-top:82px;padding:16px;transition:margin-top 0.2s;}
+#main.with-recent{margin-top:134px;}
+
+/* ── GRID ── */
+#grid{display:flex;flex-wrap:wrap;gap:10px;}
+.symbol-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:8px;
+  overflow:hidden;cursor:pointer;transition:border 0.15s,transform 0.1s;
+  position:relative;flex-shrink:0;outline:none;
+}
+.symbol-card:hover    {border-color:var(--green);transform:translateY(-1px);}
+.symbol-card.favourited{border-color:var(--gold);}
+.symbol-card.selected  {border-color:var(--purple);box-shadow:0 0 0 1px var(--purple);}
+.card-thumb{
+  width:100%;aspect-ratio:1;overflow:hidden;background:#1a1a22;
+  display:flex;align-items:center;justify-content:center;position:relative;
+}
+.card-thumb img{width:100%;height:100%;object-fit:contain;display:block;}
+.card-info{padding:6px 8px;border-top:1px solid var(--border);}
+.card-number{font-size:10px;color:var(--text-dim);letter-spacing:1px;}
+.card-title{font-size:12px;color:var(--text);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* indicators */
+.fav-star{
+  position:absolute;top:4px;right:5px;font-size:13px;color:var(--gold);
+  display:none;line-height:1;text-shadow:0 0 6px rgba(212,168,67,0.6);
+}
+.symbol-card.favourited .fav-star{display:block;}
+.annot-dot{
+  position:absolute;top:5px;left:5px;width:7px;height:7px;
+  border-radius:50%;background:var(--yellow);display:none;
+  box-shadow:0 0 5px rgba(212,194,67,0.7);
+}
+.symbol-card.has-annot .annot-dot{display:block;}
+
+/* ── LIST ── */
+#list{display:none;}
+#list table{width:100%;border-collapse:collapse;font-size:12px;}
+#list th{
+  text-align:left;padding:6px 10px;border-bottom:1px solid var(--border);
+  color:var(--text-dim);font-size:11px;letter-spacing:1px;cursor:pointer;user-select:none;
+}
+#list th:hover{color:var(--green);}
+#list td{padding:7px 10px;border-bottom:1px solid var(--bg3);vertical-align:middle;}
+#list tr:hover td{background:var(--bg2);cursor:pointer;}
+.list-thumb{width:36px;height:36px;object-fit:contain;border-radius:4px;background:#1a1a22;}
+.list-number{color:var(--text-dim);letter-spacing:1px;}
+.list-title {color:var(--text);}
+.list-dim   {color:var(--text-dim);}
+.list-audio {color:var(--green);font-size:11px;}
+.list-fav   {color:var(--gold);font-size:13px;}
+.list-fav.empty{color:transparent;}
+.list-annot {color:var(--yellow);font-size:11px;}
+.list-annot.empty{color:transparent;}
+
+/* ── CONTEXT MENU ── */
+#ctxMenu{
+  position:fixed;background:var(--bg2);border:1px solid var(--border);border-radius:8px;
+  padding:4px 0;z-index:9000;display:none;min-width:200px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.4);
+}
+.ctx-item{padding:8px 14px;font-size:12px;color:var(--text);cursor:pointer;font-family:inherit;transition:background 0.1s;}
+.ctx-item:hover{background:var(--bg3);color:var(--green);}
+.ctx-sep{height:1px;background:var(--border);margin:3px 0;}
+
+/* ── POPUP PREF MODAL ── */
+#popupPrefModal{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:8000;display:none;align-items:center;justify-content:center;}
+#popupPrefModal.show{display:flex;}
+.pref-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:24px;max-width:340px;text-align:center;}
+.pref-box h3{color:var(--green);font-size:13px;letter-spacing:2px;margin-bottom:10px;}
+.pref-box p {font-size:12px;color:var(--text-dim);margin-bottom:18px;line-height:1.6;}
+.pref-btns  {display:flex;gap:10px;justify-content:center;margin-bottom:12px;}
+.pref-btn{padding:8px 18px;border:1px solid var(--border);border-radius:7px;background:var(--bg3);color:var(--text);cursor:pointer;font-family:inherit;font-size:12px;transition:all 0.15s;}
+.pref-btn:hover  {border-color:var(--green);color:var(--green);}
+.pref-btn.primary{border-color:var(--green);color:var(--green);}
+#dontAskAgain{font-size:11px;color:var(--text-dim);cursor:pointer;}
+#dontAskAgain:hover{color:var(--text);}
+
+/* ── WEB BANNER ── */
+#webBanner{
+  background:var(--bg3);border-bottom:1px solid var(--border);
+  padding:7px 16px;font-size:11px;color:var(--text-dim);
+  display:flex;align-items:center;gap:10px;margin-top:82px;
+}
+#webBanner a{color:var(--green);text-decoration:none;}
+#closeBanner{margin-left:auto;background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:14px;font-family:inherit;}
+#closeBanner:hover{color:var(--text);}
+
+/* ── EMPTY ── */
+#emptyState{display:none;text-align:center;padding:60px 20px;color:var(--text-dim);font-size:13px;}
+
+/* keyboard focus ring on cards */
+.symbol-card:focus{outline:2px solid var(--purple);outline-offset:1px;}
+
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div id="topbar">
+  <h1>Symbols</h1>
+
+  <!-- MINT DROPDOWN -->
+  <div id="mintWrap" style="position:relative;flex-shrink:0;">
+    <button id="mintDropBtn">&#9670; Mint &#9660;</button>
+    <div id="mintDropMenu">
+      <div class="mint-opt" id="mintSimBtn">&#9655; Simulated mint</div>
+      <div class="mint-opt" id="mintBuyBtn">&#9671; Buy symbols</div>
+    </div>
+  </div>
+
+  <input id="searchInput" type="text" placeholder="search..." autocomplete="off"/>
+
+  <!-- COMBINED FILTER / SORT DROPDOWN -->
+  <div class="dropdown-wrap" id="mainDropWrap">
+    <button class="dropdown-btn" id="mainDropBtn">&#9660; filter</button>
+    <div class="dropdown-menu" id="mainDropMenu"></div>
+  </div>
+
+  <!-- RECENTLY VIEWED TOGGLE -->
+  <button class="view-btn" id="recentToggleBtn" title="Recently viewed">&#9677;</button>
+
+  <!-- WALLET INDICATOR -->
+  <div style="position:relative;flex-shrink:0;" id="walletWrap">
+    <div id="walletIndicator" title="Connect wallet">
+      <div class="wallet-dot" id="walletDot"></div>
+      <span id="walletLabel">wallet</span>
+    </div>
+    <div id="walletDrop">
+      <div class="wallet-addr" id="walletAddr"></div>
+      <div class="wallet-opt" id="walletDisconnect">Disconnect</div>
+    </div>
+  </div>
+
+  <div class="topbar-spacer"></div>
+
+  <div class="view-controls">
+    <span id="symbolCount"></span>
+    <input id="sizeSlider" type="range" min="0" max="2" step="1" value="1" title="Grid size"/>
+    <button class="view-btn active" id="btnGrid" title="Grid view">&#8862;</button>
+    <button class="view-btn" id="btnList" title="List view">&#8801;</button>
+    <button class="view-btn" id="settingsBtn" title="Settings">&#9881;</button>
+  </div>
+</div>
+
+<!-- RECENTLY VIEWED BAR -->
+<div id="recentBar">
+  <button id="recentClear" title="Clear recently viewed">&#10005;</button>
+</div>
+
+<!-- SETTINGS PANEL -->
+<div id="settingsPanel">
+  <div class="settings-title">Settings</div>
+
+  <!-- GROUP: Display -->
+  <div class="settings-group open" id="grpDisplay">
+    <div class="settings-group-hdr" onclick="toggleGroup('grpDisplay')">
+      Display <span class="grp-arrow">&#9658;</span>
+    </div>
+    <div class="settings-group-body">
+      <div class="setting-row">
+        <div class="setting-label">Default view</div>
+        <div class="setting-options">
+          <button class="setting-opt" id="setViewGrid">Grid</button>
+          <button class="setting-opt" id="setViewList">List</button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <div class="setting-label">Default grid size</div>
+        <div class="setting-options">
+          <button class="setting-opt" id="setGridSm">Small</button>
+          <button class="setting-opt" id="setGridMd">Medium</button>
+          <button class="setting-opt" id="setGridLg">Large</button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <div class="setting-label">Recently viewed</div>
+        <div class="setting-options">
+          <button class="setting-opt" id="setRecentOn">Show</button>
+          <button class="setting-opt" id="setRecentOff">Hide</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GROUP: Behaviour -->
+  <div class="settings-group" id="grpBehaviour">
+    <div class="settings-group-hdr" onclick="toggleGroup('grpBehaviour')">
+      Behaviour <span class="grp-arrow">&#9658;</span>
+    </div>
+    <div class="settings-group-body">
+      <div class="setting-row">
+        <div class="setting-label">Open viewer as</div>
+        <div class="setting-options">
+          <button class="setting-opt" id="setPrefPopup">Popup</button>
+          <button class="setting-opt" id="setPrefEmbed">Embedded</button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <div class="setting-label">Popup offset</div>
+        <div class="setting-options">
+          <button class="setting-opt" id="setOffsetOn">On</button>
+          <button class="setting-opt" id="setOffsetOff">Off</button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <div class="setting-label">Keyboard shortcuts</div>
+        <div class="setting-options">
+          <button class="setting-opt" id="setShortcutsOn">On</button>
+          <button class="setting-opt" id="setShortcutsOff">Off</button>
+        </div>
+        <table class="shortcut-table" style="margin-top:8px;">
+          <tr><td>&#8592;&#8594;</td><td>Navigate</td></tr>
+          <tr><td>Space</td><td>Open selected</td></tr>
+          <tr><td>Esc</td><td>Close panels</td></tr>
+          <tr><td>F</td><td>Favourite</td></tr>
+          <tr><td>/</td><td>Search</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- GROUP: Chain -->
+  <div class="settings-group" id="grpChain">
+    <div class="settings-group-hdr" onclick="toggleGroup('grpChain')">
+      Chain <span class="grp-arrow">&#9658;</span>
+    </div>
+    <div class="settings-group-body">
+      <div class="setting-row">
+        <div class="setting-label">Update on startup</div>
+        <div class="setting-options">
+          <button class="setting-opt" id="setAutoChainOn">On</button>
+          <button class="setting-opt" id="setAutoChainOff">Off</button>
+        </div>
+        <div style="font-size:9px;color:var(--text-dim);margin-top:5px;line-height:1.5;">
+          Fetches chain_data.json on load.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GROUP: Reset -->
+  <div class="settings-group" id="grpReset">
+    <div class="settings-group-hdr" onclick="toggleGroup('grpReset')">
+      Reset <span class="grp-arrow">&#9658;</span>
+    </div>
+    <div class="settings-group-body">
+      <button class="setting-action" id="resetAskAgain">Reset "do not ask again"</button>
+      <button class="setting-action" id="clearFavourites" style="margin-top:6px;">Clear all favourites</button>
+      <button class="setting-action" id="clearAnnotations" style="margin-top:6px;">Clear all annotations</button>
+      <button class="setting-action" id="clearRecent" style="margin-top:6px;">Clear recently viewed</button>
+    </div>
+  </div>
+</div>
+
+<!-- WEB BANNER -->
+<div id="webBanner" style="display:none;">
+  &#9432; Browser mode &#8212; download the app for full features.
+  <button id="closeBanner">&#10005;</button>
+</div>
+
+<!-- TAB NAV -->
+<div id="tabNav">
+  <button class="tab-nav-btn active" id="tabLibrary">Library</button>
+  <button class="tab-nav-btn" id="tabChain">Chain</button>
+</div>
+
+<!-- MAIN (library view) -->
+<div id="main">
+  <div id="grid"></div>
+  <div id="list"><table><thead id="listHead"></thead><tbody id="listBody"></tbody></table></div>
+  <div id="emptyState">no symbols found</div>
+</div>
+
+<!-- CHAIN VIEW -->
+<div id="chainView">
+  <div id="chainHeader">
+    <div id="chainStats">
+      <div class="chain-stat">
+        <div class="chain-stat-val revealed" id="statRevealed">—</div>
+        <div class="chain-stat-label">revealed</div>
+      </div>
+      <div class="chain-stat">
+        <div class="chain-stat-val hidden" id="statHidden">—</div>
+        <div class="chain-stat-label">hidden</div>
+      </div>
+      <div class="chain-stat">
+        <div class="chain-stat-val" id="statTotal">333</div>
+        <div class="chain-stat-label">total</div>
+      </div>
+    </div>
+    <button id="updateChainBtn">&#8635; Update</button>
+  </div>
+  <div id="chainGrid"></div>
+  <div id="chainEmpty">no chain data — click Update to fetch</div>
+</div>
+
+<!-- CHAIN UPDATE MODAL -->
+<div id="chainUpdateModal">
+  <div class="chain-modal-box">
+    <h3>UPDATE CHAIN DATA</h3>
+    <p>Fetching revealed symbols from the blockchain may take a moment. Do not close the window.</p>
+    <label class="chain-modal-check">
+      <input type="checkbox" id="chainDontAsk"/> do not ask again
+    </label>
+    <div class="chain-modal-btns">
+      <button class="chain-modal-btn" id="chainModalCancel">Cancel</button>
+      <button class="chain-modal-btn primary" id="chainModalConfirm">Fetch</button>
+    </div>
+  </div>
+</div>
+
+<!-- BUY GUIDE MODAL -->
+<div id="buyModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:8000;align-items:center;justify-content:center;padding:20px;">
+  <div class="buy-box">
+    <h2>Buy a Symbol Alpha Pack</h2>
+    <div class="buy-subtitle">Each pack contains 5 random Symbol Alpha tokens</div>
+    <a class="buy-link" href="https://basescan.org/address/0xd19001579D8C96B9f668802E7ccBA9F25156392A#writeContract" target="_blank">&#8599; Open on Basescan</a>
+    <ol class="buy-steps">
+      <li><span class="step-num">1</span><span>Go to the link above — opens the Symbol sale contract on Basescan</span></li>
+      <li><span class="step-num">2</span><span>Click <strong style="color:var(--text);">Connect to Web3</strong> top right and connect MetaMask. Must be on <strong style="color:var(--text);">Base network</strong></span></li>
+      <li><span class="step-num">3</span><span>Ensure you have at least <strong style="color:var(--green);">0.0033 ETH</strong> on Base</span></li>
+      <li><span class="step-num">4</span><span>Find <strong style="color:var(--text);">buyPack</strong> in the list and click to expand</span></li>
+      <li><span class="step-num">5</span><span>In the <strong style="color:var(--text);">value</strong> field enter <strong style="color:var(--green);">0.0033</strong> and select ETH</span></li>
+      <li><span class="step-num">6</span><span>Click <strong style="color:var(--text);">Write</strong> and confirm in MetaMask</span></li>
+      <li><span class="step-num">7</span><span>You receive <strong style="color:var(--green);">5 random Symbol Alpha tokens</strong></span></li>
+    </ol>
+    <div class="buy-notes">
+      <div class="buy-notes-title">Notes</div>
+      <ul style="list-style:none;padding:0;margin:0;" class="buy-notes">
+        <li>First 5 packs per wallet can be bought back to back</li>
+        <li>After 5 packs there is a 24 hour cooldown between purchases</li>
+        <li>Symbols appear as unrevealed on marketplaces until metadata is resolved (Alpha limitation)</li>
+        <li>To view your symbols use this library or read directly from chain</li>
+      </ul>
+    </div>
+    <button class="buy-close" id="buyModalClose">Close</button>
+  </div>
+</div>
+
+<!-- CONTEXT MENU -->
+<div id="ctxMenu">
+  <div class="ctx-item" id="ctxOpen">Open viewer</div>
+  <div class="ctx-item" id="ctxOpenNew">Open in new window</div>
+  <div class="ctx-item" id="ctxChainData" style="display:none;">&#9672; Open with chain data</div>
+  <div class="ctx-sep"></div>
+  <div class="ctx-item" id="ctxFav">&#9734; Add to favourites</div>
+  <div class="ctx-item" id="ctxAnnot">&#9998; Edit annotation</div>
+  <div class="ctx-sep"></div>
+  <div class="ctx-item" id="ctxInfo">View manifest</div>
+  <div class="ctx-sep"></div>
+  <div class="ctx-item" id="ctxDownload">Download GIF</div>
+</div>
+
+<!-- ANNOTATION MODAL -->
+<div id="annotModal">
+  <div class="annot-box">
+    <h3 id="annotTitle">ANNOTATION</h3>
+    <textarea id="annotText" placeholder="write a note..."></textarea>
+    <div class="annot-btns">
+      <button class="annot-btn" id="annotCancel">Cancel</button>
+      <button class="annot-btn primary" id="annotSave">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- POPUP PREF MODAL -->
+<div id="popupPrefModal">
+  <div class="pref-box">
+    <h3>OPEN VIEWER</h3>
+    <p>Open symbol viewers as popup windows, or embedded in this page?</p>
+    <div class="pref-btns">
+      <button class="pref-btn primary" id="prefPopup">Popup window</button>
+      <button class="pref-btn" id="prefEmbed">Embedded</button>
+    </div>
+    <div id="dontAskAgain">do not ask again</div>
+  </div>
+</div>
+
+<!-- DATE CALENDAR PICKER -->
+<div id="calPicker">
+  <div id="calNav">
+    <button id="calNavBtn-prev">&#8592;</button>
+    <span id="calNavLabel"></span>
+    <input id="calNavInput" type="text" placeholder="DD/MM-YY"/>
+    <button id="calNavBtn-next">&#8594;</button>
+  </div>
+  <div id="calGrid"></div>
+  <div id="calJumpInfo"></div>
+</div>
+
+<script>
+(function() {
+
+/* ── STATE ── */
+var symbols      = [];
+var filtered     = [];
+var viewMode     = localStorage.getItem("defView")      || "grid";
+var gridSize     = parseInt(localStorage.getItem("defGridSize") || "1");
+var activeFilter = "";   // folder key for filter (__favs__ or tag value)
+var sortCol      = localStorage.getItem("sortCol")      || "number";
+var sortDir      = parseInt(localStorage.getItem("sortDir") || "1");
+var searchTerm   = "";
+var openPref     = localStorage.getItem("openPref") || "";
+/* migrate old "embed" preference to "popup" */
+if (openPref === "embed") { openPref = "popup"; localStorage.setItem("openPref", "popup"); }
+var ctxSymbol    = null;
+var manifestWin  = null;
+var popupCounter = 0;
+var useOffset    = localStorage.getItem("popupOffset")  !== "false";
+
+/* ── WALLET STATE ── */
+var walletAddress = "";
+var ownedTokens   = {};  // folder key -> token data
+
+/* ── CONTRACT CONFIG ── fill in when deployed ──
+   CONTRACT_ADDRESS : deployed contract on Base
+   tokenURI(uint256) is used per token — same as parser.py
+   For getting all tokens by owner, the function name needs
+   confirming from your .sol file. Stubbed below. ── */
+var CONTRACT_ADDRESS = "0xB881317390AbA4fA628C2235381D7838070125EC";
+var RPC_URL_BASE     = "https://mainnet.base.org";
+var shortcutsOn  = localStorage.getItem("shortcuts")    !== "false";
+var recentOn     = localStorage.getItem("recentOn")     === "true";
+var autoChain    = localStorage.getItem("autoChain")    === "true";
+var favourites   = JSON.parse(localStorage.getItem("favourites")   || "{}");
+var annotations  = JSON.parse(localStorage.getItem("annotations")  || "{}");
+var recentList   = JSON.parse(localStorage.getItem("recentList")   || "[]");
+var popupAskDone = localStorage.getItem("popupAskDone") === "true";
+var selectedIdx  = -1;   // keyboard nav index into filtered[]
+
+var GRID_WIDTHS = [72, 120, 180];
+var MAX_RECENT  = 12;
+
+/* ── BANNER ── */
+if (!sessionStorage.getItem("bannerDismissed")) {
+  document.getElementById("webBanner").style.display = "flex";
+}
+document.getElementById("closeBanner").onclick = function() {
+  document.getElementById("webBanner").style.display = "none";
+  sessionStorage.setItem("bannerDismissed", "1");
+};
+
+/* ── FETCH ── */
+fetch("/api/symbols")
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    symbols = data;
+    buildDropdown();
+    applyFilter();
+    applySettings();
+    renderRecent();
+    /* Load chain data — static file first, then auto-update if setting on */
+    doChainFetch(true).then(function(){
+      if(autoChain) doChainFetch(false);
+    });
+  })
+  .catch(function(){
+    document.getElementById("emptyState").style.display = "block";
+    document.getElementById("emptyState").textContent = "Could not load symbols. Is the server running?";
+  });
+
+/* ── DROPDOWN (filter + sort combined) ── */
+function buildDropdown() {
+  var tagSet = {};
+  symbols.forEach(function(s) {
+    if (s.manifest.timeline) tagSet[s.manifest.timeline] = true;
+    if (s.manifest.dimension) tagSet[s.manifest.dimension] = true;
+  });
+
+  var menu = document.getElementById("mainDropMenu");
+  menu.innerHTML = "";
+
+  // FILTER section
+  var fl = document.createElement("div");
+  fl.className = "drop-section-label";
+  fl.textContent = "Filter";
+  menu.appendChild(fl);
+
+  // Favourites
+  addDropItem(menu, "&#9733; Favourites", "__favs__", "filter");
+
+  // Timeline flyout
+  var tlValues = [...new Set(symbols.map(function(s){ return s.manifest.timeline; }).filter(Boolean))];
+  if (tlValues.length) addFlyoutItem(menu, "Timeline", tlValues, "timeline");
+
+  // Dimension flyout
+  var dimValues = [...new Set(symbols.map(function(s){ return s.manifest.dimension; }).filter(Boolean))];
+  if (dimValues.length) addFlyoutItem(menu, "Dimension", dimValues, "dimension");
+
+  menu.appendChild(makeSep());
+
+  // SORT section
+  var sl = document.createElement("div");
+  sl.className = "drop-section-label";
+  sl.textContent = "Sort";
+  menu.appendChild(sl);
+
+  [
+    { label: "Number",  col: "number"  },
+    { label: "Title",   col: "title"   },
+    { label: "Date",    col: "date"    },
+  ].forEach(function(s) {
+    addDropItem(menu, s.label, s.col, "sort");
+  });
+}
+
+function addDropItem(menu, label, value, type) {
+  var item = document.createElement("div");
+  item.className = "drop-item";
+  item.dataset.value = value;
+  item.dataset.type  = type;
+
+  var check = document.createElement("span");
+  check.className = "drop-check";
+  item.appendChild(check);
+
+  var lbl = document.createElement("span");
+  lbl.innerHTML = label;
+  item.appendChild(lbl);
+
+  if (type === "sort") {
+    var dir = document.createElement("span");
+    dir.className = "sort-dir";
+    dir.id = "sortDir_" + value;
+    item.appendChild(dir);
+  }
+
+  item.onclick = function() {
+    if (type === "filter") {
+      activeFilter = activeFilter === value ? "" : value;
+      closeAllDropdowns();
+      updateDropBtn();
+      applyFilter();
+    } else if (value === "date") {
+      // open calendar picker anchored to this item
+      closeAllDropdowns();
+      sortCol = "date"; sortDir = 1;
+      localStorage.setItem("sortCol","date"); localStorage.setItem("sortDir","1");
+      updateDropBtn(); applyFilter();
+      setTimeout(function(){ openCal(item); }, 10);
+    } else {
+      if (sortCol === value) {
+        sortDir *= -1;
+        localStorage.setItem("sortDir", sortDir);
+      } else {
+        sortCol = value;
+        sortDir = 1;
+        localStorage.setItem("sortCol", sortCol);
+        localStorage.setItem("sortDir", "1");
+      }
+      closeAllDropdowns();
+      updateDropBtn();
+      applyFilter();
+    }
+  };
+  menu.appendChild(item);
+}
+
+function addFlyoutItem(menu, label, values, filterKey) {
+  var item = document.createElement("div");
+  item.className = "drop-item flyout-item";
+
+  var check = document.createElement("span");
+  check.className = "drop-check";
+  check.id = "flyCheck_" + filterKey;
+  item.appendChild(check);
+
+  var lbl = document.createElement("span");
+  lbl.textContent = label;
+  item.appendChild(lbl);
+
+  var arrow = document.createElement("span");
+  arrow.className = "flyout-arrow";
+  arrow.textContent = "▶";
+  item.appendChild(arrow);
+
+  var sub = document.createElement("div");
+  sub.className = "flyout-menu";
+
+  values.forEach(function(val) {
+    var opt = document.createElement("div");
+    opt.className = "flyout-opt";
+    opt.dataset.filterKey = filterKey;
+    opt.dataset.val = val;
+
+    var c = document.createElement("span");
+    c.className = "drop-check";
+    opt.appendChild(c);
+
+    var t = document.createElement("span");
+    t.textContent = val;
+    opt.appendChild(t);
+
+    opt.onclick = function(e) {
+      e.stopPropagation();
+      var combined = filterKey + ":" + val;
+      activeFilter = activeFilter === combined ? "" : combined;
+      closeAllDropdowns();
+      updateDropBtn();
+      applyFilter();
+    };
+    sub.appendChild(opt);
+  });
+
+  item.appendChild(sub);
+  menu.appendChild(item);
+}
+
+function makeSep() {
+  var s = document.createElement("div");
+  s.className = "drop-sep";
+  return s;
+}
+
+function updateDropBtn() {
+  var btn = document.getElementById("mainDropBtn");
+  var label = "&#9660; ";
+  if      (activeFilter === "__owned__") label += "&#9672; owned";
+  else if (activeFilter === "__favs__")  label += "&#9733; favourites";
+  else if (activeFilter)          label += activeFilter;
+  else                            label += "filter";
+  btn.innerHTML = label;
+  btn.classList.toggle("active", !!activeFilter);
+
+  // update checkmarks and sort direction labels
+  document.querySelectorAll("#mainDropMenu .drop-item:not(.flyout-item)").forEach(function(item) {
+    var check = item.querySelector(".drop-check");
+    var type  = item.dataset.type;
+    var value = item.dataset.value;
+    if (!check) return;
+    if (type === "filter") {
+      check.textContent = value === activeFilter ? "✓" : "";
+      item.classList.toggle("active", value === activeFilter);
+    } else {
+      check.textContent = value === sortCol ? "✓" : "";
+      item.classList.toggle("active", value === sortCol);
+      var dirEl = document.getElementById("sortDir_" + value);
+      if (dirEl) dirEl.textContent = value === sortCol ? (sortDir === 1 ? "▲" : "▼") : "";
+    }
+  });
+  // flyout active state
+  document.querySelectorAll(".flyout-opt").forEach(function(opt) {
+    var combined = opt.dataset.filterKey + ":" + opt.dataset.val;
+    var c = opt.querySelector(".drop-check");
+    if (c) c.textContent = combined === activeFilter ? "✓" : "";
+    opt.classList.toggle("active", combined === activeFilter);
+  });
+  // flyout parent check
+  ["timeline","dimension"].forEach(function(key) {
+    var el = document.getElementById("flyCheck_" + key);
+    if (el) el.textContent = activeFilter.startsWith(key + ":") ? "✓" : "";
+  });
+  // update main btn label for flyout filters
+  if (activeFilter && activeFilter.indexOf(":") > -1) {
+    var parts = activeFilter.split(":");
+    document.getElementById("mainDropBtn").innerHTML = "&#9660; " + parts[1];
+    document.getElementById("mainDropBtn").classList.add("active");
+  }
+}
+
+document.getElementById("mainDropBtn").onclick = function(e) {
+  e.stopPropagation();
+  document.getElementById("mainDropMenu").classList.toggle("open");
+};
+
+function closeAllDropdowns() {
+  document.querySelectorAll(".dropdown-menu").forEach(function(m){ m.classList.remove("open"); });
+  var mintMenu = document.getElementById("mintDropMenu");
+  if (mintMenu) mintMenu.classList.remove("open");
+}
+document.addEventListener("click", function() {
+  closeAllDropdowns();
+  document.getElementById("ctxMenu").style.display = "none";
+  document.getElementById("settingsPanel").classList.remove("open");
+});
+
+/* ── WALLET ── */
+function truncateAddr(addr){ return addr.slice(0,6)+"..."+addr.slice(-4); }
+
+async function connectWallet(){
+  if(!window.ethereum){ alert("No wallet detected. Install MetaMask or a Base-compatible wallet."); return; }
+  try{
+    var accounts = await window.ethereum.request({method:"eth_requestAccounts"});
+    if(!accounts.length) return;
+    walletAddress = accounts[0];
+    onWalletConnected();
+  }catch(e){ console.error("Wallet connect:",e); }
+}
+
+function disconnectWallet(){
+  walletAddress=""; ownedTokens={};
+  if(activeFilter==="__owned__") activeFilter="";
+  updateWalletUI(); updateDropBtn(); applyFilter(); render();
+}
+
+function onWalletConnected(){ updateWalletUI(); fetchOwnedTokens(); }
+
+function updateWalletUI(){
+  var indicator = document.getElementById("walletIndicator");
+  var dot       = document.getElementById("walletDot");
+  var label     = document.getElementById("walletLabel");
+  var addr      = document.getElementById("walletAddr");
+  if(walletAddress){
+    if(indicator){ indicator.classList.add("connected"); indicator.title=walletAddress; }
+    if(dot) dot.classList.add("on");
+    if(label) label.textContent=truncateAddr(walletAddress);
+    if(addr) addr.textContent=walletAddress;
+    ensureOwnedFilterItem();
+  } else {
+    if(indicator){ indicator.classList.remove("connected"); indicator.title="Connect wallet"; }
+    if(dot) dot.classList.remove("on");
+    if(label) label.textContent="wallet";
+    if(addr) addr.textContent="";
+  }
+}
+
+function ensureOwnedFilterItem(){
+  if(document.getElementById("ownedFilterItem")) return;
+  var menu=document.getElementById("mainDropMenu");
+  var first=menu.querySelector(".drop-item");
+  var item=document.createElement("div");
+  item.className="drop-item"; item.id="ownedFilterItem";
+  item.dataset.value="__owned__"; item.dataset.type="filter";
+  var check=document.createElement("span"); check.className="drop-check"; item.appendChild(check);
+  var lbl=document.createElement("span"); lbl.innerHTML="&#9672; Owned"; item.appendChild(lbl);
+  item.onclick=function(){ activeFilter=activeFilter==="__owned__"?"":"__owned__"; closeAllDropdowns(); updateDropBtn(); applyFilter(); };
+  if(first&&first.nextSibling) menu.insertBefore(item,first.nextSibling);
+  else menu.appendChild(item);
+}
+
+/* ── FETCH OWNED TOKENS ──
+   Primary: scan chainData index for tokens owned by this wallet (no RPC needed)
+   Fallback: RPC ownerOf loop if no index available
+   ── */
+async function fetchOwnedTokens(){
+  ownedTokens={};
+  if(!walletAddress){ render(); return; }
+
+  /* Use index if available — fast, no RPC */
+  if(chainData && chainData.revealed && chainData.revealed.length){
+    updateOwnedFromIndex();
+    return;
+  }
+
+  /* No index — need RPC */
+  if(!CONTRACT_ADDRESS){ render(); return; }
+  try{
+    var balHex = await rpcCall("eth_call",[{
+      to: CONTRACT_ADDRESS,
+      data: "0x70a08231" + walletAddress.slice(2).padStart(64,"0")
+    },"latest"]);
+    var balance = parseInt(balHex,16);
+    if(!balance){ render(); return; }
+
+    /* Fetch chain index first, then use it */
+    await doChainFetch(true);
+    if(chainData && chainData.revealed) {
+      updateOwnedFromIndex();
+    }
+    render();
+  }catch(e){ console.error("fetchOwnedTokens:",e); render(); }
+}
+
+function updateOwnedFromIndex(){
+  ownedTokens={};
+  if(!chainData || !chainData.revealed || !walletAddress) return;
+  chainData.revealed.forEach(function(token){
+    if(token.owner && token.owner.toLowerCase() === walletAddress.toLowerCase()){
+      if(token.folder) ownedTokens[token.folder] = token;
+    }
+  });
+  render();
+}
+
+async function rpcCall(method,params){
+  /* Route through local Flask proxy to avoid CORS on Base RPC */
+  var res=await fetch("/api/rpc",{method:"POST",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({jsonrpc:"2.0",id:1,method:method,params:params})});
+  var j=await res.json();
+  if(j.error) throw new Error(j.error.message);
+  return j.result;
+}
+
+document.getElementById("walletIndicator").onclick=function(e){
+  e.stopPropagation();
+  if(walletAddress) document.getElementById("walletDrop").classList.toggle("open");
+  else connectWallet();
+};
+document.getElementById("walletDisconnect").onclick=function(e){
+  e.stopPropagation();
+  disconnectWallet();
+  document.getElementById("walletDrop").classList.remove("open");
+};
+if(window.ethereum){
+  window.ethereum.on("accountsChanged",function(accounts){
+    if(!accounts.length) disconnectWallet();
+    else{ walletAddress=accounts[0]; onWalletConnected(); }
+  });
+}
+
+/* ── FILTER + SORT ── */
+function applyFilter() {
+  var q = searchTerm.toLowerCase();
+  filtered = symbols.filter(function(s) {
+    var m = s.manifest;
+    var matchSearch = !q ||
+      (m.title  && m.title.toLowerCase().includes(q))  ||
+      (m.number && m.number.includes(q))                ||
+      (m.timeline && m.timeline.toLowerCase().includes(q));
+    var matchFilter;
+    if (activeFilter === "__owned__") {
+      matchFilter = !!ownedTokens[s.folder];
+    } else if (activeFilter === "__favs__") {
+      matchFilter = !!favourites[s.folder];
+    } else if (activeFilter && activeFilter.indexOf(":") > -1) {
+      var parts = activeFilter.split(":");
+      var fKey = parts[0], fVal = parts[1];
+      matchFilter = (m[fKey] === fVal);
+    } else if (activeFilter) {
+      matchFilter = m.timeline === activeFilter || m.dimension === activeFilter;
+    } else {
+      matchFilter = true;
+    }
+    return matchSearch && matchFilter;
+  });
+
+  // Sort
+  filtered.sort(function(a, b) {
+    var av = a.manifest[sortCol] || "";
+    var bv = b.manifest[sortCol] || "";
+
+    if (sortCol === "number") {
+      // numeric sort — strip non-digits and compare as integer
+      var an = parseInt(av.replace(/\D/g,""), 10) || 0;
+      var bn = parseInt(bv.replace(/\D/g,""), 10) || 0;
+      return (an - bn) * sortDir;
+    }
+
+    if (sortCol === "date") {
+      // parse DD/MM-YY or DD/MM-YYYY into a sortable integer YYYYMMDD
+      function parseDate(s) {
+        var m = s.match(/(\d{1,2})\/(\d{1,2})[-\/](\d{2,4})/);
+        if (!m) return 0;
+        var d = parseInt(m[1],10), mo = parseInt(m[2],10), yr = parseInt(m[3],10);
+        if (yr < 100) yr += 2000;
+        return yr * 10000 + mo * 100 + d;
+      }
+      return (parseDate(av) - parseDate(bv)) * sortDir;
+    }
+
+    // default string sort
+    av = av.toLowerCase(); bv = bv.toLowerCase();
+    if (av < bv) return -sortDir;
+    if (av > bv) return  sortDir;
+    return 0;
+  });
+
+  selectedIdx = -1;
+  render();
+  updateDropBtn();
+}
+
+/* ── RENDER ── */
+function render() {
+  document.getElementById("symbolCount").textContent = filtered.length + " symbols";
+  if (viewMode === "grid") renderGrid();
+  else renderList();
+  document.getElementById("emptyState").style.display = filtered.length === 0 ? "block" : "none";
+}
+
+function gifUrl(s) {
+  return "/symbols/" + encodeURIComponent(s.folder) + "/" + encodeURIComponent(s.gif);
+}
+function viewerUrl(s) {
+  return "/symbols/" + encodeURIComponent(s.folder) + "/viewer.html?folder=" + encodeURIComponent(s.folder);
+}
+
+function makeCard(s, idx) {
+  var w = GRID_WIDTHS[gridSize];
+  var card = document.createElement("div");
+  card.className = "symbol-card" +
+    (favourites[s.folder]  ? " favourited" : "") +
+    (annotations[s.folder] ? " has-annot"  : "") +
+    (ownedTokens[s.folder] ? " owned"      : "") +
+    (idx === selectedIdx   ? " selected"   : "");
+  card.style.width = w + "px";
+  card.tabIndex = 0;
+  card.dataset.idx = idx;
+
+  var thumb = document.createElement("div");
+  thumb.className = "card-thumb";
+
+  var img = document.createElement("img");
+  img.dataset.src = gifUrl(s);
+  img.src = "";
+  img.alt = s.manifest.title || s.folder;
+  img.style.opacity = "0";
+  img.style.transition = "opacity 0.2s";
+  thumb.appendChild(img);
+
+  var star = document.createElement("div");
+  star.className = "fav-star";
+  star.textContent = "★";
+  thumb.appendChild(star);
+
+  var dot = document.createElement("div");
+  dot.className = "annot-dot";
+  thumb.appendChild(dot);
+
+  var ownDot = document.createElement("div");
+  ownDot.className = "owned-dot";
+  thumb.appendChild(ownDot);
+
+  card.appendChild(thumb);
+
+  var info = document.createElement("div");
+  info.className = "card-info";
+  info.innerHTML =
+    '<div class="card-number">' + (s.manifest.number || "") + '</div>' +
+    '<div class="card-title">'  + (s.manifest.title  || s.folder) + '</div>';
+  card.appendChild(info);
+
+  card.addEventListener("click", function(e) {
+    e.preventDefault();
+    selectedIdx = idx;
+    openSymbol(s, false);
+  });
+  card.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+    selectedIdx = idx;
+    showCtxMenu(e, s);
+  });
+  card.addEventListener("focus", function() {
+    selectedIdx = idx;
+  });
+  return card;
+}
+
+function renderGrid() {
+  document.getElementById("grid").style.display = "flex";
+  document.getElementById("list").style.display = "none";
+  var container = document.getElementById("grid");
+  container.innerHTML = "";
+  filtered.forEach(function(s, i) {
+    container.appendChild(makeCard(s, i));
+  });
+  observeImages();
+}
+
+function renderList() {
+  document.getElementById("grid").style.display = "none";
+  document.getElementById("list").style.display = "block";
+
+  document.getElementById("listHead").innerHTML =
+    '<tr>' +
+    '<th></th>' +
+    '<th data-col="number">#</th>' +
+    '<th data-col="title">Title</th>' +
+    '<th data-col="date">Date</th>' +
+    '<th data-col="dimension">Dim</th>' +
+    '<th data-col="timeline">Timeline</th>' +
+    '<th>&#9835;</th>' +
+    '<th>&#9733;</th>' +
+    '<th>&#9998;</th>' +
+    '<th title="Owned">&#9672;</th>' +
+    '</tr>';
+
+  document.querySelectorAll("#listHead th[data-col]").forEach(function(th) {
+    if (th.dataset.col === sortCol) {
+      th.textContent += sortDir === 1 ? " ▲" : " ▼";
+    }
+    th.addEventListener("click", function() {
+      if (sortCol === th.dataset.col) {
+        sortDir *= -1;
+        localStorage.setItem("sortDir", sortDir);
+      } else {
+        sortCol = th.dataset.col;
+        sortDir = 1;
+        localStorage.setItem("sortCol", sortCol);
+        localStorage.setItem("sortDir", "1");
+      }
+      applyFilter();
+    });
+  });
+
+  var tbody = document.getElementById("listBody");
+  tbody.innerHTML = "";
+  filtered.forEach(function(s, i) {
+    var isFav    = !!favourites[s.folder];
+    var hasAnnot = !!annotations[s.folder];
+    var isOwned  = !!ownedTokens[s.folder];
+    var tr = document.createElement("tr");
+    if (i === selectedIdx) tr.style.background = "var(--bg3)";
+    tr.innerHTML =
+      '<td><img class="list-thumb" src="' + gifUrl(s) + '"/></td>' +
+      '<td class="list-number">' + (s.manifest.number || "")       + '</td>' +
+      '<td class="list-title">'  + (s.manifest.title  || s.folder) + '</td>' +
+      '<td class="list-dim">'    + (s.manifest.date   || "")       + '</td>' +
+      '<td class="list-dim">'    + (s.manifest.dimension || "")    + '</td>' +
+      '<td class="list-dim">'    + (s.manifest.timeline  || "")    + '</td>' +
+      '<td class="list-audio">'  + (s.has_audio ? "♪" : "")        + '</td>' +
+      '<td class="list-fav'   + (isFav    ? "" : " empty") + '">★</td>' +
+      '<td class="list-annot' + (hasAnnot ? "" : " empty") + '">&#9632;</td>' +
+      '<td class="list-owned' + (isOwned  ? "" : " empty") + '">&#9672;</td>';
+    tr.addEventListener("click", function() { selectedIdx = i; openSymbol(s, false); });
+    tr.addEventListener("contextmenu", function(e) { e.preventDefault(); selectedIdx = i; showCtxMenu(e, s); });
+    tbody.appendChild(tr);
+  });
+}
+
+/* ── RECENTLY VIEWED ── */
+function addToRecent(s) {
+  recentList = recentList.filter(function(f){ return f !== s.folder; });
+  recentList.unshift(s.folder);
+  if (recentList.length > MAX_RECENT) recentList = recentList.slice(0, MAX_RECENT);
+  localStorage.setItem("recentList", JSON.stringify(recentList));
+  renderRecent();
+}
+
+function renderRecent() {
+  var bar = document.getElementById("recentBar");
+  // Remove old thumbs (keep clear button)
+  var existing = bar.querySelectorAll(".recent-thumb");
+  existing.forEach(function(el){ el.remove(); });
+
+  if (!recentOn || recentList.length === 0) return;
+
+  var clearBtn = document.getElementById("recentClear");
+  recentList.forEach(function(folder) {
+    var s = symbols.find(function(x){ return x.folder === folder; });
+    if (!s) return;
+    var thumb = document.createElement("div");
+    thumb.className = "recent-thumb";
+    thumb.title = (s.manifest.number || "") + " " + (s.manifest.title || folder);
+
+    var img = document.createElement("img");
+    img.src = gifUrl(s);
+    thumb.appendChild(img);
+
+    var lbl = document.createElement("div");
+    lbl.className = "recent-label";
+    lbl.textContent = s.manifest.number || folder;
+    thumb.appendChild(lbl);
+
+    thumb.onclick = function() { openSymbol(s, false); };
+    bar.insertBefore(thumb, clearBtn);
+  });
+}
+
+function setRecentVisible(on) {
+  recentOn = on;
+  localStorage.setItem("recentOn", on ? "true" : "false");
+  var bar  = document.getElementById("recentBar");
+  var main = document.getElementById("main");
+  bar.classList.toggle("visible", on && recentList.length > 0);
+  main.classList.toggle("with-recent", on && recentList.length > 0);
+  renderRecent();
+  applySettings();
+}
+
+document.getElementById("recentToggleBtn").onclick = function(e) {
+  e.stopPropagation();
+  setRecentVisible(!recentOn);
+};
+document.getElementById("recentClear").onclick = function(e) {
+  e.stopPropagation();
+  recentList = [];
+  localStorage.removeItem("recentList");
+  setRecentVisible(false);
+};
+
+// init bar visibility
+if (recentOn && recentList.length > 0) {
+  document.getElementById("recentBar").classList.add("visible");
+  document.getElementById("main").classList.add("with-recent");
+}
+
+/* ── FAVOURITES ── */
+function toggleFavourite(s) {
+  if (favourites[s.folder]) delete favourites[s.folder];
+  else favourites[s.folder] = true;
+  localStorage.setItem("favourites", JSON.stringify(favourites));
+  render();
+}
+
+/* ── ANNOTATIONS ── */
+var annotTarget = null;
+function openAnnotModal(s) {
+  annotTarget = s;
+  document.getElementById("annotTitle").textContent =
+    (s.manifest.number || "") + " — " + (s.manifest.title || s.folder);
+  document.getElementById("annotText").value = annotations[s.folder] || "";
+  document.getElementById("annotModal").classList.add("show");
+  setTimeout(function(){ document.getElementById("annotText").focus(); }, 50);
+}
+document.getElementById("annotSave").onclick = function() {
+  if (!annotTarget) return;
+  var val = document.getElementById("annotText").value.trim();
+  if (val) annotations[annotTarget.folder] = val;
+  else     delete annotations[annotTarget.folder];
+  localStorage.setItem("annotations", JSON.stringify(annotations));
+  document.getElementById("annotModal").classList.remove("show");
+  render();
+};
+document.getElementById("annotCancel").onclick = function() {
+  document.getElementById("annotModal").classList.remove("show");
+};
+document.getElementById("annotModal").addEventListener("click", function(e) {
+  if (e.target === this) document.getElementById("annotModal").classList.remove("show");
+});
+
+/* ── POPUP POSITIONING ── */
+function calcPopupPos() {
+  var sw = screen.width, sh = screen.height;
+  var pw = 620, ph = 760;
+  var baseLeft = Math.round(sw * (2/3));
+  var baseTop  = Math.round(sh * (1/10));
+  var offset   = useOffset ? popupCounter * 24 : 0;
+  var left = Math.min(baseLeft + offset, sw - pw - 10);
+  var top  = Math.min(baseTop  + offset, sh - ph - 40);
+  popupCounter++;
+  return { left: left, top: top, width: pw, height: ph };
+}
+
+/* ── OPEN SYMBOL ── */
+function openSymbol(s, forceNew) {
+  if (!s.has_viewer) return;
+  addToRecent(s);
+  if (forceNew) { doOpen(s, "popup"); return; }
+  if (popupAskDone && openPref) { doOpen(s, openPref); return; }
+  showPrefModal(s);
+}
+
+function doOpen(s, mode) {
+  var url = viewerUrl(s);
+  if (mode === "popup") {
+    var p = calcPopupPos();
+    var winName = (s.manifest.number || "") + " " + (s.manifest.title || s.folder);
+    window.open(url, winName,
+      "width=" + p.width + ",height=" + p.height +
+      ",left=" + p.left + ",top=" + p.top +
+      ",resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,status=no");
+  } else {
+    window.open(url, "_blank");
+  }
+}
+
+/* ── PREF MODAL ── */
+function showPrefModal(s) {
+  document.getElementById("popupPrefModal").classList.add("show");
+  document.getElementById("prefPopup").onclick = function() {
+    openPref = "popup"; closePrefModal(); doOpen(s, "popup");
+  };
+  document.getElementById("prefEmbed").onclick = function() {
+    openPref = "embed"; closePrefModal(); doOpen(s, "embed");
+  };
+  document.getElementById("dontAskAgain").onclick = function() {
+    if (!openPref) openPref = "popup";
+    popupAskDone = true;
+    localStorage.setItem("popupAskDone", "true");
+    localStorage.setItem("openPref", openPref);
+    closePrefModal(); doOpen(s, openPref);
+  };
+}
+function closePrefModal() {
+  document.getElementById("popupPrefModal").classList.remove("show");
+}
+document.getElementById("popupPrefModal").addEventListener("click", function(e) {
+  if (e.target === this) closePrefModal();
+});
+
+/* ── CONTEXT MENU ── */
+function showCtxMenu(e, s) {
+  ctxSymbol = s;
+  document.getElementById("ctxFav").innerHTML =
+    favourites[s.folder] ? "&#9733; Remove from favourites" : "&#9734; Add to favourites";
+  document.getElementById("ctxAnnot").innerHTML =
+    annotations[s.folder] ? "&#9998; Edit annotation" : "&#9998; Add annotation";
+  document.getElementById("ctxChainData").style.display =
+    ownedTokens[s.folder] ? "block" : "none";
+  var menu = document.getElementById("ctxMenu");
+  menu.style.display = "block";
+  var x = Math.min(e.clientX, window.innerWidth  - 210);
+  var y = Math.min(e.clientY, window.innerHeight - 200);
+  menu.style.left = x + "px";
+  menu.style.top  = y + "px";
+}
+
+document.getElementById("ctxChainData").onclick = function() {
+  if(!ctxSymbol) return;
+  var td=ownedTokens[ctxSymbol.folder]; if(!td) return;
+  var url=viewerUrl(ctxSymbol);
+  if(td.effects)    url+="&nft_effects="  +encodeURIComponent(td.effects);
+  if(td.grid)       url+="&nft_grid="     +encodeURIComponent(td.grid);
+  if(td.generation) url+="&nft_gen="      +encodeURIComponent(td.generation);
+  if(td.chain)      url+="&nft_chain="    +encodeURIComponent(td.chain);
+  if(td.ts)         url+="&nft_ts="       +encodeURIComponent(td.ts);
+  if(td.owner)      url+="&nft_owner="    +encodeURIComponent(td.owner);
+  if(td.tokenId)    url+="&nft_tokenid="  +encodeURIComponent(td.tokenId);
+  if(td.number)     url+="&nft_number="   +encodeURIComponent(td.number);
+  if(td.effectParams) Object.keys(td.effectParams).forEach(function(k){
+    url+="&"+k+"="+encodeURIComponent(td.effectParams[k]);
+  });
+  var p=calcPopupPos();
+  var wn="sym_" + Date.now();
+  window.open(url,wn,"width=620,height=760,left="+p.left+",top="+p.top+",resizable=yes,scrollbars=yes");
+};
+document.getElementById("ctxOpen").onclick     = function() { if(ctxSymbol) openSymbol(ctxSymbol, false); };
+document.getElementById("ctxOpenNew").onclick   = function() { if(ctxSymbol) doOpen(ctxSymbol, "popup"); };
+document.getElementById("ctxFav").onclick       = function() { if(ctxSymbol) toggleFavourite(ctxSymbol); };
+document.getElementById("ctxAnnot").onclick     = function() { if(ctxSymbol) openAnnotModal(ctxSymbol); };
+document.getElementById("ctxInfo").onclick      = function() { if(ctxSymbol) openManifest(ctxSymbol); };
+document.getElementById("ctxDownload").onclick  = function() {
+  if(!ctxSymbol || !ctxSymbol.gif) return;
+  var a = document.createElement("a");
+  a.href = gifUrl(ctxSymbol);
+  a.download = ctxSymbol.gif;
+  a.click();
+};
+
+/* ── MANIFEST PANEL ── */
+function openManifest(s) {
+  var url = "/manifest-panel.html?folder=" + encodeURIComponent(s.folder);
+  if (manifestWin && !manifestWin.closed) {
+    manifestWin.location.href = url;
+  } else {
+    var p = calcPopupPos();
+    manifestWin = window.open(url, "manifestPanel",
+      "width=360,height=540,left=" + (p.left - 370) + ",top=" + p.top +
+      ",resizable=yes,scrollbars=yes");
+  }
+}
+
+/* ── KEYBOARD SHORTCUTS ── */
+document.addEventListener("keydown", function(e) {
+  if (!shortcutsOn) return;
+  var tag = document.activeElement && document.activeElement.tagName;
+  if (tag === "INPUT" || tag === "TEXTAREA") return;
+
+  if (e.key === "Escape") {
+    closeAllDropdowns();
+    document.getElementById("settingsPanel").classList.remove("open");
+    document.getElementById("ctxMenu").style.display = "none";
+    closePrefModal();
+    return;
+  }
+
+  if (e.key === "/") {
+    e.preventDefault();
+    document.getElementById("searchInput").focus();
+    return;
+  }
+
+  if (filtered.length === 0) return;
+
+  var step = 1;
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+    // calculate columns per row from grid width and card width
+    if (viewMode === "grid") {
+      var gridEl = document.getElementById("grid");
+      var cardW  = [72, 120, 180][gridSize] + 10; // card + gap
+      var cols   = Math.max(1, Math.floor(gridEl.offsetWidth / cardW));
+      step = cols;
+    }
+  }
+
+  if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+    e.preventDefault();
+    selectedIdx = Math.min(selectedIdx + step, filtered.length - 1);
+    if (selectedIdx < 0) selectedIdx = 0;
+    render();
+    scrollToSelected();
+  } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+    e.preventDefault();
+    selectedIdx = Math.max(selectedIdx - step, 0);
+    render();
+    scrollToSelected();
+  } else if (e.key === " " && selectedIdx >= 0) {
+    e.preventDefault();
+    openSymbol(filtered[selectedIdx], false);
+  } else if (e.key === "f" || e.key === "F") {
+    if (selectedIdx >= 0) toggleFavourite(filtered[selectedIdx]);
+  }
+});
+
+function scrollToSelected() {
+  if (selectedIdx < 0) return;
+  var cards = document.querySelectorAll(".symbol-card");
+  if (cards[selectedIdx]) {
+    cards[selectedIdx].scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+}
+
+/* ── SETTINGS ── */
+document.getElementById("settingsBtn").onclick = function(e) {
+  e.stopPropagation();
+  document.getElementById("settingsPanel").classList.toggle("open");
+};
+document.getElementById("settingsPanel").addEventListener("click", function(e) {
+  e.stopPropagation();
+});
+
+function applySettings() {
+  document.getElementById("setViewGrid").classList.toggle("active",   viewMode === "grid");
+  document.getElementById("setViewList").classList.toggle("active",   viewMode === "list");
+  ["Sm","Md","Lg"].forEach(function(s, i) {
+    document.getElementById("setGrid" + s).classList.toggle("active", gridSize === i);
+  });
+  document.getElementById("setPrefPopup").classList.toggle("active",  openPref === "popup");
+  document.getElementById("setPrefEmbed").classList.toggle("active",  openPref === "embed");
+  document.getElementById("setOffsetOn").classList.toggle("active",   useOffset);
+  document.getElementById("setOffsetOff").classList.toggle("active",  !useOffset);
+  document.getElementById("setShortcutsOn").classList.toggle("active",  shortcutsOn);
+  document.getElementById("setShortcutsOff").classList.toggle("active", !shortcutsOn);
+  document.getElementById("setRecentOn").classList.toggle("active",   recentOn);
+  document.getElementById("setRecentOff").classList.toggle("active",  !recentOn);
+  document.getElementById("setAutoChainOn").classList.toggle("active",  autoChain);
+  document.getElementById("setAutoChainOff").classList.toggle("active", !autoChain);
+  document.getElementById("sizeSlider").value = gridSize;
+  document.getElementById("btnGrid").classList.toggle("active", viewMode === "grid");
+  document.getElementById("btnList").classList.toggle("active", viewMode === "list");
+  document.getElementById("recentToggleBtn").classList.toggle("active", recentOn);
+}
+
+document.getElementById("setPrefPopup").onclick   = function() { openPref = "popup"; localStorage.setItem("openPref", openPref); applySettings(); };
+document.getElementById("setPrefEmbed").onclick   = function() { openPref = "embed"; localStorage.setItem("openPref", openPref); applySettings(); };
+document.getElementById("setOffsetOn").onclick    = function() { useOffset = true;  localStorage.setItem("popupOffset","true");  applySettings(); };
+document.getElementById("setOffsetOff").onclick   = function() { useOffset = false; localStorage.setItem("popupOffset","false"); applySettings(); };
+document.getElementById("setShortcutsOn").onclick = function() { shortcutsOn = true;  localStorage.setItem("shortcuts","true");  applySettings(); };
+document.getElementById("setShortcutsOff").onclick= function() { shortcutsOn = false; localStorage.setItem("shortcuts","false"); applySettings(); };
+document.getElementById("setRecentOn").onclick    = function() { setRecentVisible(true);  };
+document.getElementById("setAutoChainOn").onclick  = function() { autoChain=true;  localStorage.setItem("autoChain","true");  applySettings(); };
+document.getElementById("setAutoChainOff").onclick = function() { autoChain=false; localStorage.setItem("autoChain","false"); applySettings(); };
+document.getElementById("setRecentOff").onclick   = function() { setRecentVisible(false); };
+document.getElementById("setViewGrid").onclick    = function() { viewMode = "grid"; localStorage.setItem("defView", viewMode); applySettings(); render(); };
+document.getElementById("setViewList").onclick    = function() { viewMode = "list"; localStorage.setItem("defView", viewMode); applySettings(); render(); };
+["Sm","Md","Lg"].forEach(function(s, i) {
+  document.getElementById("setGrid" + s).onclick = function() {
+    gridSize = i; localStorage.setItem("defGridSize", gridSize);
+    document.getElementById("sizeSlider").value = gridSize;
+    applySettings(); render();
+  };
+});
+document.getElementById("resetAskAgain").onclick = function() {
+  popupAskDone = false; openPref = "";
+  localStorage.removeItem("popupAskDone"); localStorage.removeItem("openPref");
+  applySettings();
+  var btn = this; btn.textContent = "✓ reset";
+  setTimeout(function(){ btn.textContent = "Reset \"do not ask again\""; }, 1500);
+};
+document.getElementById("clearFavourites").onclick = function() {
+  favourites = {}; localStorage.removeItem("favourites"); render();
+  var btn = this; btn.textContent = "✓ cleared";
+  setTimeout(function(){ btn.textContent = "Clear all favourites"; }, 1500);
+};
+document.getElementById("clearAnnotations").onclick = function() {
+  annotations = {}; localStorage.removeItem("annotations"); render();
+  var btn = this; btn.textContent = "✓ cleared";
+  setTimeout(function(){ btn.textContent = "Clear all annotations"; }, 1500);
+};
+document.getElementById("clearRecent").onclick = function() {
+  recentList = []; localStorage.removeItem("recentList"); setRecentVisible(false);
+  var btn = this; btn.textContent = "✓ cleared";
+  setTimeout(function(){ btn.textContent = "Clear recently viewed"; }, 1500);
+};
+
+/* ── VIEW TOGGLE ── */
+document.getElementById("btnGrid").onclick = function() { viewMode = "grid"; localStorage.setItem("defView", viewMode); applySettings(); render(); };
+document.getElementById("btnList").onclick = function() { viewMode = "list"; localStorage.setItem("defView", viewMode); applySettings(); render(); };
+
+/* ── SIZE SLIDER ── */
+document.getElementById("sizeSlider").oninput = function() {
+  gridSize = parseInt(this.value); localStorage.setItem("defGridSize", gridSize);
+  applySettings(); render();
+};
+
+/* ── SEARCH ── */
+document.getElementById("searchInput").oninput = function() {
+  searchTerm = this.value; applyFilter();
+};
+
+/* ── LOGO SCROLL TO TOP + RESET FILTERS ── */
+document.querySelector("#topbar h1").onclick = function() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  searchTerm = "";
+  activeFilter = "";
+  document.getElementById("searchInput").value = "";
+  updateDropBtn();
+  applyFilter();
+};
+
+/* ── MINT BUTTON ── */
+/* ── MINT DROPDOWN ── */
+document.getElementById("mintDropBtn").onclick = function(e) {
+  e.stopPropagation();
+  document.getElementById("mintDropMenu").classList.toggle("open");
+};
+document.getElementById("mintSimBtn").onclick = function() {
+  document.getElementById("mintDropMenu").classList.remove("open");
+  var sw = screen.width, sh = screen.height;
+  window.open("mint.html", "mintPack",
+    "width=" + sw + ",height=" + sh + ",left=0,top=0,resizable=no,scrollbars=no");
+};
+document.getElementById("mintBuyBtn").onclick = function() {
+  document.getElementById("mintDropMenu").classList.remove("open");
+  document.getElementById("buyModal").classList.add("show");
+};
+document.getElementById("buyModalClose").onclick = function() {
+  document.getElementById("buyModal").classList.remove("show");
+};
+document.getElementById("buyModal").addEventListener("click", function(e) {
+  if (e.target === this) this.classList.remove("show");
+});
+
+
+/* ── DATE CALENDAR ── */
+var calOpen     = false;
+var calYear     = new Date().getFullYear();
+var calMonth    = new Date().getMonth(); // 0-based
+var calDates    = {};  // "YYYY-M-D" -> symbol
+var dateJumpTarget = null;
+
+function buildCalDates() {
+  calDates = {};
+  symbols.forEach(function(s) {
+    var m = s.manifest.date || "";
+    var match = m.match(/(\d{1,2})\/(\d{1,2})[-\/](\d{2,4})/);
+    if (!match) return;
+    var d = parseInt(match[1],10), mo = parseInt(match[2],10), yr = parseInt(match[3],10);
+    if (yr < 100) yr += 2000;
+    var key = yr + "-" + mo + "-" + d;
+    if (!calDates[key]) calDates[key] = [];
+    calDates[key].push(s);
+  });
+}
+
+function renderCal() {
+  var monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  document.getElementById("calNavLabel").textContent =
+    monthNames[calMonth] + " " + calYear;
+
+  var grid = document.getElementById("calGrid");
+  grid.innerHTML = "";
+
+  // day name headers
+  ["M","T","W","T","F","S","S"].forEach(function(d) {
+    var el = document.createElement("div");
+    el.className = "cal-dayname";
+    el.textContent = d;
+    grid.appendChild(el);
+  });
+
+  // first day of month (Mon=0)
+  var first = new Date(calYear, calMonth, 1).getDay();
+  first = (first + 6) % 7; // make Monday=0
+  var days = new Date(calYear, calMonth + 1, 0).getDate();
+  var today = new Date();
+
+  for (var i = 0; i < first; i++) {
+    var el = document.createElement("div");
+    el.className = "cal-day empty";
+    grid.appendChild(el);
+  }
+  for (var d = 1; d <= days; d++) {
+    var el = document.createElement("div");
+    el.textContent = d;
+    var key = calYear + "-" + (calMonth+1) + "-" + d;
+    var isToday = (d === today.getDate() && calMonth === today.getMonth() && calYear === today.getFullYear());
+    var hasSym  = !!calDates[key];
+    el.className = "cal-day" +
+      (hasSym  ? " has-symbol" : "") +
+      (isToday ? " today" : "");
+    if (dateJumpTarget && dateJumpTarget.y === calYear &&
+        dateJumpTarget.m === calMonth+1 && dateJumpTarget.d === d) {
+      el.classList.add("highlight");
+    }
+    (function(day, k) {
+      el.onclick = function() {
+        jumpToDate(calYear, calMonth+1, day);
+      };
+    })(d, key);
+    grid.appendChild(el);
+  }
+}
+
+function jumpToDate(yr, mo, day) {
+  dateJumpTarget = { y: yr, m: mo, d: day };
+  // set sort to date ascending
+  sortCol = "date"; sortDir = 1;
+  localStorage.setItem("sortCol", sortCol);
+  localStorage.setItem("sortDir", "1");
+  applyFilter();
+
+  // find first symbol on or after this date
+  var target = yr * 10000 + mo * 100 + day;
+  function parseDate(s) {
+    var raw = (s.manifest.date || "");
+    var match = raw.match(/(\d{1,2})\/(\d{1,2})[-\/](\d{2,4})/);
+    if (!match) return 0;
+    var d2 = parseInt(match[1],10), m2 = parseInt(match[2],10), y2 = parseInt(match[3],10);
+    if (y2 < 100) y2 += 2000;
+    return y2 * 10000 + m2 * 100 + d2;
+  }
+  var idx = -1;
+  for (var i = 0; i < filtered.length; i++) {
+    if (parseDate(filtered[i]) >= target) { idx = i; break; }
+  }
+
+  var info = document.getElementById("calJumpInfo");
+  if (idx >= 0) {
+    selectedIdx = idx;
+    render();
+    setTimeout(scrollToSelected, 100);
+    // flash highlight on card
+    setTimeout(function() {
+      var cards = document.querySelectorAll(".symbol-card");
+      if (cards[idx]) {
+        cards[idx].style.boxShadow = "0 0 0 2px var(--green)";
+        setTimeout(function() { cards[idx].style.boxShadow = ""; }, 1200);
+      }
+    }, 200);
+    info.textContent = filtered[idx].manifest.number + " — " + (filtered[idx].manifest.title || "");
+  } else {
+    info.textContent = "no symbols on or after this date";
+  }
+  renderCal();
+}
+
+function openCal(anchorEl) {
+  buildCalDates();
+  calOpen = true;
+  var cal = document.getElementById("calPicker");
+  cal.classList.add("open");
+  var rect = anchorEl.getBoundingClientRect();
+  cal.style.left = rect.left + "px";
+  cal.style.top  = (rect.bottom + 4) + "px";
+  renderCal();
+}
+function closeCal() {
+  calOpen = false;
+  document.getElementById("calPicker").classList.remove("open");
+}
+
+document.getElementById("calNavBtn-prev").onclick = function(e) {
+  e.stopPropagation();
+  calMonth--; if(calMonth < 0){ calMonth=11; calYear--; } renderCal();
+};
+document.getElementById("calNavBtn-next").onclick = function(e) {
+  e.stopPropagation();
+  calMonth++; if(calMonth > 11){ calMonth=0; calYear++; } renderCal();
+};
+
+// click label to type a date directly
+document.getElementById("calNavLabel").onclick = function(e) {
+  e.stopPropagation();
+  var lbl = document.getElementById("calNavLabel");
+  var inp = document.getElementById("calNavInput");
+  lbl.style.display = "none";
+  inp.style.display = "block";
+  inp.value = "";
+  inp.placeholder = "MM/YYYY";
+  inp.focus();
+};
+document.getElementById("calNavInput").addEventListener("keydown", function(e) {
+  e.stopPropagation();
+  if (e.key === "Enter") {
+    var val = this.value.trim();
+    var m = val.match(/^(\d{1,2})[\/-](\d{2,4})$/);
+    if (m) {
+      calMonth = parseInt(m[1],10) - 1;
+      calYear  = parseInt(m[2],10);
+      if (calYear < 100) calYear += 2000;
+      if (calMonth < 0) calMonth = 0;
+      if (calMonth > 11) calMonth = 11;
+    }
+    this.style.display = "none";
+    document.getElementById("calNavLabel").style.display = "";
+    renderCal();
+  } else if (e.key === "Escape") {
+    this.style.display = "none";
+    document.getElementById("calNavLabel").style.display = "";
+  }
+});
+document.getElementById("calNavInput").addEventListener("click", function(e) { e.stopPropagation(); });
+
+document.getElementById("calPicker").addEventListener("click", function(e) { e.stopPropagation(); });
+document.addEventListener("click", function() { closeCal(); });
+
+
+/* ── CHAIN TAB ── */
+var currentTab      = "library";
+var chainData       = JSON.parse(localStorage.getItem("chainData") || "null");
+var chainDontAsk    = localStorage.getItem("chainDontAsk") === "true";
+var TOTAL_SUPPLY    = 333;   // unique symbols
+var MAX_TOKEN_ID    = 3333;  // contract max supply (totalMinted ceiling)
+var CHAIN_GRID_SIZE = 1; // uses same GRID_WIDTHS
+
+/* Tab switching */
+document.getElementById("tabLibrary").onclick = function() {
+  currentTab = "library";
+  document.getElementById("tabLibrary").classList.add("active");
+  document.getElementById("tabChain").classList.remove("active");
+  document.getElementById("main").style.display = "block";
+  document.getElementById("chainView").classList.remove("visible");
+};
+document.getElementById("tabChain").onclick = function() {
+  currentTab = "chain";
+  document.getElementById("tabChain").classList.add("active");
+  document.getElementById("tabLibrary").classList.remove("active");
+  document.getElementById("main").style.display = "none";
+  document.getElementById("chainView").classList.add("visible");
+  renderChain();
+};
+
+/* Update button */
+document.getElementById("updateChainBtn").onclick = function() {
+  if (chainDontAsk) { doChainFetch(); return; }
+  document.getElementById("chainUpdateModal").classList.add("show");
+};
+document.getElementById("chainModalCancel").onclick = function() {
+  document.getElementById("chainUpdateModal").classList.remove("show");
+};
+document.getElementById("chainModalConfirm").onclick = function() {
+  if (document.getElementById("chainDontAsk").checked) {
+    chainDontAsk = true;
+    localStorage.setItem("chainDontAsk", "true");
+  }
+  document.getElementById("chainUpdateModal").classList.remove("show");
+  doChainFetch();
+};
+
+/* ── CHAIN FETCH ──
+   Primary  : reads chain_data.json (static file, built by chain_index.py)
+   Fallback : live RPC fetch if no static file available
+   ── */
+async function doChainFetch(silent) {
+  var btn = document.getElementById("updateChainBtn");
+  if (!silent) { btn.innerHTML = "&#8635; fetching..."; btn.classList.add("loading"); }
+
+  /* Try static chain_data.json first */
+  try {
+    var r = await fetch("chain_data.json?t=" + Date.now());
+    if (r.ok) {
+      var data = await r.json();
+      if (data && data.revealed) {
+        chainData = data;
+        localStorage.setItem("chainData", JSON.stringify(chainData));
+        renderChain();
+        if (!silent) { btn.innerHTML = "&#8635; Update"; btn.classList.remove("loading"); }
+        /* Also update owned tokens if wallet connected */
+        if (walletAddress) updateOwnedFromIndex();
+        return;
+      }
+    }
+  } catch(e) { /* no static file — fall through to live RPC */ }
+
+  /* Live RPC fetch */
+  try {
+    /* ── Get total minted count via totalMinted() ── */
+    var totalMintedHex = await rpcCall("eth_call", [{
+      to: CONTRACT_ADDRESS,
+      data: "0xa2309ff8"  /* keccak256("totalMinted()") - verified with cast */
+    }, "latest"]);
+    var totalMinted = parseInt(totalMintedHex, 16);
+    if (!totalMinted || totalMinted > MAX_TOKEN_ID) totalMinted = MAX_TOKEN_ID;
+
+    var revealed    = [];
+    var hiddenCount = 0;
+    var BATCH_SIZE  = 50;  /* tokens per batch */
+
+    document.getElementById("statRevealed").textContent = "…";
+    document.getElementById("statHidden").textContent   = "…";
+    document.getElementById("updateChainBtn").innerHTML =
+      "&#8635; fetching 0/" + totalMinted;
+
+    /* Fetch in parallel batches to speed up the loop */
+    for (var batchStart = 1; batchStart <= totalMinted; batchStart += BATCH_SIZE) {
+      var batchEnd = Math.min(batchStart + BATCH_SIZE - 1, totalMinted);
+      var batchIds = [];
+      for (var bi = batchStart; bi <= batchEnd; bi++) batchIds.push(bi);
+
+      /* Fetch all tokenURIs in this batch in parallel */
+      var batchResults = await Promise.all(batchIds.map(function(id) {
+        return fetchTokenURIjs(id).catch(function(){ return null; });
+      }));
+
+      batchResults.forEach(function(uri, idx) {
+        var id = batchIds[idx];
+        if (uri && uri.trim().startsWith("=== symbol")) {
+          try {
+            var parsed = parseOnchainMetadata(uri);
+            var s = symbols.find(function(x){ return x.manifest.number === parsed.number; });
+            revealed.push({
+              tokenId:    id,
+              number:     parsed.number,
+              title:      parsed.title,
+              folder:     s ? s.folder : null,
+              gif:        s ? s.gif    : null,
+              generation: parsed.generation,
+              chain:      parsed.chain,
+              ts:         parsed.timestamp,
+              effects:    parsed.effects,
+              revealed:   true
+            });
+          } catch(e) { hiddenCount++; }
+        } else {
+          hiddenCount++;
+        }
+      });
+
+      /* Update progress */
+      document.getElementById("statRevealed").textContent = revealed.length;
+      document.getElementById("statHidden").textContent   = hiddenCount;
+      document.getElementById("updateChainBtn").innerHTML =
+        "&#8635; fetching " + batchEnd + "/" + totalMinted;
+
+      /* Small yield between batches to keep UI responsive */
+      await new Promise(function(r){ setTimeout(r, 10); });
+    }
+
+    chainData = {
+      revealed:    revealed,
+      hiddenCount: hiddenCount,
+      totalMinted: totalMinted,
+      fetchedAt:   Date.now()
+    };
+    localStorage.setItem("chainData", JSON.stringify(chainData));
+    renderChain();
+
+  } catch(e) {
+    console.error("Chain fetch error:", e);
+    btn.innerHTML = "&#8635; Update (error)";
+    btn.classList.remove("loading");
+    return;
+  }
+
+  btn.innerHTML = "&#8635; Update";
+  btn.classList.remove("loading");
+}
+
+/* Low-level tokenURI fetch in JS (mirrors parser.py logic) */
+async function fetchTokenURIjs(tokenId) {
+  // ABI encode tokenURI(uint256) call
+  var sig  = "0xc87b56dd"; // keccak256("tokenURI(uint256)") first 4 bytes
+  var padded = tokenId.toString(16).padStart(64, "0");
+  var data = sig + padded;
+  var result = await rpcCall("eth_call", [{ to: CONTRACT_ADDRESS, data: data }, "latest"]);
+  // decode ABI string — use TextDecoder for proper UTF-8 handling
+  var hex    = result.slice(2);
+  var len    = parseInt(hex.slice(64, 128), 16);
+  var strHex = hex.slice(128, 128 + len * 2);
+  var bytes  = new Uint8Array(strHex.match(/.{2}/g).map(function(b){ return parseInt(b,16); }));
+  return new TextDecoder("utf-8").decode(bytes);
+}
+
+/* Parse on-chain metadata string (JS port of parser.py) */
+function parseOnchainMetadata(raw) {
+  var lines = raw.split("\n").map(function(l){ return l.trim(); })
+    .filter(function(l){
+      if (!l) return false;
+      if (l.startsWith("===")) return false;
+      /* only filter separator lines (all dashes), not grid rows containing --- cells */
+      if (/^-+$/.test(l.replace(/ /g,""))) return false;
+      return true;
+    });
+  var file  = lines[0] || "";
+  var gen   = lines[1] || "";
+  var chain = lines[2] || "";
+  var m = file.match(/^(\d+) - (.+)\.gif$/);
+  var number = m ? m[1] : "";
+  var title  = m ? m[2] : file;
+  var idx = 3;
+  var gridLines = [];
+  while (idx < lines.length && !/^\d+$/.test(lines[idx])) {
+    gridLines.push(lines[idx]); idx++;
+  }
+  var ts = parseInt(lines[idx] || "0"); idx++;
+  if (lines[idx] === "effects:") idx++;
+  var glowRaw   = lines[idx]   || "~";
+  var invertRaw = lines[idx+1] || "~";
+  var filtRaw   = lines[idx+2] || "~";
+  var effects = [parseEffectLine(glowRaw), parseEffectLine(invertRaw), parseEffectLine(filtRaw)]
+    .filter(function(e){ return e !== null; });
+  return { number:number, title:title, generation:gen, chain:chain,
+           grid:gridLines.join("|"), timestamp:ts, effects:effects };
+}
+
+function parseEffectLine(line) {
+  line = (line||"").trim();
+  if (!line || line === "~") return null;
+  if (line === "I") return { type:"negative" };
+  if (line === "@G") return { type:"glow", pulse:true, cycle:true };
+  if (line === "@F") return { type:"filter", pulse:true, cycle:true };
+  var m;
+  m = line.match(/^\*([GF]):([RGBWCMY])$/);
+  if (m) return { type: m[1]==="G"?"glow":"filter", color:m[2], pulse:true, cycle:false };
+  m = line.match(/^※([GF])\[(\d+)\]$/);
+  if (m) { var k=m[1]==="G"?"glow":"filter"; var r={}; r.type=k; r[k==="glow"?"radius":"opacity"]=parseInt(m[2]); r.pulse=false; r.cycle=true; return r; }
+  m = line.match(/^([GF]):([RGBWCMY])\[(\d+)\]$/);
+  if (m) { var k2=m[1]==="G"?"glow":"filter"; var r2={}; r2.type=k2; r2.color=m[2]; r2[k2==="glow"?"radius":"opacity"]=parseInt(m[3]); r2.pulse=false; r2.cycle=false; return r2; }
+  return null;
+}
+
+/* ── RENDER CHAIN ── */
+function renderChain() {
+  var w = GRID_WIDTHS[gridSize];
+  var grid = document.getElementById("chainGrid");
+  var empty = document.getElementById("chainEmpty");
+  grid.innerHTML = "";
+
+  if (!chainData || !chainData.revealed) {
+    empty.classList.add("visible");
+    document.getElementById("statRevealed").textContent = "—";
+    document.getElementById("statHidden").textContent   = "—";
+    return;
+  }
+  empty.classList.remove("visible");
+
+  var revealed = chainData.revealed;
+  var hidden   = chainData.hiddenCount || (TOTAL_SUPPLY - revealed.length);
+  document.getElementById("statRevealed").textContent = revealed.length;
+  document.getElementById("statHidden").textContent   = hidden;
+  document.getElementById("statTotal").textContent    = TOTAL_SUPPLY;
+
+  revealed.forEach(function(token) {
+    var card = document.createElement("div");
+    card.className = "chain-card" + (token.folder && ownedTokens[token.folder] ? " owned" : "");
+    card.style.width = w + "px";
+
+    var thumb = document.createElement("div");
+    thumb.className = "chain-thumb";
+
+    var img = document.createElement("img");
+    if (token.folder && token.gif) {
+      img.src = "/symbols/" + encodeURIComponent(token.folder) + "/" + encodeURIComponent(token.gif);
+    } else {
+      img.src = "";
+    }
+    img.alt = token.title || "";
+
+    // Apply CSS effects to thumbnail
+    applyEffectsToImg(img, token.effects);
+
+    thumb.appendChild(img);
+
+    // Effect pills overlay (visible on hover)
+    var pills = document.createElement("div");
+    pills.className = "chain-effect-pills";
+    (token.effects || []).forEach(function(e) {
+      var pill = document.createElement("span");
+      pill.className = "chain-pill";
+      pill.textContent = effectToLabel(e);
+      pills.appendChild(pill);
+    });
+    if (pills.children.length) thumb.appendChild(pills);
+
+    card.appendChild(thumb);
+
+    var info = document.createElement("div");
+    info.className = "chain-info";
+    var dateStr = "";
+    if (token.ts) {
+      var d = new Date(token.ts * 1000);
+      var pad = function(n){ return n<10?"0"+n:n; };
+      dateStr = pad(d.getDate())+"/"+pad(d.getMonth()+1)+"-"+String(d.getFullYear()).slice(2);
+    }
+    info.innerHTML =
+      '<div class="chain-number">' + (token.number||"#"+token.tokenId) + '</div>' +
+      '<div class="chain-title">'  + (token.title||"") + '</div>' +
+      '<div class="chain-date">'   + dateStr + '</div>';
+    card.appendChild(info);
+
+    card.onclick = function() {
+      if (!token.folder) return;
+      var s = symbols.find(function(x){ return x.folder===token.folder; });
+      if (!s) return;
+      var url = viewerUrl(s);
+      // apply effects via URL params
+      var ep = effectsToUrlParams(token.effects);
+      Object.keys(ep).forEach(function(k){ url+="&"+k+"="+encodeURIComponent(ep[k]); });
+      // NFT metadata
+      if (token.generation) url+="&nft_gen="+encodeURIComponent(token.generation);
+      if (token.chain)      url+="&nft_chain="+encodeURIComponent(token.chain);
+      if (token.ts)         url+="&nft_ts="+encodeURIComponent(token.ts);
+      if (token.grid)       url+="&nft_grid="+encodeURIComponent(token.grid);
+      if (token.owner)      url+="&nft_owner="+encodeURIComponent(token.owner);
+      if (token.tokenId)    url+="&nft_tokenid="+encodeURIComponent(token.tokenId);
+      if (token.number)     url+="&nft_number="+encodeURIComponent(token.number);
+      var pills2 = (token.effects||[]).map(effectToLabel).filter(Boolean).join(",");
+      if (pills2) url+="&nft_effects="+encodeURIComponent(pills2);
+      var p = calcPopupPos();
+      var wn = "sym_" + Date.now();
+      window.open(url,wn,"width=620,height=760,left="+p.left+",top="+p.top+",resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,status=no");
+    };
+
+    grid.appendChild(card);
+  });
+}
+
+/* Apply CSS filter to img element based on effects array */
+function applyEffectsToImg(img, effects) {
+  if (!effects || !effects.length) return;
+  var filterParts = [];
+  var glowColor = null, glowRadius = 10;
+  var filterColor = null, filterOpacity = 0.7;
+  var negative = false;
+  var gPulse = false, gCycle = false, fPulse = false, fCycle = false;
+
+  effects.forEach(function(e) {
+    if (e.type === "negative") { negative = true; }
+    else if (e.type === "glow") {
+      var colorMap = {R:"red",G:"#00dd00",B:"#4488ff",W:"white"};
+      glowColor  = e.color ? (colorMap[e.color]||e.color) : "white";
+      glowRadius = e.radius || 10;
+      gPulse = !!e.pulse; gCycle = !!e.cycle;
+    } else if (e.type === "filter") {
+      var fcMap = {C:"cyan",M:"magenta",Y:"yellow"};
+      filterColor   = e.color ? (fcMap[e.color]||e.color) : "cyan";
+      filterOpacity = (e.opacity||40) / 50;
+      fPulse = !!e.pulse; fCycle = !!e.cycle;
+    }
+  });
+
+  if (negative) filterParts.push("invert(1)");
+  if (filterColor && !fCycle) {
+    filterParts.push("opacity("+filterOpacity.toFixed(2)+") drop-shadow(0 0 0 "+filterColor+")");
+  }
+  if (glowColor && !gCycle && !gPulse) {
+    filterParts.push("drop-shadow(0 0 "+glowRadius+"px "+glowColor+")");
+  }
+  if (filterParts.length) img.style.filter = filterParts.join(" ");
+
+  // Animated effects via CSS animation
+  if (gCycle && gPulse) {
+    img.style.animation = "cycleHue 2s linear infinite";
+  } else if (gCycle) {
+    img.style.animation = "cycleHue 3s linear infinite";
+  } else if (gPulse && glowColor) {
+    img.style.setProperty("--glow-color", glowColor);
+    img.style.animation = "pulseGlow 1.5s ease-in-out infinite";
+  }
+  if (fCycle) {
+    img.style.animation = (img.style.animation ? img.style.animation+", " : "") + "cycleFilter 3s linear infinite";
+  }
+}
+
+/* Convert effects array to URL params (for opening viewer) */
+function effectsToUrlParams(effects) {
+  var p = {};
+  (effects||[]).forEach(function(e) {
+    if (e.type==="glow"||e.type==="flow_glow") {
+      var colorMap={R:"red",G:"green",B:"blue",W:"white"};
+      if (e.color) p.gcolor = colorMap[e.color]||e.color;
+      if (e.radius) p.gsize = String(e.radius);
+      if (e.pulse) p.gpulse = "true";
+      if (e.cycle) p.gcycle = "true";
+    } else if (e.type==="filter") {
+      var fcMap={C:"cyan",M:"magenta",Y:"yellow"};
+      if (e.color) p.fcolor = fcMap[e.color]||e.color;
+      if (e.opacity) p.fopacity = String(e.opacity);
+      if (e.pulse) p.fpulse = "true";
+      if (e.cycle) p.fcycle = "true";
+    } else if (e.type==="negative") {
+      p.negative = "true";
+    }
+  });
+  return p;
+}
+
+/* Effect label for pills */
+function effectToLabel(e) {
+  if (!e) return "";
+  if (e.type==="negative") return "I";
+  var g = e.type==="glow", prefix = g ? "G" : "F";
+  if (e.pulse&&e.cycle) return "@"+prefix;
+  if (e.pulse) return "*"+prefix+":"+(e.color||"");
+  if (e.cycle) return "※"+prefix+"["+(g?e.radius:e.opacity)+"]";
+  return prefix+":"+(e.color||"")+"["+(g?e.radius:e.opacity)+"]";
+}
+
+/* Keep chain grid size in sync with main slider */
+document.getElementById("sizeSlider").addEventListener("input", function() {
+  if (currentTab === "chain") renderChain();
+});
+
+/* ── INTERSECTION OBSERVER ── */
+var imgObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      var img = entry.target;
+      if (img.dataset.src) {
+        img.src = img.dataset.src;
+        img.onload  = function() { img.style.opacity = "1"; };
+        img.onerror = function() { img.style.opacity = "1"; };
+        delete img.dataset.src;
+        imgObserver.unobserve(img);
+      }
+    }
+  });
+}, { rootMargin: "200px" });
+
+function observeImages() {
+  document.querySelectorAll("img[data-src]").forEach(function(img) {
+    imgObserver.observe(img);
+  });
+}
+
+})();
+</script>
+
+</body>
+</html>

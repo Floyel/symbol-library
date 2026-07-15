@@ -1,0 +1,19 @@
+{
+  "title": "ljudp",
+  "number": "0254",
+  "filetype": ".gif",
+  "frames": "18(0,2)",
+  "date": "18/9-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↑ ● jord", "↑ ● luft", "↓ ● vann"],
+  "L2": ["↑ ○ jord", "↓ ● vann", "↑ ● luft", "↓ ○ ild"],
+  "L3": ["↓ ● luft", "↑ ● ild", "↑ ● vann", "↓ ○ jord"],
+  "L4": ["↑ ★ metall", "↑ ★ plante", "---", "↑ ★ lyn"],
+  "L5": ["---", "↓ ★ lyn", "---", "↑ ★ metall"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

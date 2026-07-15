@@ -1,0 +1,19 @@
+{
+  "title": "goujfø",
+  "number": "0301",
+  "filetype": ".gif",
+  "frames": "10(0,2)",
+  "date": "4/11-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● jord", "↑ ○ jord", "↓ ● vann", "↓ ● jord"],
+  "L2": ["↓ ● luft", "↑ ● ild", "↑ ● vann", "↑ ● luft"],
+  "L3": ["↑ ● vann", "↑ ● luft", "↑ ○ ild", "↓ ● ild"],
+  "L4": ["---", "↑ ★ metall", "↑ ★ lyn", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

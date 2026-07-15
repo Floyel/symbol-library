@@ -1,0 +1,19 @@
+{
+  "title": "uhur",
+  "number": "0249",
+  "filetype": ".gif",
+  "frames": "21(0,2)",
+  "date": "13/9-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↑ ○ vann", "↑ ● jord", "↓ ○ vann"],
+  "L2": ["↓ ● vann", "↑ ● jord", "↑ ○ ild", "↓ ● ild"],
+  "L3": ["↓ ● luft", "↓ ● jord", "↑ ● ild", "↓ ● luft"],
+  "L4": ["---", "↓ ★ plante", "↓ ★ metall", "↑ ★ lyn"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

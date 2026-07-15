@@ -1,0 +1,19 @@
+{
+  "title": "øg",
+  "number": "0328",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "11/5-26",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● vann", "↓ ○ jord", "↓ ● ild", "↓ ● ild"],
+  "L2": ["↓ ● jord", "↓ ● ild", "↑ ● luft", "↑ ● luft"],
+  "L3": ["↓ ● luft", "↑ ● vann", "↑ ● jord", "↑ ● vann"],
+  "L4": ["↓ ★ plante", "↓ ★ metall", "---", "---"],
+  "L5": ["---", "↑ ★ lyn", "---", "---"]
+  },
+  "effects": ["Glow","Inverted","Filter"]
+}

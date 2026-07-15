@@ -1,0 +1,19 @@
+{
+  "title": "ehauh",
+  "number": "0197",
+  "filetype": ".gif",
+  "frames": "23(0,2)",
+  "date": "25/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↓ ● vann", "↑ ● luft", "↓ ○ ild", "↓ ○ ild"],
+  "L2":  ["↑ ● jord", "↓ ● ild", "↓ ● vann", "↓ ○ vann"],
+  "L3":  ["↓ ● luft", "↑ ● jord", "↓ ● luft", "↓ ● jord"],
+  "L4":  ["↓ ★ plante", "↑ ★ metall", "↓ ★ lyn", "↓ ★ lyn"],
+  "L5":  ["---", "---", "---", "↑ ★ plante"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

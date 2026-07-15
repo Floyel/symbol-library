@@ -1,0 +1,19 @@
+{
+  "title": "eio",
+  "number": "0248",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "12/9-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● jord", "↑ ● jord", "↑ ● ild", "↑ ● ild"],
+  "L2": ["↑ ● vann", "↑ ● jord", "↑ ○ ild", "↑ ● luft"],
+  "L3": ["↓ ● vann", "↑ ● luft", "↑ ● vann", "↑ ● luft"],
+  "L4": ["↓ ★ plante", "---", "↑ ★ lyn", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

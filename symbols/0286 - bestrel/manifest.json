@@ -1,0 +1,19 @@
+{
+  "title": "bestrel",
+  "number": "0286",
+  "filetype": ".gif",
+  "frames": "10(0,2)",
+  "date": "20/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↑ ○ vann", "↓ ● luft", "↓ ● vann"],
+  "L2": ["↓ ● ild", "↑ ● ild", "↓ ● jord", "↑ ● luft"],
+  "L3": ["↑ ● ild", "↓ ● luft", "↑ ● vann", "↓ ● jord"],
+  "L4": ["↓ ★ metall", "↓ ★ lyn", "↑ ★ plante", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

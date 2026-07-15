@@ -1,0 +1,19 @@
+{
+  "title": "flog",
+  "number": "0140",
+  "filetype": ".gif",
+  "frames": "27(0,2)",
+  "date": "5/3-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↓ ○ jord", "↓ ● luft", "↑ ● ild"],
+  "L2": ["↑ ○ vann", "↓ ● vann", "↓ ● ild", "↓ ● ild"],
+  "L3": ["↑ ● jord", "↓ ○ jord", "↑ ● vann", "↓ ● luft"],
+  "L4": ["↑ ★ plante", "↑ ★ plante", "↑ ★ lyn", "---"],
+  "L5": ["---", "↓ ★ plante", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

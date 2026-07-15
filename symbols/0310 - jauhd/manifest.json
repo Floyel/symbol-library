@@ -1,0 +1,19 @@
+{
+  "title": "jauhd",
+  "number": "0310",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "2/1-26",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● vann", "↑ ● ild", "↑ ● jord", "↑ ● luft"],
+  "L2": ["↓ ● jord", "↑ ○ vann", "↓ ● ild", "↑ ● jord"],
+  "L3": ["↓ ● luft", "↓ ● luft", "↓ ● ild", "↓ ● vann"],
+  "L4": ["↓ ★ plante", "↑ ★ lyn", "↓ ★ metall", "↑ ★ plante"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,48 @@
+{
+  "title": "cobleng",
+  "number": "0030",
+  "filetype": ".gif",
+  "frames": "18(0,2)",
+  "date": "15/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● ild",
+      "↓ ● jord",
+      "↑ ● ild",
+      "↓ ● jord"
+    ],
+    "L2": [
+      "↑ ● luft",
+      "↓ ● luft",
+      "↑ ● ild",
+      "↑ ● luft"
+    ],
+    "L3": [
+      "↓ ● jord",
+      "↑ ● vann",
+      "↓ ● vann",
+      "↓ ● vann"
+    ],
+    "L4": [
+      "---",
+      "---",
+      "↓ ★ lyn",
+      "---"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

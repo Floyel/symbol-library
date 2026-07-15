@@ -1,0 +1,19 @@
+{
+  "title": "eifote",
+  "number": "0305",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "8/11-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ○ vann", "↑ ● ild", "↓ ● ild", "↑ ● luft"],
+  "L2": ["↓ ● jord", "↑ ● luft", "↓ ● luft", "↑ ● vann"],
+  "L3": ["↓ ● jord", "↑ ● ild", "↓ ● vann", "↑ ○ jord"],
+  "L4": ["↓ ★ plante", "---", "---", "↓ ★ plante"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

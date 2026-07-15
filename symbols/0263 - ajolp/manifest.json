@@ -1,0 +1,19 @@
+{
+  "title": "ajolp",
+  "number": "0263",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "27/9-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● vann", "↓ ○ ild", "↑ ● luft", "↑ ○ ild"],
+  "L2": ["↑ ● vann", "↓ ● jord", "↓ ● luft", "↑ ○ jord"],
+  "L3": ["↑ ○ jord", "↑ ● vann", "↑ ● luft", "↑ ● ild"],
+  "L4": ["↓ ★ plante", "↓ ★ metall", "---", "↓ ★ metall"],
+  "L5": ["---", "↓ ★ plante", "---", "↓ ★ metall"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

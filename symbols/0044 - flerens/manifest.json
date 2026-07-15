@@ -1,0 +1,48 @@
+{
+  "title": "flerens",
+  "number": "0044",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "29/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● vann",
+      "↓ ○ ild",
+      "↑ ● jord",
+      "↑ ● jord"
+    ],
+    "L2": [
+      "↑ ● vann",
+      "↓ ● vann",
+      "↑ ○ ild",
+      "↑ ● luft"
+    ],
+    "L3": [
+      "↑ ○ jord",
+      "↓ ● luft",
+      "↓ ● ild",
+      "↑ ● luft"
+    ],
+    "L4": [
+      "↑ ★ plante",
+      "↓ ★ lyn",
+      "↑ ★ metall",
+      "---"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

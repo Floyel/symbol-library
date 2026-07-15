@@ -1,0 +1,19 @@
+{
+  "title": "ovejo",
+  "number": "0270",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "4/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● vann", "↑ ● jord", "↑ ● jord", "↓ ● ild"],
+  "L2": ["↑ ● ild", "↑ ● luft", "↓ ● luft", "↑ ● ild"],
+  "L3": ["↓ ● luft", "↑ ● vann", "↑ ● vann", "↓ ● jord"],
+  "L4": ["↓ ★ lyn", "---", "---", "↓ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

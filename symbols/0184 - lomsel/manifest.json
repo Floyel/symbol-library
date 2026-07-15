@@ -1,0 +1,20 @@
+{
+  "title": "lomsel",
+  "number": "0184",
+  "filetype": ".gif",
+  "frames": "10(0,2)",
+  "date": "10/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↑ ● vann", "↑ ● vann", "↑ ● luft"],
+  "L2": ["↓ ● jord", "↓ ○ jord", "↑ ○ ild", "↓ ● luft"],
+  "L3": ["↓ ● luft", "↓ ● ild", "↑ ● vann", "↓ ● jord"],
+  "L4": ["↑ ★ metall", "↑ ★ plante", "↓ ★ lyn", "---"],
+  "L5": ["---", "↓ ★ metall", "↑ ★ lyn", "---"]
+  
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

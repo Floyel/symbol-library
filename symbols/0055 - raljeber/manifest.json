@@ -1,0 +1,48 @@
+{
+  "title": "raljeber",
+  "number": "0055",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "10/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● jord",
+      "↓ ● luft",
+      "↓ ● jord",
+      "↓ ● ild"
+    ],
+    "L2": [
+      "↓ ● luft",
+      "↑ ● luft",
+      "↓ ○ ild",
+      "↑ ● vann"
+    ],
+    "L3": [
+      "↑ ● jord",
+      "↑ ● ild",
+      "↑ ● vann",
+      "↑ ● vann"
+    ],
+    "L4": [
+      "---",
+      "---",
+      "↑ ★ metall",
+      "↓ ★ lyn"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "↑ ★ lyn",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "title": "jeblop",
+  "number": "0002",
+  "filetype": ".gif",
+  "frames": "9(0,2)",
+  "date": "18/10-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● luft",
+      "↑ ○ ild",
+      "↑ ● vann",
+      "↓ ● ild"
+    ],
+    "L2": [
+      "↑ ● vann",
+      "↑ ● jord",
+      "↓ ● vann",
+      "↓ ○ jord"
+    ],
+    "L3": [
+      "↓ ● luft",
+      "↑ ● luft",
+      "↑ ● ild",
+      "↑ ● jord"
+    ],
+    "L4": [
+      "---",
+      "↑ ★ metall",
+      "↑ ★ lyn",
+      "↑ ★ metall"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "title": "grevelp",
+  "number": "0024",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "9/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● vann",
+      "↑ ● vann",
+      "↓ ○ jord",
+      "↓ ● jord"
+    ],
+    "L2": [
+      "↑ ● vann",
+      "↓ ● luft",
+      "↓ ● ild",
+      "↑ ● jord"
+    ],
+    "L3": [
+      "↑ ● luft",
+      "↑ ● ild",
+      "↑ ● luft",
+      "↓ ● ild"
+    ],
+    "L4": [
+      "---",
+      "---",
+      "↑ ★ metall",
+      "↓ ★ metall"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

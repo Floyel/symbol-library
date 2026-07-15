@@ -1,0 +1,19 @@
+{
+  "title": "kranse",
+  "number": "0094",
+  "filetype": ".gif",
+  "frames": "24(0,2)",
+  "date": "18/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↑ ● jord", "↑ ● luft", "↑ ○ vann"],
+  "L2": ["↓ ● ild", "↑ ○ ild", "↑ ● ild", "↑ ● jord"],
+  "L3": ["↑ ● luft", "↑ ○ jord", "↓ ● vann", "↓ ● vann"],
+  "L4": ["---", "↑ ★ metall", "↓ ★ lyn", "↑ ★ plante"],
+  "L5": ["---", "↓ ★ metall", "---", "↑ ★ plante"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

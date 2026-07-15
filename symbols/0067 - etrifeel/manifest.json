@@ -1,0 +1,21 @@
+{
+  "title": "etrifeel",
+  "number": "0067",
+  "filetype": ".gif",
+  "frames": "18(0,2)",
+  "date": "22/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↓ ● luft", "↑ ● luft", "↑ ● jord", "↓ ● ild"],
+  "L2":  ["↑ ● ild", "↓ ● vann", "↑ ○ jord", "↓ ○ vann"],
+  "L3":  ["↑ ● luft", "↑ ● ild", "↑ ● vann",  "↑ ● jord"],
+  "L4":  ["---", "↑ ★ lyn", "↓ ★ plante", "↓ ★ lyn"],
+  "L5":  ["---", "---", "---", "↑ ★ plante"]
+  },
+  "effects": ["Glow",
+    "Inverted",
+    "Filter"]
+}

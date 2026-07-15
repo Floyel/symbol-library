@@ -1,0 +1,19 @@
+{
+  "title": "wrrurij",
+  "number": "0303",
+  "filetype": ".gif",
+  "frames": "8(0,2)",
+  "date": "6/11-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● vann", "↑ ○ jord", "↓ ● vann", "↓ ● ild"],
+  "L2": ["↑ ● ild", "↑ ● vann", "↓ ● luft", "↑ ● ild"],
+  "L3": ["↑ ○ jord", "↓ ● luft", "↓ ● jord", "↓ ● luft"],
+  "L4": ["↑ ★ lyn", "↑ ★ plante", "---", "---"],
+  "L5": ["↑ ★ metall", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

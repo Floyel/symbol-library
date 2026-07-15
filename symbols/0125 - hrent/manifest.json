@@ -1,0 +1,19 @@
+{
+  "title": "hrent",
+  "number": "0125",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "18/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↓ ○ vann", "↓ ● luft", "↓ ● ild"],
+  "L2": ["↑ ○ ild", "↓ ● ild", "↓ ○ vann", "↓ ● luft"],
+  "L3": ["↑ ○ vann", "↓ ● luft", "↓ ● jord", "↑ ● jord"],
+  "L4": ["↓ ★ metall", "↑ ★ lyn", "↓ ★ plante", "---"],
+  "L5": ["↑ ★ lyn", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

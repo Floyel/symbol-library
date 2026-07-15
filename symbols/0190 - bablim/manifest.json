@@ -1,0 +1,19 @@
+{
+  "title": "bablim",
+  "number": "0190",
+  "filetype": ".gif",
+  "frames": "20(0,1)",
+  "date": "19/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● ild", "↑ ● luft", "↑ ● jord", "↑ ● luft"],
+  "L2": ["↓ ● ild", "↓ ● jord", "↑ ○ vann", "↓ ● vann"],
+  "L3": ["↓ ● ild", "↑ ● jord", "↑ ● luft", "↑ ● vann"],
+  "L4": ["---", "---", "↓ ★ plante", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

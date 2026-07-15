@@ -1,0 +1,19 @@
+{
+  "title": "gjawi",
+  "number": "0080",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "4/5-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● vann", "↑ ● ild", "↑ ● jord", "↑ ● jord"],
+  "L2": ["↓ ● luft", "↑ ● luft", "↑ ○ ild", "↓ ● ild"],
+  "L3": ["↓ ● vann", "↓ ● luft", "↑ ● jord", "↑ ● vann"],
+  "L4": ["---", "---", "↓ ★ metall", "↑ ★ metall"],
+  "L5": ["---", "---", "↓ ★ metall", "↑ ★ lyn"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

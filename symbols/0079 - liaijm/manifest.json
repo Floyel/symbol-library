@@ -1,0 +1,19 @@
+{
+  "title": "liaijm",
+  "number": "0079",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "3/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● vann", "↓ ● jord", "↓ ● vann", "↓ ● vann"],
+  "L2": ["↓ ● ild", "↑ ● luft", "↑ ○ jord", "↓ ● luft"],
+  "L3": ["↑ ● jord", "↑ ● luft", "↑ ● ild", "↑ ● ild"],
+  "L4": ["↑ ★ lyn", "---", "↑ ★ plante", "---"],
+  "L5": ["↑ ★ metall", "---", "↓ ★ metall", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

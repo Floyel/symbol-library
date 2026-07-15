@@ -1,0 +1,19 @@
+{
+  "title": "jasfufeo",
+  "number": "0327",
+  "filetype": ".gif",
+  "frames": "10(0,2)",
+  "date": "10/5-26",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↑ ● vann", "↓ ● luft", "↓ ● vann"],
+  "L2": ["↑ ● jord", "↓ ● luft", "↑ ● ild", "↑ ○ jord"],
+  "L3": ["↓ ● vann", "↑ ● jord", "↑ ● ild", "↑ ● ild"],
+  "L4": ["↓ ★ plante", "---", "---", "↑ ★ plante"],
+  "L5": ["---", "---", "---", "↑ ★ metall"]
+  },
+  "effects": ["Glow","Inverted","Filter"]
+}

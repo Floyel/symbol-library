@@ -1,0 +1,19 @@
+{
+  "title": "sheletn",
+  "number": "0133",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "27/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↓ ● vann", "↓ ● luft", "↑ ● vann"],
+  "L2": ["↓ ● jord", "↓ ● luft", "↓ ● jord", "↑ ○ ild"],
+  "L3": ["↓ ○ vann", "↑ ● luft", "↓ ○ ild", "↓ ● ild"],
+  "L4": ["↑ ★ plante", "---", "↓ ★ metall", "↑ ★ lyn"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "ej-ee-e",
+  "number": "0232",
+  "filetype": ".gif",
+  "frames": "48(0,1)",
+  "date": "27/8-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↑ ● vann", "↓ ● ild", "↓ ● luft"],
+  "L2": ["↑ ● jord", "↓ ● vann", "↑ ● vann", "↑ ● jord"],
+  "L3": ["↓ ● ild", "↓ ○ ild", "↓ ● jord", "↓ ● luft"],
+  "L4": ["↑ ★ metall", "↓ ★ lyn", "↑ ★ lyn", "---"],
+  "L5": ["---", "---", "↑ ★ plante", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": ".xd",
+  "filetype": ".gif",
+  "number": "0257",
+  "frames": "17(0,2)",
+  "date": "21/9-25",
+  "size": "1000x1000 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● jord", "↓ ● luft", "↓ ● vann", "↓ ● ild"],
+  "L2": ["↓ ○ jord", "↓ ● luft", "↓ ● luft", "↑ ● vann"],
+  "L3": ["↓ ● vann", "↓ ● ild", "↓ ● ild", "↓ ● jord"],
+  "L4": ["↓ ★ plante", "---", "---", "↓ ★ lyn"],
+  "L5": ["---", "---", "---", "↑ ★ plante"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

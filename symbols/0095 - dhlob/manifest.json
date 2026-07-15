@@ -1,0 +1,19 @@
+{
+  "title": "dhlob",
+  "number": "0095",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "19/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↑ ● vann", "↑ ● ild", "↓ ● vann"],
+  "L2": ["↓ ● jord", "↑ ● luft", "↑ ● ild", "↓ ○ ild"],
+  "L3": ["↓ ● jord", "↑ ● luft", "↑ ○ jord", "↑ ● vann"],
+  "L4": ["---", "---", "↑ ★ metall", "↓ ★ lyn"],
+  "L5": ["---", "---", "---", "↓ ★ lyn"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

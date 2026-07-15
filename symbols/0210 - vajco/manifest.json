@@ -1,0 +1,19 @@
+{
+  "title": "vajco",
+  "number": "0210",
+  "filetype": ".gif",
+  "frames": "18(0,2)",
+  "date": "25/7-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "The first watercolour symbol",
+  "element_code": {
+  "L1":  ["↓ ● ild", "↑ ● luft", "↓ ● vann", "↑ ● jord"],
+  "L2":  ["↑ ● vann", "↑ ● jord", "↑ ● ild", "↑ ○ ild"],
+  "L3":  ["↓ ● luft", "↑ ● luft", "↓ ● jord", "↑ ● vann"],
+  "L4":  ["↓ ★ lyn", "---", "↑ ★ lyn", "↑ ★ metall"],
+  "L5":  ["---", "---", "↓ ★ metall", "↓ ★ lyn"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "borrap",
+  "number": "0149",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "20/3-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↑ ● ild", "↑ ● vann", "↓ ● luft"],
+  "L2": ["↓ ○ jord", "↑ ● luft", "↓ ● jord", "↑ ● vann"],
+  "L3": ["↓ ● ild", "↑ ● ild", "↓ ● jord", "↑ ● vann"],
+  "L4": ["↑ ★ metall", "---", "↑ ★ plante", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

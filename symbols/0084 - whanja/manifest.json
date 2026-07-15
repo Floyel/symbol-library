@@ -1,0 +1,19 @@
+{
+  "title": "whanja",
+  "number": "0084",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "8/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "First inverted discovered",
+  "element_code": {
+  "L1": ["↑ ● luft", "↓ ● luft", "↓ ● jord", "↑ ○ vann"],
+  "L2": ["↓ ● ild", "↑ ○ ild", "↑ ● jord", "↑ ● jord"],
+  "L3": ["↓ ● ild", "↑ ● vann", "↑ ○ vann", "↑ ● luft"],
+  "L4": ["---", "↑ ★ lyn", "↓ ★ plante", "↑ ★ plante"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "cefk",
+  "number": "0218",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "13/8-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↑ ● luft", "↓ ● ild", "↑ ● ild", "↑ ● vann"],
+  "L2":  ["↓ ● luft", "↓ ● ild", "↑ ○ jord", "↑ ● vann"],
+  "L3":  ["↑ ● vann", "↓ ○ jord", "↑ ● luft", "↑ ○ jord"],
+  "L4":  ["---", "↓ ★ metall", "↓ ★ metall", "↓ ★ plante"],
+  "L5":  ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

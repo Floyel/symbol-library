@@ -1,0 +1,48 @@
+{
+  "title": "hjetung",
+  "number": "0018",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "2/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● ild",
+      "↓ ● vann",
+      "↑ ● jord",
+      "↓ ● vann"
+    ],
+    "L2": [
+      "↓ ● jord",
+      "↑ ● ild",
+      "↓ ● vann",
+      "↓ ● luft"
+    ],
+    "L3": [
+      "↑ ● luft",
+      "↓ ● jord",
+      "↑ ● luft",
+      "↑ ● ild"
+    ],
+    "L4": [
+      "↓ ★ metall",
+      "↑ ★ lyn",
+      "↑ ★ plante",
+      "---"
+    ],
+    "L5": [
+      "---",
+      "↑ ★ metall",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

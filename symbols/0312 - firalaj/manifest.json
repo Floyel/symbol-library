@@ -1,0 +1,19 @@
+{
+  "title": "firalaj",
+  "number": "0312",
+  "filetype": ".gif",
+  "frames": "18(0,2)",
+  "date": "12/1-26",
+  "size": "1000x1000 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↑ ● vann", "↓ ● luft", "↓ ● luft"],
+  "L2": ["↓ ● jord", "↑ ○ jord", "↓ ● vann", "↑ ● vann"],
+  "L3": ["↑ ● ild", "↑ ● luft", "↑ ● ild", "↓ ● jord"],
+  "L4": ["↓ ★ metall", "↑ ★ plante", "↑ ★ lyn", "↑ ★ plante"],
+  "L5": ["↓ ★ metall", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

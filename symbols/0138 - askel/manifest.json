@@ -1,0 +1,20 @@
+{
+  "title": "askel",
+  "number": "0138",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "3/3-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↓ ● vann", "↓ ● vann", "↓ ● ild"],
+  "L2": ["↓ ● luft", "↑ ● ild", "↓ ● luft", "↑ ● jord"],
+  "L3": ["↑ ● jord", "↓ ● vann", "↓ ● jord", "↑ ● luft"],
+  "L4": ["---", "↓ ★ lyn", "---", "↓ ★ metall"],
+  "L5": ["---", "↓ ★ lyn", "---", "---"]
+  
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

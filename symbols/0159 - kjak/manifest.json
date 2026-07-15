@@ -1,0 +1,19 @@
+{
+  "title": "kjak",
+  "number": "0159",
+  "filetype": ".gif",
+  "frames": "19(0,2)",
+  "date": "3/4-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↓ ● vann", "↑ ● ild", "↑ ● jord"],
+  "L2": ["↓ ● vann", "↓ ● luft", "↑ ● luft", "↓ ● ild"],
+  "L3": ["↑ ● jord", "↑ ● vann", "↓ ● luft", "↑ ● jord"],
+  "L4": ["↑ ★ lyn", "---", "---", "↓ ★ metall"],
+  "L5": ["↓ ★ plante", "---", "---", "↑ ★ metall"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

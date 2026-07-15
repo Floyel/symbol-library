@@ -1,0 +1,19 @@
+{
+  "title": "dosava",
+  "number": "0318",
+  "filetype": ".gif",
+  "frames": "17(0,2)",
+  "date": "18/2-26",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ○ jord", "↑ ● jord", "↑ ● vann", "↓ ● luft"],
+  "L2": ["↓ ● vann", "↓ ● luft", "↓ ● ild", "↓ ● luft"],
+  "L3": ["↑ ● ild", "↑ ● vann", "↑ ● jord", "↑ ● ild"],
+  "L4": ["↓ ★ plante", "---", "↓ ★ lyn", "---"],
+  "L5": ["↓ ★ lyn", "---", "↓ ★ metall", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

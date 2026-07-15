@@ -1,0 +1,19 @@
+{
+  "title": "phamp",
+  "number": "0143",
+  "filetype": ".gif",
+  "frames": "18(0,2)",
+  "date": "8/3-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↑ ● vann", "↓ ● jord", "↑ ● ild"],
+  "L2": ["↓ ● vann", "↓ ● jord", "↑ ○ jord", "↑ ● luft"],
+  "L3": ["↓ ● vann", "↑ ● luft", "↑ ● ild", "↓ ● ild"],
+  "L4": ["---", "↑ ★ plante", "↓ ★ metall", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

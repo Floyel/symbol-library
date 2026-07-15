@@ -1,0 +1,19 @@
+{
+  "title": "spifo",
+  "number": "0070",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "25/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● jord", "↓ ● vann", "↑ ● vann", "↓ ● ild"],
+  "L2": ["↑ ● vann", "↓ ● luft", "↓ ● luft", "↓ ○ jord"],
+  "L3": ["↓ ● luft", "↓ ● ild", "↑ ● jord", "↓ ○ ild"],
+  "L4": ["↑ ★ plante", "---", "---", "↑ ★ metall"],
+  "L5": ["---", "---", "---", "↑ ★ metall"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

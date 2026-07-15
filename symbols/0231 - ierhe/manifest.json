@@ -1,0 +1,19 @@
+{
+  "title": "ierhe",
+  "number": "0231",
+  "filetype": ".gif",
+  "frames": "11(0,2)",
+  "date": "26/8-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "All elements up",
+  "element_code": {
+  "L1": ["↑ ● luft", "↓ ● luft", "↓ ● ild", "↓ ● ild"],
+  "L2": ["↑ ● jord", "↓ ● jord", "↑ ● vann", "↓ ● ild"],
+  "L3": ["↑ ● luft", "↓ ○ vann", "↑ ● vann", "↓ ○ jord"],
+  "L4": ["---", "↓ ★ plante", "↓ ★ lyn", "↓ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

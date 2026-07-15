@@ -1,0 +1,48 @@
+{
+  "title": "hayi",
+  "number": "0007",
+  "filetype": ".gif",
+  "frames": "15(0,2)",
+  "date": "23/10-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● ild",
+      "↑ ● ild",
+      "↑ ● luft",
+      "↑ ● luft"
+    ],
+    "L2": [
+      "↑ ○ vann",
+      "↓ ● jord",
+      "↑ ● vann",
+      "↑ ● luft"
+    ],
+    "L3": [
+      "↑ ● ild",
+      "↑ ● vann",
+      "↑ ○ jord",
+      "↓ ● jord"
+    ],
+    "L4": [
+      "↑ ★ lyn",
+      "↑ ★ metall",
+      "↓ ★ plante",
+      "---"
+    ],
+    "L5": [
+      "↑ ★ lyn",
+      "↑ ★ plante",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "title": "mahlev",
+  "number": "0005",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "21/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● luft",
+      "↓ ● jord",
+      "↑ ● jord",
+      "↓ ● vann"
+    ],
+    "L2": [
+      "↓ ○ vann",
+      "↓ ○ ild",
+      "↑ ● luft",
+      "↑ ● jord"
+    ],
+    "L3": [
+      "↓ ● ild",
+      "↓ ○ vann",
+      "↑ ● ild",
+      "↑ ● luft"
+    ],
+    "L4": [
+      "↑ ★ lyn",
+      "↑ ★ metall",
+      "---",
+      "↓ ★ plante"
+    ],
+    "L5": [
+      "---",
+      "↑ ★ lyn",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

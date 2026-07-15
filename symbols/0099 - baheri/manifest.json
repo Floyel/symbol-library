@@ -1,0 +1,19 @@
+{
+  "title": "baheri",
+  "number": "0099",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "23/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ○ vann", "↓ ● ild", "↓ ● ild", "↑ ● luft"],
+  "L2": ["↓ ● jord", "↓ ○ jord", "↑ ● luft", "↑ ● jord"],
+  "L3": ["↑ ● vann", "↑ ● ild", "↑ ● luft", "↑ ○ vann"],
+  "L4": ["↓ ★ plante", "↑ ★ metall", "---", "↓ ★ plante"],
+  "L5":["↑ ★ plante", "↑ ★ metall", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

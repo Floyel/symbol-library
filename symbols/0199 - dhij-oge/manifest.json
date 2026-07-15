@@ -1,0 +1,19 @@
+{
+  "title": "dhij-oge",
+  "number": "0199",
+  "filetype": ".gif",
+  "frames": "32(0,2)",
+  "date": "28/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↑ ● jord", "↑ ● vann", "↓ ● luft", "↑ ○ vann"],
+  "L2":  ["↑ ● jord", "↓ ● luft", "↓ ● ild", "↑ ● jord"],
+  "L3":  ["↓ ● vann", "↑ ● luft", "↓ ● ild", "↑ ○ ild"],
+  "L4":  ["↓ ★ plante", "---", "---", "↓ ★ plante"],
+  "L5":  ["---", "---", "---", "↓ ★ metall"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

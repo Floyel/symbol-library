@@ -1,0 +1,19 @@
+{
+  "title": "holoon",
+  "number": "0093",
+  "filetype": ".gif",
+  "frames": "22(0,2)",
+  "date": "17/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↓ ● luft", "↑ ● ild", "↑ ● jord"],
+  "L2": ["↓ ● vann", "↑ ● vann", "↑ ● luft", "↓ ● ild"],
+  "L3": ["↓ ○ jord", "↓ ● vann", "↑ ● ild", "↓ ● luft"],
+  "L4": ["↑ ★ plante", "---", "---", "↓ ★ metall"],
+  "L5": ["↑ ★ plante", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

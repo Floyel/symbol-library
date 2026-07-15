@@ -1,0 +1,19 @@
+{
+  "title": "buruo",
+  "number": "0220",
+  "filetype": ".gif",
+  "frames": "25(0,2)",
+  "date": "15/8-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↑ ● luft", "↓ ● jord", "↓ ○ vann", "↑ ● ild"],
+  "L2":  ["↑ ● ild", "↑ ● luft", "↓ ● jord", "↑ ○ vann"],
+  "L3":  ["↓ ● ild", "↓ ● vann", "↑ ● luft", "↑ ● jord"],
+  "L4":  ["---", "---", "↓ ★ plante", "↓ ★ lyn"],
+  "L5":  ["---", "---", "---", "↑ ★ plante"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

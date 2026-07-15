@@ -1,0 +1,19 @@
+{
+  "title": "wralt",
+  "number": "0273",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "7/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↓ ● luft", "↑ ● ild", "↑ ● vann"],
+  "L2": ["↑ ○ jord", "↓ ● jord", "↑ ○ jord", "↑ ● vann"],
+  "L3": ["↑ ○ ild", "↓ ● luft", "↓ ● luft", "↓ ● vann"],
+  "L4": ["↑ ★ metall", "---", "↓ ★ metall", "---"],
+  "L5": ["↑ ★ metall", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "sjohai",
+  "number": "0160",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "4/4-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● jord", "↓ ● ild", "↓ ● luft", "↓ ● vann"],
+  "L2": ["↑ ○ vann", "↑ ● luft", "↓ ● vann", "↑ ● ild"],
+  "L3": ["↑ ● ild", "↑ ● jord", "↑ ● jord", "↑ ● luft"],
+  "L4": ["↑ ★ plante", "---", "↓ ★ plante", "↑ ★ lyn"],
+  "L5": ["↓ ★ lyn", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

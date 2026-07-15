@@ -1,0 +1,19 @@
+{
+  "title": "kjes",
+  "number": "0311",
+  "filetype": ".gif",
+  "frames": "19(0,1)",
+  "date": "11/1-26",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● vann", "↑ ● jord", "↑ ● luft", "↓ ● vann"],
+  "L2": ["↑ ○ jord", "↑ ○ vann", "↑ ● luft", "↑ ● luft"],
+  "L3": ["↑ ○ ild", "↑ ● jord", "↑ ● ild", "↑ ● ild"],
+  "L4": ["↓ ★ plante", "↓ ★ plante", "---", "---"],
+  "L5": ["↓ ★ metall", "↑ ★ plante", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "phmot",
+  "number": "0207",
+  "filetype": ".gif",
+  "frames": "30(0,2)",
+  "date": "20/7-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↓ ● luft", "↓ ● jord", "↑ ● ild", "↑ ● jord"],
+  "L2":  ["↓ ● vann", "↓ ● jord", "↑ ● ild", "↓ ● luft"],
+  "L3":  ["↓ ● vann", "↑ ● luft", "↓ ● vann", "↑ ● ild"],
+  "L4":  ["---", "---", "↓ ★ lyn", "---"],
+  "L5":  ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

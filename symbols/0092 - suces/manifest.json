@@ -1,0 +1,19 @@
+{
+  "title": "suces",
+  "number": "0092",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "16/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↓ ● luft", "↑ ● jord", "↑ ○ jord"],
+  "L2": ["↑ ● vann", "↓ ● luft", "↓ ● ild", "↑ ● vann"],
+  "L3": ["↓ ● ild", "↑ ● vann", "↓ ○ jord", "↓ ● ild"],
+  "L4": ["↑ ★ lyn", "---", "↑ ★ metall", "↑ ★ plante"],
+  "L5": ["---", "---", "↓ ★ metall", "↓ ★ lyn"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

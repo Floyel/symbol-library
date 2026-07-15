@@ -1,0 +1,19 @@
+{
+  "title": "perroo",
+  "number": "0156",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "31/3-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ○ jord", "↓ ● vann", "↑ ● luft", "↓ ● vann"],
+  "L2": ["↑ ● ild", "↑ ● luft", "↑ ● vann", "↓ ● luft"],
+  "L3": ["↑ ● ild", "↑ ● ild", "↓ ● jord", "↑ ● jord"],
+  "L4": ["↓ ★ metall", "---", "↓ ★ plante", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

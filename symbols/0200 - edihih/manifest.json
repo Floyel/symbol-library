@@ -1,0 +1,19 @@
+{
+  "title": "edihih",
+  "number": "0200",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "30/6-25",
+  "size": "1000x1000 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↓ ● luft", "↓ ● ild", "↑ ● ild", "↓ ● jord"],
+  "L2":  ["↓ ● luft", "↑ ● vann", "↓ ● vann", "↓ ○ jord"],
+  "L3":  ["↑ ● jord", "↓ ● vann", "↓ ● luft", "↓ ● ild"],
+  "L4":  ["---", "↑ ★ lyn", "↓ ★ lyn", "↑ ★ metall"],
+  "L5":  ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

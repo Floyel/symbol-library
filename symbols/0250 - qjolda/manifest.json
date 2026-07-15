@@ -1,0 +1,19 @@
+{
+  "title": "qjolda",
+  "number": "0250",
+  "filetype": ".gif",
+  "frames": "27(0,2)",
+  "date": "14/9-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● vann", "↓ ● ild", "↓ ● luft", "↑ ● ild"],
+  "L2": ["↓ ● jord", "↑ ● luft", "↓ ● vann", "↓ ○ ild"],
+  "L3": ["↑ ● jord", "↑ ● luft", "↓ ● vann", "↓ ● jord"],
+  "L4": ["↑ ★ plante", "---", "---", "↓ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

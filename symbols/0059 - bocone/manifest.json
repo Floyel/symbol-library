@@ -1,0 +1,48 @@
+{
+  "title": "bocone",
+  "number": "0059",
+  "filetype": ".gif",
+  "frames": "24(0,2)",
+  "date": "14/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● jord",
+      "↓ ● vann",
+      "↓ ● vann",
+      "↑ ● ild"
+    ],
+    "L2": [
+      "↑ ● luft",
+      "↑ ● vann",
+      "↓ ● luft",
+      "↑ ● luft"
+    ],
+    "L3": [
+      "↑ ● ild",
+      "↓ ● jord",
+      "↑ ● ild",
+      "↓ ● jord"
+    ],
+    "L4": [
+      "---",
+      "↓ ★ plante",
+      "---",
+      "---"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "høbe",
+  "number": "0226",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "21/8-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● ild", "↓ ○ vann", "↓ ● vann", "↑ ● vann"],
+  "L2": ["↓ ● luft", "↓ ● jord", "↓ ○ jord", "↓ ● jord"],
+  "L3": ["↑ ● ild", "↓ ● luft", "↓ ● luft", "↑ ● ild"],
+  "L4": ["---", "↑ ★ plante", "↑ ★ plante", "↓ ★ plante"],
+  "L5": ["---", "---", "---", "↓ ★ metall"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

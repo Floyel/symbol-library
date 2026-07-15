@@ -1,0 +1,19 @@
+{
+  "title": "hlant",
+  "number": "0139",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "4/3-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↓ ● vann", "↓ ● vann", "↑ ○ ild"],
+  "L2": ["↑ ○ vann", "↓ ● luft", "↓ ○ jord", "↑ ● jord"],
+  "L3": ["↑ ● jord", "↓ ● ild", "↑ ● luft", "↓ ● ild"],
+  "L4": ["↓ ★ plante", "---", "↑ ★ plante", "↑ ★ metall"],
+  "L5": ["---", "---", "---", "↑ ★ metall"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

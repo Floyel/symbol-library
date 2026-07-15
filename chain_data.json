@@ -1,0 +1,73 @@
+{
+  "revealed": [
+    {
+      "tokenId": 27,
+      "number": "0287",
+      "title": "thopjo",
+      "folder": "0287 - thopjo",
+      "gif": "0287 - thopjo.gif",
+      "owner": "0x4411f79d120e1d964a5a264793a93b0c19ae4e56",
+      "generation": "Alpha",
+      "chain": "Base",
+      "ts": 1782008065,
+      "effects": [],
+      "grid": "↑●⌃ ↓○△ ↑●▢ ↑●▽|↑●▽ ↓●▢ ↑●⌃ ↓●⌃|↑○△ ↓●▢ ↓●▽ ↑●△|↑★ϟ ↑★⌂ --- ---"
+    },
+    {
+      "tokenId": 34,
+      "number": "0252",
+      "title": "zlotrod",
+      "folder": "0252 - zlotrod",
+      "gif": "0252 - zlotrod.gif",
+      "owner": "0x4411f79d120e1d964a5a264793a93b0c19ae4e56",
+      "generation": "Alpha",
+      "chain": "Base",
+      "ts": 1782008133,
+      "effects": [],
+      "grid": "↑○△ ↓○▽ ↓●▢ ↑●▢|↑●▢ ↓●△ ↓●⌃ ↓●▽|↑●⌃ ↑●⌃ ↓●▽ ↑●△|↑★⌂ ↓★ϟ --- ↑★✳|--- --- --- ↓★ϟ"
+    },
+    {
+      "tokenId": 40,
+      "number": "0251",
+      "title": "tikg",
+      "folder": "0251 - tikg",
+      "gif": "0251 - tikg.gif",
+      "owner": "0x4411f79d120e1d964a5a264793a93b0c19ae4e56",
+      "generation": "Alpha",
+      "chain": "Base",
+      "ts": 1782008176,
+      "effects": [],
+      "grid": "↑●⌃ ↓●▽ ↓●⌃ ↓○▽|↑●▢ ↓●⌃ ↓○△ ↓●△|↓●▢ ↑●▢ ↓●▽ ↑●△|--- --- ↓★ϟ ↑★ϟ"
+    },
+    {
+      "tokenId": 201,
+      "number": "0079",
+      "title": "liaijm",
+      "folder": "0079 - liaijm",
+      "gif": "0079 - liaijm.gif",
+      "owner": "0x4411f79d120e1d964a5a264793a93b0c19ae4e56",
+      "generation": "Alpha",
+      "chain": "Base",
+      "ts": 1782009782,
+      "effects": [],
+      "grid": "↑●⌃ ↓●△ ↑●⌃ ↓●△|↑●▢ ↑●△ ↑●▢ ↑●▢|↓●▽ ↑●⌃ ↓●▽ ↑○▽|↓★✳ --- ↑★✳ ↑★⌂|--- --- --- ↑★✳"
+    },
+    {
+      "tokenId": 3329,
+      "number": "0005",
+      "title": "mahlev",
+      "folder": "0005 - mahlev",
+      "gif": "0005 - mahlev.gif",
+      "owner": "0x4411f79d120e1d964a5a264793a93b0c19ae4e56",
+      "generation": "Alpha",
+      "chain": "Base",
+      "ts": 1782033985,
+      "effects": [],
+      "grid": "↑●⌃ ↓●▽ ↓○▽ ↑●▢|↑●▽ ↓●⌃ ↓●▢ ↑○△|↓●⌃ ↑●△ ↑●▢ ↓●△|--- --- ↑★✳ ↓★⌂"
+    }
+  ],
+  "hiddenCount": 3328,
+  "total": 3333,
+  "fetchedAt": 1782254184,
+  "rpc": "https://mainnet.base.org"
+}

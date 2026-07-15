@@ -1,0 +1,19 @@
+{
+  "title": "puduruh",
+  "number": "0245",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "9/9-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↑ ● luft", "↓ ○ ild", "↓ ● luft"],
+  "L2": ["↓ ○ vann", "↓ ○ jord", "↓ ● jord", "↓ ● jord"],
+  "L3": ["↓ ● ild", "↓ ● vann", "↓ ● luft", "↑ ● vann"],
+  "L4": ["↓ ★ lyn", "↓ ★ plante", "↓ ★ metall", "↓ ★ plante"],
+  "L5": ["↑ ★ lyn", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

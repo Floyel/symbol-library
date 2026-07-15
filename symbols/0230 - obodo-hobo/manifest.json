@@ -1,0 +1,19 @@
+{
+  "title": "obodo-hobo",
+  "number": "0230",
+  "filetype": ".gif",
+  "frames": "24(0,2)",
+  "date": "25/8-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↓ ● ild", "↓ ● vann", "↓ ● vann"],
+  "L2": ["↓ ● luft", "↑ ○ ild", "↓ ○ jord", "↑ ● ild"],
+  "L3": ["↓ ● jord", "↑ ● jord", "↓ ● vann", "↑ ● luft"],
+  "L4": ["---", "↓ ★ metall", "↓ ★ plante", "↓ ★ lyn"],
+  "L5": ["---", "---", "↓ ★ plante", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

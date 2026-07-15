@@ -1,0 +1,48 @@
+{
+  "title": "satpied",
+  "number": "0015",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "31/10-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● luft",
+      "↑ ○ jord",
+      "↑ ● luft",
+      "↑ ● luft"
+    ],
+    "L2": [
+      "↓ ● ild",
+      "↑ ● ild",
+      "↓ ● vann",
+      "↑ ● vann"
+    ],
+    "L3": [
+      "↓ ○ jord",
+      "↓ ● vann",
+      "↑ ● ild",
+      "↓ ● jord"
+    ],
+    "L4": [
+      "↑ ★ metall",
+      "↑ ★ metall",
+      "↓ ★ lyn",
+      "↓ ★ plante"
+    ],
+    "L5": [
+      "---",
+      "↓ ★ lyn",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

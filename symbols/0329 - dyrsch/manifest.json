@@ -1,0 +1,19 @@
+{
+  "title": "dyrsch",
+  "number": "0329",
+  "filetype": ".gif",
+  "frames": "10(0,2)",
+  "date": "12/5-26",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↑ ● vann", "↑ ○ ild", "↑ ○ vann"],
+  "L2": ["↓ ● vann", "↓ ● ild", "↑ ● jord", "↑ ● jord"],
+  "L3": ["↑ ● luft", "↑ ● ild", "↑ ● luft", "↑ ● jord"],
+  "L4": ["---", "↑ ★ lyn", "↓ ★ metall", "↑ ★ plante"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow","Inverted","Filter"]
+}

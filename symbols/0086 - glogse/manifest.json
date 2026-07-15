@@ -1,0 +1,19 @@
+{
+  "title": "glogse",
+  "number": "0086",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "10/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↓ ● vann", "↑ ● ild", "↓ ● ild"],
+  "L2": ["↓ ● ild", "↓ ● luft", "↑ ○ jord", "↓ ○ vann"],
+  "L3": ["↓ ○ vann", "↓ ● luft", "↑ ● jord", "↓ ○ jord"],
+  "L4": ["↑ ★ lyn", "---", "↓ ★ metall", "↓ ★ lyn"],
+  "L5": ["---", "---", "---", "↓ ★ plante"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

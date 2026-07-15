@@ -1,0 +1,19 @@
+{
+  "title": "dørre",
+  "number": "0258",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "22/9-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↑ ● luft", "↓ ● ild", "↓ ● jord"],
+  "L2": ["↓ ● vann", "↑ ● vann", "↑ ● jord", "↑ ● ild"],
+  "L3": ["↑ ● vann", "↑ ● luft", "↓ ● luft", "↑ ○ jord"],
+  "L4": ["↓ ★ lyn", "---", "↓ ★ metall", "↑ ★ metall"],
+  "L5": ["---", "---", "---", "↑ ★ metall"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

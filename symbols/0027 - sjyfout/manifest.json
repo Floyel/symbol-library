@@ -1,0 +1,48 @@
+{
+  "title": "sjyfout",
+  "number": "0027",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "12/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● jord",
+      "↓ ● jord",
+      "↓ ● luft",
+      "↑ ● luft"
+    ],
+    "L2": [
+      "↑ ● vann",
+      "↑ ● luft",
+      "↑ ● ild",
+      "↓ ● vann"
+    ],
+    "L3": [
+      "↑ ○ jord",
+      "↓ ● vann",
+      "↑ ● ild",
+      "↑ ● ild"
+    ],
+    "L4": [
+      "↓ ★ plante",
+      "---",
+      "---",
+      "↑ ★ lyn"
+    ],
+    "L5": [
+      "↓ ★ plante",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

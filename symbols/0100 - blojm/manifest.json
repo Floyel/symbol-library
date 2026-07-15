@@ -1,0 +1,19 @@
+{
+  "title": "blojm",
+  "number": "0100",
+  "filetype": ".gif",
+  "frames": "23(0,2)",
+  "date": "24/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● vann", "↓ ● luft", "↓ ● luft", "↓ ● ild"],
+  "L2": ["↓ ● jord", "↑ ● jord", "↓ ● vann", "↓ ● luft"],
+  "L3": ["↓ ● jord", "↓ ● vann", "↓ ○ ild", "↓ ● ild"],
+  "L4": ["↑ ★ plante", "↑ ★ plante", "↓ ★ lyn", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

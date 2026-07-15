@@ -1,0 +1,20 @@
+{
+  "title": "ohdje",
+  "number": "0091",
+  "filetype": ".gif",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "15/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● vann", "↓ ● luft", "↓ ● luft", "↑ ● ild"],
+  "L2": ["↑ ● luft", "↓ ● vann", "↑ ○ jord", "↓ ● ild"],
+  "L3": ["↑ ● jord", "↓ ● vann", "↑ ● ild", "↑ ● jord"],
+  "L4": ["--- ", "---", "↑ ★ metall", "↑ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

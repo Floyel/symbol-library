@@ -1,0 +1,19 @@
+{
+  "title": "asej",
+  "number": "0166",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "6/5-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↑ ○ jord", "↑ ● vann", "↑ ○ vann"],
+  "L2": ["↓ ● luft", "↑ ● ild", "↓ ● luft", "↑ ○ jord"],
+  "L3": ["↑ ● ild", "↓ ● jord", "↑ ● ild", "↑ ● vann"],
+  "L4": ["---", "↑ ★ metall", "---", "↑ ★ plante"],
+  "L5": ["---", "↑ ★ metall", "---", "↑ ★ plante"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

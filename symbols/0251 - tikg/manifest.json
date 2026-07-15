@@ -1,0 +1,19 @@
+{
+  "title": "tikg",
+  "number": "0251",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "15/9-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● vann", "↓ ● jord", "↑ ● luft", "↓ ● jord"],
+  "L2": ["↓ ○ vann", "↑ ● luft", "↑ ● ild", "↓ ○ vann"],
+  "L3": ["↓ ● jord", "↑ ● ild", "↓ ● luft", "↑ ● ild"],
+  "L4": ["↑ ★ plante", "---", "---", "↑ ★ plante"],
+  "L5": ["---", "---", "---", "↓ ★ lyn"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

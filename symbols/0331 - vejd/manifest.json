@@ -1,0 +1,19 @@
+{
+  "title": "vejd",
+  "number": "0331",
+  "filetype": ".gif",
+  "frames": "10(0,2)",
+  "date": "23/5-26",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● jord", "↓ ● luft", "↑ ● jord", "↑ ● luft"],
+  "L2": ["↓ ● luft", "↑ ● vann", "↓ ● ild", "↑ ● vann"],
+  "L3": ["↑ ● jord", "↓ ● ild", "↑ ● ild", "↓ ● vann"],
+  "L4": ["---", "↑ ★ lyn", "↑ ★ metall", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow","Inverted","Filter"]
+}

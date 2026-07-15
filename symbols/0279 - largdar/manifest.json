@@ -1,0 +1,19 @@
+{
+  "title": "largdar",
+  "number": "0279",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "13/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↑ ● vann", "↓ ● luft", "↑ ● jord"],
+  "L2": ["↑ ● luft", "↓ ● ild", "↑ ● vann", "↑ ○ vann"],
+  "L3": ["↓ ● jord", "↑ ● jord", "↓ ● ild", "↓ ● ild"],
+  "L4": ["---", "↑ ★ lyn", "↑ ★ lyn", "↑ ★ plante"],
+  "L5": ["---", "↑ ★ metall", "---", "↓ ★ lyn"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

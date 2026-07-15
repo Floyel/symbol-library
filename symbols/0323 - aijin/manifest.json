@@ -1,0 +1,19 @@
+{
+  "title": "aijin",
+  "number": "0323",
+  "filetype": ".gif",
+  "frames": "15(0,2)",
+  "date": "3/4-26",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↓ ● ild", "↓ ● vann", "↓ ● luft"],
+  "L2": ["↓ ● vann", "↑ ● vann", "↑ ● luft", "↑ ○ jord"],
+  "L3": ["↓ ○ ild", "↑ ○ jord", "↓ ● jord", "↑ ● ild"],
+  "L4": ["↑ ★ lyn", "↑ ★ lyn", "---", "↓ ★ metall"],
+  "L5": ["---", "↓ ★ plante", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

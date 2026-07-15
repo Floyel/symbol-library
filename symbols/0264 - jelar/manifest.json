@@ -1,0 +1,19 @@
+{
+  "title": "jelar",
+  "number": "0264",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "28/9-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↓ ● vann", "↑ ● ild", "↓ ● luft"],
+  "L2": ["↓ ● vann", "↑ ● jord", "↓ ● ild", "↓ ● jord"],
+  "L3": ["↑ ● ild", "↓ ● vann", "↓ ○ jord", "↓ ● luft"],
+  "L4": ["↓ ★ lyn", "↑ ★ plante", "↑ ★ metall", "---"],
+  "L5": ["---", "↑ ★ plante", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

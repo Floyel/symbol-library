@@ -1,0 +1,48 @@
+{
+  "title": "stirkel",
+  "number": "0023",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "8/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● vann",
+      "↑ ● luft",
+      "↓ ○ vann",
+      "↓ ● ild"
+    ],
+    "L2": [
+      "↓ ● ild",
+      "↑ ● jord",
+      "↓ ● jord",
+      "↑ ● vann"
+    ],
+    "L3": [
+      "↓ ● ild",
+      "↓ ● jord",
+      "↑ ● luft",
+      "↓ ● luft"
+    ],
+    "L4": [
+      "↓ ★ lyn",
+      "---",
+      "↑ ★ plante",
+      "↓ ★ lyn"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

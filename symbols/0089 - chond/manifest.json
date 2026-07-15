@@ -1,0 +1,19 @@
+{
+  "title": "chond",
+  "number": "0089",
+  "filetype": ".gif",
+  "frames": "24(0,2)",
+  "date": "13/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● jord", "↑ ● vann", "↑ ● ild", "↑ ● luft"],
+  "L2": ["↓ ○ vann", "↑ ● luft", "↑ ● luft", "↑ ● jord"],
+  "L3": ["↓ ● ild", "↓ ● vann", "↓ ● ild", "↑ ● jord"],
+  "L4": ["↓ ★ plante", "---", "---", "---"],
+  "L5": ["↓ ★ lyn", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

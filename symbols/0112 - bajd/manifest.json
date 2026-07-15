@@ -1,0 +1,19 @@
+{
+  "title": "bajd",
+  "number": "0112",
+  "filetype": ".gif",
+  "frames": "31(0,2)",
+  "date": "5/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ○ ild", "↑ ● luft", "↑ ● vann", "↓ ● jord"],
+  "L2": ["↑ ● jord", "↓ ● vann", "↑ ● luft", "↓ ● jord"],
+  "L3": ["↓ ● luft", "↓ ● vann", "↓ ● ild", "↓ ○ ild"],
+  "L4": ["↑ ★ metall", "---", "---", "↑ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

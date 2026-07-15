@@ -1,0 +1,48 @@
+{
+  "title": "tjhofemin",
+  "number": "0029",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "14/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ○ jord",
+      "↓ ○ jord",
+      "↓ ● jord",
+      "↓ ● luft"
+    ],
+    "L2": [
+      "↑ ● ild",
+      "↓ ● ild",
+      "↑ ○ ild",
+      "↓ ● luft"
+    ],
+    "L3": [
+      "↓ ● vann",
+      "↑ ● vann",
+      "↑ ● vann",
+      "↑ ● luft"
+    ],
+    "L4": [
+      "↑ ★ metall",
+      "↑ ★ metall",
+      "↓ ★ metall",
+      "---"
+    ],
+    "L5": [
+      "↓ ★ lyn",
+      "↑ ★ lyn",
+      "↓ ★ lyn",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

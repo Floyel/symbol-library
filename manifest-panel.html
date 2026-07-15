@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Manifest</title>
+<style>
+:root {
+  --bg:       #2a2a34;
+  --bg2:      #32323e;
+  --bg3:      #3c3c4a;
+  --border:   #4a4a5a;
+  --green:    #5fcf89;
+  --purple:   #bf95cb;
+  --text:     #c8c8d8;
+  --text-dim: #7a7a8a;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  min-height: 100vh;
+  padding: 0;
+}
+
+/* HEADER */
+#header {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 16px 10px;
+}
+#sym-number {
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+}
+#sym-title {
+  font-size: 20px;
+  color: var(--green);
+  letter-spacing: 3px;
+  text-transform: lowercase;
+  margin-top: 2px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--bg3);
+}
+.section-label {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* FIELD GRID */
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+}
+.field-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.field-key {
+  font-size: 9px;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.field-val {
+  font-size: 12px;
+  color: var(--text);
+}
+
+ELEMENT CODE GRID */
+#elementGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+.el-cell {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 6px 5px;
+  min-height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+}
+.el-cell.empty {
+  background: transparent;
+  border-color: var(--bg3);
+}
+.el-arrow {
+  font-size: 11px;
+  color: var(--purple);
+  line-height: 1;
+}
+.el-shape {
+  font-size: 10px;
+  color: var(--text-dim);
+  line-height: 1;
+}
+.el-name {
+  font-size: 10px;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+/* INFO */
+#infoText {
+  color: var(--text-dim);
+  font-size: 12px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* LOADING */
+#loading {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-dim);
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<div id="loading">loading...</div>
+<div id="content" style="display:none;">
+  <div id="header">
+    <div id="sym-number"></div>
+    <div id="sym-title"></div>
+  </div>
+
+  <div class="section" id="fieldsSection">
+    <div class="section-label">info</div>
+    <div class="fields" id="fieldsGrid"></div>
+  </div>
+
+  <div class="section" id="elementSection">
+    <div class="section-label">element code</div>
+    <div id="elementGrid"></div>
+  </div>
+
+  <div class="section" id="infoSection" style="display:none;">
+    <div class="section-label">notes</div>
+    <div id="infoText"></div>
+  </div>
+</div>
+
+<script>
+function parseFrames(raw) {
+  if (!raw) return raw;
+  // "8(0,2)" → "8 frames  ·  0.2s"
+  var m = raw.match(/^(\d+)\(([^)]+)\)$/);
+  if (!m) return raw;
+  var count = m[1];
+  var delay = m[2].replace(",", ".");
+  // parse delay — if it looks like "0.2" use as seconds, else /10
+  var delayNum = parseFloat(delay);
+  if (isNaN(delayNum)) return raw;
+  var sec = delayNum < 1 ? delayNum : delayNum / 10;
+  return count + " frames  ·  " + sec.toFixed(1) + "s";
+}
+
+function loadManifest(folder) {
+  fetch("/symbols/" + encodeURIComponent(folder) + "/manifest.json")
+    .then(function(r) { return r.json(); })
+    .then(function(m) { render(m); })
+    .catch(function() {
+      document.getElementById("loading").textContent = "manifest not found";
+    });
+}
+
+function render(m) {
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("content").style.display = "block";
+
+  document.getElementById("sym-number").textContent = m.number || "";
+  document.getElementById("sym-title").textContent  = m.title  || "";
+  document.title = (m.number || "") + " — " + (m.title || "manifest");
+
+  // ── SIMPLE FIELDS ──
+  var fields = [
+    { key: "date",      val: m.date },
+    { key: "size",      val: m.size },
+    { key: "dimension", val: m.dimension },
+    { key: "filetype",  val: m.filetype },
+    { key: "frames",    val: parseFrames(m.frames) },
+    { key: "timeline",  val: m.timeline },
+  ];
+  var fg = document.getElementById("fieldsGrid");
+  fg.innerHTML = "";
+  fields.forEach(function(f) {
+    if (!f.val) return;
+    var row = document.createElement("div");
+    row.className = "field-row";
+    row.innerHTML = '<div class="field-key">' + f.key + '</div>' +
+                    '<div class="field-val">' + f.val + '</div>';
+    fg.appendChild(row);
+  });
+
+  // ── ELEMENT CODE ──
+  var ec = m.element_code;
+  var grid = document.getElementById("elementGrid");
+  grid.innerHTML = "";
+  if (ec) {
+    var layers = Object.keys(ec).sort(); // L1..L5
+    layers.forEach(function(lk) {
+      var row = ec[lk];
+      row.forEach(function(cell) {
+        var div = document.createElement("div");
+        if (!cell || cell === "---") {
+          div.className = "el-cell empty";
+        } else {
+          div.className = "el-cell";
+          // Parse: "↑ ● jord" — arrow, shape, name
+          var parts = cell.trim().split(/\s+/);
+          var arrow = parts[0] || "";
+          var shape = parts[1] || "";
+          var name  = parts.slice(2).join(" ");
+          div.innerHTML =
+            '<span class="el-arrow">' + arrow + '</span>' +
+            '<span class="el-shape">' + shape + '</span>' +
+            '<span class="el-name">'  + name  + '</span>';
+        }
+        grid.appendChild(div);
+      });
+    });
+  }
+
+  // ── NOTES / INFO ──
+  if (m.info && m.info !== "-") {
+    document.getElementById("infoText").textContent = m.info;
+    document.getElementById("infoSection").style.display = "block";
+  }
+}
+
+// Read folder from URL params
+var params = new URLSearchParams(window.location.search);
+var folder = params.get("folder");
+if (folder) {
+  loadManifest(folder);
+} else {
+  document.getElementById("loading").textContent = "no symbol specified";
+}
+</script>
+</body>
+</html>

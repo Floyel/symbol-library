@@ -1,0 +1,19 @@
+{
+  "title": "plifp",
+  "number": "0259",
+  "filetype": ".gif",
+  "frames": "21(0,2)",
+  "date": "23/9-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↑ ● luft", "↓ ● vann", "↑ ● ild"],
+  "L2": ["↓ ● ild", "↓ ● vann", "↑ ● jord", "↑ ● luft"],
+  "L3": ["↑ ● jord", "↑ ● vann", "↑ ● luft", "↓ ● jord"],
+  "L4": ["↑ ★ metall", "---", "↑ ★ plante", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

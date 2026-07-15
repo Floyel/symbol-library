@@ -1,0 +1,19 @@
+{
+  "title": "gost",
+  "number": "0150",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "21/3-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● jord", "↑ ● luft", "↑ ● ild", "↓ ● luft"],
+  "L2": ["↓ ● luft", "↓ ● vann", "↓ ● vann", "↓ ● jord"],
+  "L3": ["↓ ● vann", "↑ ● jord", "↑ ● ild", "↑ ● ild"],
+  "L4": ["---", "↑ ★ plante", "↓ ★ lyn", "↑ ★ metall"],
+  "L5": ["---", "---", "↓ ★ lyn", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

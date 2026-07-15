@@ -1,0 +1,19 @@
+{
+  "title": "entajs",
+  "number": "0179",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "1/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↑ ● vann", "↓ ● jord", "↓ ● ild"],
+  "L2": ["↓ ● luft", "↓ ● luft", "↓ ● jord", "↑ ● vann"],
+  "L3": ["↑ ● ild", "↑ ● vann", "↑ ● ild", "↑ ● luft"],
+  "L4": ["---", "---", "↓ ★ metall", "↑ ★ lyn"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

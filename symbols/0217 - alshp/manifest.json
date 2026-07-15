@@ -1,0 +1,19 @@
+{
+  "title": "alshp",
+  "number": "0217",
+  "filetype": ".gif",
+  "frames": "19(0,1)",
+  "date": "12/8-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↑ ● luft", "↓ ● vann", "↓ ● ild", "↑ ● jord"],
+  "L2":  ["↑ ● jord", "↑ ● ild", "↑ ● luft", "↓ ● luft"],
+  "L3":  ["↑ ● jord", "↑ ● ild", "↓ ● vann", "↑ ● vann"],
+  "L4":  ["---", "↑ ★ lyn", "---", "---"],
+  "L5":  ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

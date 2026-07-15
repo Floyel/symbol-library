@@ -1,0 +1,19 @@
+{
+  "title": "dorig",
+  "number": "0271",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "5/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● vann", "↑ ● jord", "↓ ● ild", "↑ ● vann"],
+  "L2": ["↑ ○ jord", "↓ ● jord", "↓ ● luft", "↓ ● ild"],
+  "L3": ["↑ ● vann", "↓ ● luft", "↑ ● ild", "↑ ● luft"],
+  "L4": ["↓ ★ plante", "---", "---", "↑ ★ lyn"],
+  "L5": ["↑ ★ plante", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

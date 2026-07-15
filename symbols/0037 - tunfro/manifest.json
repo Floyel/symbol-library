@@ -1,0 +1,48 @@
+{
+  "title": "tunfro",
+  "number": "0037",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "22/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● vann",
+      "↓ ● vann",
+      "↓ ● luft",
+      "↓ ● vann"
+    ],
+    "L2": [
+      "↑ ● jord",
+      "↑ ● ild",
+      "↓ ● jord",
+      "↓ ○ ild"
+    ],
+    "L3": [
+      "↓ ● jord",
+      "↓ ● luft",
+      "↓ ● luft",
+      "↓ ● ild"
+    ],
+    "L4": [
+      "↓ ★ plante",
+      "↑ ★ lyn",
+      "---",
+      "↑ ★ lyn"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

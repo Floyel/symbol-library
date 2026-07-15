@@ -1,0 +1,19 @@
+{
+  "title": "jodobo",
+  "number": "0214",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "31/7-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↓ ● jord", "↓ ● jord", "↓ ● vann", "↑ ● luft"],
+  "L2":  ["↑ ● luft", "↑ ● vann", "↑ ● vann", "↓ ○ ild"],
+  "L3":  ["↑ ● ild", "↑ ● luft", "↑ ○ ild", "↓ ● jord"],
+  "L4":  ["---", "↓ ★ plante", "↑ ★ lyn", "↑ ★ metall"],
+  "L5":  ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

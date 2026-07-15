@@ -1,0 +1,21 @@
+{
+  "title": "aap",
+  "number": "0066",
+  "filetype": ".gif",
+  "frames": "16 (0,2)",
+  "date": "21/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": ["↑ ● ild", "↓ ● jord", "↑ ○ vann", "↑ ● luft"],
+    "L2": ["↓ ● jord", "↑ ● luft", "↑ ● ild", "↓ ● ild"],
+    "L3": ["↑ ● jord", "↓ ● luft", "↓ ● vann", "↑ ● vann"],
+    "L4": ["↑ ★ metall", "---", "↓ ★ lyn", "↓ ★ lyn"],
+    "L5": ["---", "---", "↓ ★ lyn", "---"]
+  },
+  "effects": ["Glow",
+    "Inverted",
+    "Filter"]
+}

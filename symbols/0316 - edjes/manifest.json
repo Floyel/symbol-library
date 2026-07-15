@@ -1,0 +1,19 @@
+{
+  "title": "edjes",
+  "number": "0316",
+  "filetype": ".gif",
+  "frames": "13(0,2)",
+  "date": "17/2-26",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↓ ● luft", "↑ ● ild", "↑ ● jord"],
+  "L2": ["↑ ● vann", "↑ ● ild", "↑ ● luft", "↑ ○ jord"],
+  "L3": ["↓ ● ild", "↓ ● jord", "↓ ● vann", "↑ ● vann"],
+  "L4": ["↓ ★ lyn", "↓ ★ metall", "---", "↑ ★ plante"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "garm",
+  "number": "0181",
+  "filetype": ".gif",
+  "frames": "10(0,2)",
+  "date": "5/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↑ ○ ild", "↓ ● vann", "↑ ● luft"],
+  "L2": ["↑ ● luft", "↑ ● vann", "↑ ● vann", "↑ ● jord"],
+  "L3": ["↑ ● luft", "↑ ○ jord", "↓ ● ild", "↓ ● ild"],
+  "L4": ["---", "↓ ★ lyn", "↑ ★ lyn", "↓ ★ metall"],
+  "L5": ["---", "↑ ★ plante", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

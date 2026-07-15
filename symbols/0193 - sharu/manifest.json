@@ -1,0 +1,19 @@
+{
+  "title": "sharu",
+  "number": "0193",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "21/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↑ ○ vann", "↑ ● jord", "↑ ● luft", "↓ ● ild"],
+  "L2": ["↑ ● jord", "↓ ● vann", "↓ ● vann", "↑ ● luft"],
+  "L3": ["↓ ● luft", "↑ ● ild", "↑ ● jord", "↑ ● ild"],
+  "L4": ["↑ ★ plante", "↓ ★ plante", "↓ ★ plante", "---"],
+  "L5":  ["---", "↓ ★ lyn", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,20 @@
+{
+  "title": "megne",
+  "number": "0119",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "12/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↓ ● luft", "↓ ● luft", "↓ ● jord"],
+  "L2": ["↑ ○ ild", "↓ ● jord", "↑ ● luft", "↑ ○ ild"],
+  "L3": ["↑ ● vann", "↑ ● jord", "↑ ● vann", "↑ ● vann"],
+  "L4": ["↓ ★ lyn", "---", "---", "↑ ★ metall"],
+  "L5": ["---", "---", "---", "↓ ★ lyn"]
+  
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

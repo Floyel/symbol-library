@@ -1,0 +1,48 @@
+{
+  "title": "mimlater",
+  "number": "0052",
+  "filetype": ".gif",
+  "frames": "15(0,2)",
+  "date": "7/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● ild",
+      "↓ ● jord",
+      "↓ ● luft",
+      "↑ ● luft"
+    ],
+    "L2": [
+      "↓ ● vann",
+      "↑ ● vann",
+      "↓ ● vann",
+      "↓ ● jord"
+    ],
+    "L3": [
+      "↓ ○ ild",
+      "↓ ● ild",
+      "↑ ● luft",
+      "↓ ● jord"
+    ],
+    "L4": [
+      "↓ ★ lyn",
+      "↑ ★ plante",
+      "---",
+      "---"
+    ],
+    "L5": [
+      "↑ ★ lyn",
+      "↑ ★ lyn",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

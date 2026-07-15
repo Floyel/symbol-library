@@ -1,0 +1,48 @@
+{
+  "title": "catrot",
+  "number": "0013",
+  "filetype": ".gif",
+  "frames": "15(0,2)",
+  "date": "29/10-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● luft",
+      "↓ ● ild",
+      "↓ ● vann",
+      "↑ ● luft"
+    ],
+    "L2": [
+      "↑ ● ild",
+      "↓ ● luft",
+      "↑ ● vann",
+      "↑ ● jord"
+    ],
+    "L3": [
+      "↓ ● jord",
+      "↓ ● vann",
+      "↑ ○ jord",
+      "↓ ● ild"
+    ],
+    "L4": [
+      "↑ ★ metall",
+      "---",
+      "↑ ★ plante",
+      "↓ ★ metall"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

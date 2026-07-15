@@ -1,0 +1,19 @@
+{
+  "title": "hito",
+  "number": "0145",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "16/3-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● vann", "↓ ● jord", "↓ ● jord", "↓ ● jord"],
+  "L2": ["↓ ● ild", "↑ ● ild", "↑ ● vann", "↓ ● luft"],
+  "L3": ["↑ ● luft", "↑ ○ vann", "↓ ● luft", "↓ ● ild"],
+  "L4": ["↓ ★ lyn", "↓ ★ metall", "↓ ★ plante", "---"],
+  "L5": ["---", "↑ ★ lyn", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

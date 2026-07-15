@@ -1,0 +1,19 @@
+{
+  "title": "laz",
+  "number": "0113",
+  "filetype": ".gif",
+  "frames": "18(0,2)",
+  "date": "6/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ○ vann", "↓ ● jord", "↓ ● ild", "↓ ○ vann"],
+  "L2": ["↓ ● ild", "↑ ● jord", "↑ ● luft", "↓ ● ild"],
+  "L3": ["↓ ● luft", "↑ ● jord", "↓ ● vann", "↓ ● luft"],
+  "L4": ["↓ ★ lyn", "---", "---", "↑ ★ lyn"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

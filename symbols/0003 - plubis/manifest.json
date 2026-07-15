@@ -1,0 +1,48 @@
+{
+  "title": "plubis",
+  "number": "0003",
+  "filetype": ".gif",
+  "frames": "9(0,2)",
+  "date": "19/10-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● vann",
+      "↑ ○ ild",
+      "↑ ● jord",
+      "↓ ● luft"
+    ],
+    "L2": [
+      "↓ ● ild",
+      "↑ ● jord",
+      "↑ ○ ild",
+      "↑ ○ jord"
+    ],
+    "L3": [
+      "↓ ● luft",
+      "↓ ● vann",
+      "↑ ● luft",
+      "↑ ● vann"
+    ],
+    "L4": [
+      "↓ ★ lyn",
+      "↓ ★ metall",
+      "↓ ★ metall",
+      "↑ ★ plante"
+    ],
+    "L5": [
+      "---",
+      "↑ ★ plante",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

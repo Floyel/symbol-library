@@ -1,0 +1,19 @@
+{
+  "title": "dadoh",
+  "number": "0185",
+  "filetype": ".gif",
+  "frames": "22(0,2)",
+  "date": "12/6-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↑ ● jord", "↓ ● luft", "↑ ● vann"],
+  "L2": ["↑ ● ild", "↓ ● jord", "↓ ○ ild", "↓ ○ ild"],
+  "L3": ["↓ ● luft", "↑ ● jord", "↓ ● vann", "↓ ● vann"],
+  "L4": ["---", "---", "↓ ★ lyn", "↓ ★ lyn"],
+  "L5": ["---", "---", "---", "↓ ★ lyn"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "sliqil",
+  "number": "0285",
+  "filetype": ".gif",
+  "frames": "9(0,2)",
+  "date": "19/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● jord", "↑ ● vann", "↑ ○ vann", "↑ ● jord"],
+  "L2": ["↑ ● luft", "↑ ○ jord", "↑ ● ild", "↑ ● luft"],
+  "L3": ["↑ ● ild", "↓ ● luft", "↓ ● ild", "↑ ● vann"],
+  "L4": ["---", "↑ ★ plante", "↑ ★ lyn", "---"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

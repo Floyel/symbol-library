@@ -1,0 +1,19 @@
+{
+  "title": "gegel",
+  "number": "0236",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "30/8-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↑ ● jord", "↑ ● vann", "↓ ● luft"],
+  "L2": ["↑ ● ild", "↑ ● jord", "↑ ● luft", "↓ ● ild"],
+  "L3": ["↑ ● luft", "↑ ○ vann", "↑ ● jord", "↓ ○ vann"],
+  "L4": ["---", "↓ ★ plante", "---", "↓ ★ lyn"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

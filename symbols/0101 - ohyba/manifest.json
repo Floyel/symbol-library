@@ -1,0 +1,19 @@
+{
+  "title": "ohyba",
+  "number": "0101",
+  "filetype": ".gif",
+  "frames": "22(0,2)",
+  "date": "25/1-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● vann", "↓ ● vann", "↑ ● jord", "↑ ● luft"],
+  "L2": ["↑ ● ild", "↑ ● jord", "↑ ● luft", "↓ ● vann"],
+  "L3": ["↑ ● ild", "↑ ● luft", "↑ ● ild", "↑ ● jord"],
+  "L4": ["↑ ★ lyn", "↑ ★ plante", "---", "↓ ★ plante"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

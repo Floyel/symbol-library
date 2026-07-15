@@ -1,0 +1,19 @@
+{
+  "title": "idtil",
+  "number": "0130",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "23/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↓ ● vann", "↓ ● jord", "↓ ● ild"],
+  "L2": ["↓ ● jord", "↓ ● vann", "↑ ● luft", "↓ ● ild"],
+  "L3": ["↑ ● vann", "↑ ● ild", "↓ ● luft", "↑ ● jord"],
+  "L4": ["↓ ★ plante", "↓ ★ lyn", "---", "↑ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

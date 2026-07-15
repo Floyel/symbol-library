@@ -1,0 +1,48 @@
+{
+  "title": "changle",
+  "number": "0028",
+  "filetype": ".gif",
+  "frames": "19(0,2)",
+  "date": "13/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● jord",
+      "↑ ● luft",
+      "↑ ● luft",
+      "↑ ● luft"
+    ],
+    "L2": [
+      "↓ ○ vann",
+      "↑ ○ jord",
+      "↓ ● jord",
+      "↓ ● ild"
+    ],
+    "L3": [
+      "↓ ● vann",
+      "↑ ● vann",
+      "↑ ● ild",
+      "↑ ● ild"
+    ],
+    "L4": [
+      "↑ ★ plante",
+      "↑ ★ plante",
+      "↓ ★ metall",
+      "---"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

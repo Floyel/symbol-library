@@ -1,0 +1,19 @@
+{
+  "title": "hieo",
+  "number": "0074",
+  "filetype": ".gif",
+  "frames": "16(0,2)",
+  "date": "29/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+"L1": ["↓ ● vann", "↓ ● ild", "↓ ● ild", "↑ ● ild"],
+"L2": ["↑ ○ vann", "↑ ● luft", "↓ ● luft", "↑ ● luft"],
+"L3": ["↑ ● jord", "↑ ● vann", "↓ ● jord", "↓ ● jord"],
+"L4": ["↓ ★ plante", "---", "---", "---"],
+"L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

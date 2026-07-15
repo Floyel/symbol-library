@@ -1,0 +1,19 @@
+{
+  "title": "boroo",
+  "number": "0116",
+  "filetype": ".gif",
+  "frames": "13(0,2)",
+  "date": "9/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↓ ● ild", "↑ ● jord", "↑ ○ vann"],
+  "L2": ["↑ ● vann", "↓ ● luft", "↓ ● jord", "↑ ● jord"],
+  "L3": ["↓ ● ild", "↑ ● luft", "↓ ○ ild", "↓ ● vann"],
+  "L4": ["↓ ★ lyn", "---", "↓ ★ metall", "↓ ★ plante"],
+  "L5": ["---", "---", "---", "↑ ★ plante"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

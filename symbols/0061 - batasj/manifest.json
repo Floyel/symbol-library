@@ -1,0 +1,48 @@
+{
+  "title": "batasj",
+  "number": "0061",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "16/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↓ ● vann",
+      "↓ ● jord",
+      "↑ ● luft",
+      "↑ ● ild"
+    ],
+    "L2": [
+      "↓ ● luft",
+      "↓ ○ vann",
+      "↓ ● jord",
+      "↓ ● ild"
+    ],
+    "L3": [
+      "↑ ● vann",
+      "↑ ● luft",
+      "↑ ● jord",
+      "↓ ● ild"
+    ],
+    "L4": [
+      "---",
+      "↓ ★ plante",
+      "---",
+      "---"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

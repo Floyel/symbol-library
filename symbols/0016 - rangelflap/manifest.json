@@ -1,0 +1,48 @@
+{
+  "title": "rangelflap",
+  "number": "0016",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "1/11-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ○ ild",
+      "↓ ● jord",
+      "↓ ○ ild",
+      "↓ ● ild"
+    ],
+    "L2": [
+      "↑ ● vann",
+      "↑ ● luft",
+      "↓ ● vann",
+      "↓ ○ jord"
+    ],
+    "L3": [
+      "↓ ● luft",
+      "↓ ● luft",
+      "↓ ● vann",
+      "↓ ● jord"
+    ],
+    "L4": [
+      "↓ ★ lyn",
+      "---",
+      "↓ ★ lyn",
+      "↓ ★ metall"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "---"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}

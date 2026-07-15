@@ -1,0 +1,19 @@
+{
+  "title": "tuge",
+  "number": "0173",
+  "filetype": ".gif",
+  "frames": "9(0,2)",
+  "date": "19/5-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● jord", "↑ ● ild", "↓ ○ jord", "↑ ● luft"],
+  "L2": ["↑ ● luft", "↓ ● luft", "↓ ● vann", "↓ ● ild"],
+  "L3": ["↓ ● ild", "↓ ● jord", "↑ ● vann", "↑ ● vann"],
+  "L4": ["---", "---", "↑ ★ plante", "↓ ★ lyn"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

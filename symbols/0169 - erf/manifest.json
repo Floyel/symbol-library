@@ -1,0 +1,19 @@
+{
+  "title": "erf",
+  "number": "0169",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "12/5-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ○ vann", "↑ ● vann", "↑ ● jord", "↑ ○ ild"],
+  "L2": ["↑ ○ jord", "↑ ● luft", "↑ ● luft", "↑ ● vann"],
+  "L3": ["↑ ● ild", "↓ ● ild", "↓ ● jord", "↑ ● luft"],
+  "L4": ["↑ ★ plante", "---", "---", "↑ ★ lyn"],
+  "L5": ["↓ ★ metall", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

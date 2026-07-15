@@ -1,0 +1,19 @@
+{
+  "title": "limæx",
+  "number": "0309",
+  "filetype": ".gif",
+  "frames": "15(0,2)",
+  "date": "3/12-25",
+  "size": "1000x1000 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild",  "↓ ● jord", "↑ ○ jord", "↓ ● vann"],
+  "L2": ["↑ ● luft", "↓ ● luft", "↑ ○ vann", "↓ ● luft"],
+  "L3": ["↓ ● vann", "↓ ● ild", "↑ ● jord", "↑ ● ild"],
+  "L4": ["---", "---", "↑ ★ plante", "---"],
+  "L5": ["---", "---", "↓ ★ plante", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "irlij",
+  "number": "0288",
+  "filetype": ".gif",
+  "frames": "10(0,2)",
+  "date": "22/10-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ○ vann", "↑ ● vann", "↓ ● vann", "↑ ● luft"],
+  "L2": ["↑ ○ ild", "↑ ● luft", "↓ ● luft", "↑ ○ ild"],
+  "L3": ["↑ ● jord", "↓ ● ild", "↑ ● jord", "↑ ● jord"],
+  "L4": ["↓ ★ lyn", "---", "---", "↑ ★ metall"],
+  "L5": ["↑ ★ metall", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "ufbam",
+  "number": "0205",
+  "filetype": ".gif",
+  "frames": "12(0,2)",
+  "date": "17/7-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1":  ["↓ ● luft", "↓ ● vann", "↓ ○ jord", "↓ ● jord"],
+  "L2":  ["↑ ○ vann", "↑ ● ild", "↓ ● ild", "↑ ● vann"],
+  "L3":  ["↑ ● jord", "↑ ● luft", "↓ ● ild", "↑ ● luft"],
+  "L4":  ["↓ ★ plante", "↓ ★ lyn", "↑ ★ metall", "↓ ★ plante"],
+  "L5":  ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

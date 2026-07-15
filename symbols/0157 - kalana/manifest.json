@@ -1,0 +1,19 @@
+{
+  "title": "kalana",
+  "number": "0157",
+  "filetype": ".gif",
+  "frames": "14(0,2)",
+  "date": "1/4-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● jord", "↓ ● luft", "↑ ● ild", "↓ ● vann"],
+  "L2": ["↑ ● vann", "↓ ● ild", "↓ ● jord", "↓ ● vann"],
+  "L3": ["↑ ● luft", "↓ ● luft", "↓ ● jord", "↑ ● ild"],
+  "L4": ["↑ ★ plante", "---", "↑ ★ metall", "↓ ★ lyn"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

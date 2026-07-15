@@ -1,0 +1,19 @@
+{
+  "title": "klaps",
+  "number": "0076",
+  "filetype": ".gif",
+  "frames": "18(0,2)",
+  "date": "31/12-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ● luft", "↑ ● luft", "↑ ● jord", "↑ ● luft"],
+  "L2": ["↓ ● ild", "↓ ● vann", "↓ ● ild", "↓ ● jord"],
+  "L3": ["↑ ● jord", "↑ ● ild", "↑ ● vann", "↓ ○ vann"],
+  "L4": ["↓ ★ metall", "↑ ★ lyn", "↓ ★ metall", "↓ ★ plante"],
+  "L5": ["---", "---", "↑ ★ lyn", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

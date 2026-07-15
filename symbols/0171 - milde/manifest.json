@@ -1,0 +1,19 @@
+{
+  "title": "milde",
+  "number": "0171",
+  "filetype": ".gif",
+  "frames": "18(0,2)",
+  "date": "17/5-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● ild", "↓ ○ jord", "↓ ● luft", "↑ ● luft"],
+  "L2": ["↑ ○ vann", "↓ ● vann", "↓ ● luft", "↓ ● ild"],
+  "L3": ["↑ ● vann", "↑ ● jord", "↓ ● jord", "↓ ● ild"],
+  "L4": ["↓ ★ lyn", "↑ ★ plante", "---", "---"],
+  "L5": ["---", "↑ ★ plante", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

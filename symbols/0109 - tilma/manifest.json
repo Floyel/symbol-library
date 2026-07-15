@@ -1,0 +1,19 @@
+{
+  "title": "tilma",
+  "number": "0109",
+  "filetype": ".gif",
+  "frames": "20(0,2)",
+  "date": "2/2-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "by Mathilde",
+  "element_code": {
+  "L1": ["↑ ● luft", "↑ ● luft", "↑ ● ild", "↓ ● ild"],
+  "L2": ["↑ ○ jord", "↓ ● vann", "↓ ● luft", "↑ ● ild"],
+  "L3": ["↑ ● vann", "↓ ○ jord", "↑ ● vann", "↓ ● jord"],
+  "L4": ["↓ ★ plante", "↑ ★ plante", "---", "↑ ★ metall"],
+  "L5": ["---", "---", "---", "---"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

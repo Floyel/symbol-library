@@ -1,0 +1,20 @@
+{
+  "title": "sliren",
+  "number": "0153",
+  "filetype": ".gif",
+  "frames": "24(0,2)",
+  "date": "27/3-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↑ ● luft", "↑ ● vann", "↓ ● luft", "↓ ● vann"],
+  "L2": ["↓ ○ ild", "↓ ● ild", "↓ ● ild", "↓ ● luft"],
+  "L3": ["↓ ● jord", "↑ ● vann", "↓ ○ jord", "↓ ● jord"],
+  "L4": ["↓ ★ metall", "↑ ★ lyn", "↑ ★ metall", "---"],
+  "L5": ["---", "↑ ★ lyn", "---", "---"]
+  
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

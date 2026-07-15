@@ -1,0 +1,19 @@
+{
+  "title": "sabliat",
+  "number": "0306",
+  "filetype": ".gif",
+  "frames": "13(0,2)",
+  "date": "9/11-25",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+  "L1": ["↓ ○ ild", "↑ ● jord", "↓ ● jord", "↓ ● ild"],
+  "L2": ["↓ ● vann", "↓ ● luft", "↓ ● luft", "↑ ○ vann"],
+  "L3": ["↓ ● vann", "↓ ● luft", "↓ ● jord", "↑ ● ild"],
+  "L4": ["↓ ★ lyn", "---", "---", "↑ ★ lyn"],
+  "L5": ["---", "---", "---", "↑ ★ lyn"]
+  },
+  "effects": ["Glow", "Inverted", "Filter"]
+}

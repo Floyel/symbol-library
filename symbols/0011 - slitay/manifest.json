@@ -1,0 +1,48 @@
+{
+  "title": "slitay",
+  "number": "0011",
+  "filetype": ".gif",
+  "frames": "15(0,2)",
+  "date": "27/10-24",
+  "size": "500x500 px",
+  "dimension": "2D",
+  "timeline": "main",
+  "info": "-",
+  "element_code": {
+    "L1": [
+      "↑ ● ild",
+      "↓ ● luft",
+      "↓ ● vann",
+      "↑ ● ild"
+    ],
+    "L2": [
+      "↑ ● luft",
+      "↓ ● jord",
+      "↑ ● vann",
+      "↓ ● vann"
+    ],
+    "L3": [
+      "↑ ● ild",
+      "↑ ● jord",
+      "↑ ● luft",
+      "↓ ○ jord"
+    ],
+    "L4": [
+      "---",
+      "---",
+      "---",
+      "↑ ★ lyn"
+    ],
+    "L5": [
+      "---",
+      "---",
+      "---",
+      "↑ ★ plante"
+    ]
+  },
+  "effects": [
+    "Glow",
+    "Inverted",
+    "Filter"
+  ]
+}
